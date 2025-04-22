@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Font Families */
+  --font-pacifico: 'Pacifico', cursive;
+  --font-poppins: 'Poppins', sans-serif;
+
+  /* Primary Colors */
+  --color-primary-100: #edf5ca;
+  --color-primary-300: #d3e97e;
+  --color-primary-400: #bdde3b;
+  --color-primary-500: #a8d400;
+
+  /* Secondary Colors */
+  --color-secondary-100: #ffe0e9;
+  --color-secondary-500: #e12f6b;
+  --color-secondary-600: #b12453;
+
+  /* Basic Colors */
+  --color-basic-100: #fafafa;
+  --color-basic-200: #e0e0e0;
+  --color-basic-300: #bbbbbb;
+  --color-basic-400: #999999;
+  --color-basic-700: #4d4d4d;
+  --color-basic-900: #333333;
+
+  /* Warning */
+  --color-warning-500: #fe4444;
+
+  /* Info - Brown */
+  --color-info-brown-100: #eebc00;
+  --color-info-brown-900: #b08d57;
+
+  /* Info - Blue */
+  --color-info-blue-100: #dee9ff;
+  --color-info-blue-500: #78a7ff;
+}
+
+@layer base {
+  body {
+    @apply bg-basic-100 text-basic-900 font-poppins;
+  }
+
+  h1 {
+    @apply text-3xl sm:text-6xl font-pacifico text-basic-900
+  }
+
+  h2 {
+    @apply text-2xl sm:text-5xl font-pacifico text-basic-900;
+  }
+
+  h3 {
+    @apply text-xl sm:text-3xl font-pacifico text-basic-900;
+  }
+
+  p {
+    @apply text-base text-basic-900 leading-relaxed;
+  }
+
+  .input {
+    @apply px-4 py-2 rounded-full border border-basic-300 text-sm outline-none focus:ring-1 focus:ring-primary-500;
+  }
+}
