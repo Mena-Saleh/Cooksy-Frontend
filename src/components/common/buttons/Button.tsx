@@ -16,7 +16,7 @@ export default function Button({
 
 	const variants = {
 		primary:
-			"px-6 py-2 bg-secondary-500 hover:bg-secondary-600 text-basic-100",
+			"px-6 py-2 bg-secondary-500 hover:bg-secondary-600 text-basic-100 font-medium",
 		secondary:
 			"px-6 py-2 bg-primary-500 hover:bg-primary-600 text-basic-100",
 		outline:
