@@ -17,7 +17,7 @@ export default function NavSearch() {
 				className={clsx(
 					"input absolute right-0 transition-all duration-300 ease-in-out pr-10 shadow-md",
 					open
-						? "2xl:w-64  w-52 opacity-100 px-4"
+						? "2xl:w-64 w-52 opacity-100 px-4"
 						: "w-0 opacity-0 px-0 pointer-events-none"
 				)}
 			/>
@@ -30,7 +30,7 @@ export default function NavSearch() {
 					"z-10 w-7 h-7 flex items-center justify-center rounded-full transition-all duration-300 ease-in-out cursor-pointer",
 					open
 						? "bg-secondary-500 text-basic-100 shadow-md"
-						: "text-basic-900"
+						: "sm:text-basic-900 text-basic-100 bg-secondary-500 sm:bg-transparent"
 				)}
 			>
 				<Icon icon="mdi:magnify" className="w-5 h-5" />

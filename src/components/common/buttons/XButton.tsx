@@ -1,10 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 
-export default function XButton() {
+type XButtonProps = {
+	onClick?: () => void;
+};
+
+export default function XButton({ onClick }: XButtonProps) {
 	return (
-		<div className="rounded-full w-8 h-8 bg-primary-300 hover:bg-primary-400 transition-colors duration-200 cursor-pointer flex justify-center items-center">
-			<FontAwesomeIcon icon={faX} className="text-basic-900" />
+		<div
+			onClick={onClick}
+			className="rounded-full sm:w-7 sm:h-7 w-6 h-6 bg-primary-300 hover:bg-primary-400 transition-colors duration-200 cursor-pointer flex justify-center items-center"
+		>
+			<FontAwesomeIcon icon={faX} className="text-basic-900 text-xs sm:text-sm" />
 		</div>
 	);
 }

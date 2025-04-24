@@ -1,11 +1,13 @@
 import "./App.css";
-import NavBar from "./components/navigation/NavBar";
+import RegisterForm from "./components/forms/RegisterForm";
+import NavBarWrapper from "./components/navigation/NavBarWrapper";
 
 function App() {
 
 	return (
 		<div className="">
-			<NavBar />
+			<NavBarWrapper />
+			{/* <RegisterForm /> */}
 		</div>
 	);
 }

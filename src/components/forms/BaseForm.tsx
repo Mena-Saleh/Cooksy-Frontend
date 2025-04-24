@@ -24,7 +24,7 @@ export default function BaseForm({ children }: { children?: React.ReactNode }) {
 
 			{/* Bottom swoosh */}
 			<img
-				src="/svg/Swooshes/BottomSwooshOld.svg"
+				src="/svg/Swooshes/BottomSwoosh.svg"
 				className="absolute bottom-0 left-0 w-full h-auto object-cover z-0"
 			/>
 		</div>

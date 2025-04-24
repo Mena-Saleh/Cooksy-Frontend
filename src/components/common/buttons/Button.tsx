@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	variant?: "primary" | "secondary" | "outline" | "ghost";
-	size?: "sm" | "md" | "lg";
+	size?: "xs" | "sm" | "md" | "lg";
 };
 
 export default function Button({
@@ -26,6 +26,7 @@ export default function Button({
 	};
 
 	const sizes = {
+		xs: "px-3 py-1 text-xs",
 		sm: "px-4 py-2 text-sm",
 		md: "px-6 py-2 text-base",
 		lg: "px-8 py-3 text-lg",
