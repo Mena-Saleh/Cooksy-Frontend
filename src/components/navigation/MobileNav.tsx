@@ -34,23 +34,23 @@ export default function MobileNav() {
                     open ? "translate-x-0" : "-translate-x-full"
                 )}
             >
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex justify-between items-center mt-4 mb-16">
                     {/* Logo */}
                     <Link to="/">
-                        <img src="/logo.svg" alt="Cooksy Logo" className="w-24" />
+                        <img src="/logo.svg" alt="Cooksy Logo" className="w-28" />
                     </Link>
                     <XButton
                         onClick={() => setOpen(false)}
                     />
                 </div>
-                <nav className="flex flex-col gap-4 text-basic-900">
-                    <Link to="/" className="text-sm text-basic-900 hover:text-secondary-500"
+                <nav className="flex flex-col gap-4 text-basic-900 pl-6">
+                    <Link to="/" className="text-basic-900 hover:text-secondary-500"
                         onClick={() => setOpen(false)}>Home</Link>
-                    <Link to="/recipes" className="text-sm text-basic-900 hover:text-secondary-500"
+                    <Link to="/recipes" className="text-basic-900 hover:text-secondary-500"
                         onClick={() => setOpen(false)}>Recipes</Link>
-                    <Link to="/articles" className="text-sm text-basic-900 hover:text-secondary-500"
+                    <Link to="/articles" className="text-basic-900 hover:text-secondary-500"
                         onClick={() => setOpen(false)}>Articles</Link>
-                    <Link to="/categories" className="text-sm text-basic-900 hover:text-secondary-500"
+                    <Link to="/categories" className="text-basic-900 hover:text-secondary-500"
                         onClick={() => setOpen(false)}>Categories</Link>
                     <div className="mt-4">
                         <NavLang />

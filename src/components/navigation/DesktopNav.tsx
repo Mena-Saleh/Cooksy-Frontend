@@ -9,28 +9,28 @@ export default function NavBar() {
 		<header className="w-full bg-basic-100/30 shadow-sm">
 			<nav className="flex items-center justify-between py-4 px-24">
 				{/* Navigation Links */}
-				<div className="flex items-center gap-6">
+				<div className="flex items-center gap-6 text-sm">
 					<Link
 						to="/"
-						className="text-sm text-basic-900 hover:text-secondary-500"
+						className="text-basic-900 hover:text-secondary-500"
 					>
 						Home
 					</Link>
 					<Link
 						to="/recipes"
-						className="text-sm text-basic-900 hover:text-secondary-500"
+						className="text-basic-900 hover:text-secondary-500"
 					>
 						Recipes
 					</Link>
 					<Link
 						to="/articles"
-						className="text-sm text-basic-900 hover:text-secondary-500"
+						className="text-basic-900 hover:text-secondary-500"
 					>
 						Articles
 					</Link>
 					<Link
 						to="/categories"
-						className="text-sm text-basic-900 hover:text-secondary-500"
+						className="text-basic-900 hover:text-secondary-500"
 					>
 						Categories
 					</Link>
