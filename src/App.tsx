@@ -1,15 +1,11 @@
 import "./App.css";
-import NewPasswordForm from "./components/forms/NewPasswordForm";
-import { useTranslation } from "react-i18next";
+import NavBar from "./components/navigation/NavBar";
 
 function App() {
-	const { i18n } = useTranslation();
-
-	i18n.changeLanguage("en");
 
 	return (
-		<div className="sm:mx-10 my-10">
-			<NewPasswordForm />
+		<div className="">
+			<NavBar />
 		</div>
 	);
 }
