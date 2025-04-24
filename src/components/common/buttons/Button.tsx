@@ -3,12 +3,14 @@ import clsx from "clsx";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	variant?: "primary" | "secondary" | "outline" | "ghost";
+	size?: "sm" | "md" | "lg";
 };
 
 export default function Button({
 	children,
 	className,
 	variant = "primary",
+	size = "md",
 	...props
 }: ButtonProps) {
 	const base =
@@ -16,16 +18,24 @@ export default function Button({
 
 	const variants = {
 		primary:
-			"px-6 py-2 bg-secondary-500 hover:bg-secondary-600 text-basic-100 font-medium",
-		secondary:
-			"px-6 py-2 bg-primary-500 hover:bg-primary-600 text-basic-100",
+			"bg-secondary-500 hover:bg-secondary-600 text-basic-100 font-medium",
+		secondary: "bg-primary-500 hover:bg-primary-600 text-basic-100",
 		outline:
-			"px-6 py-2 border border-secondary-500 text-secondary-500 hover:bg-secondary-100",
+			"border border-secondary-500 text-secondary-500 hover:bg-secondary-100",
 		ghost: "text-secondary-500 hover:underline",
 	};
 
+	const sizes = {
+		sm: "px-4 py-2 text-sm",
+		md: "px-6 py-2 text-base",
+		lg: "px-8 py-3 text-lg",
+	};
+
 	return (
-		<button className={clsx(base, variants[variant], className)} {...props}>
+		<button
+			className={clsx(base, variants[variant], sizes[size], className)}
+			{...props}
+		>
 			{children}
 		</button>
 	);
