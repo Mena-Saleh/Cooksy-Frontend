@@ -38,7 +38,7 @@ export default function NavLang() {
 				className="flex items-center gap-2 text-basic-900 hover:text-secondary-500 transition-colors cursor-pointer"
 			>
 				<Icon icon="material-symbols:globe" className="w-6 h-6" />
-				<span className="sm:text-sm font-medium">{currentLang.toUpperCase()}</span>
+				<span className="text-sm font-medium">{currentLang.toUpperCase()}</span>
 				<Icon icon="mdi:chevron-down" className="w-4 h-4" />
 			</button>
 
@@ -52,7 +52,7 @@ export default function NavLang() {
 					<button
 						key={lang.code}
 						onClick={() => handleChange(lang.code)}
-						className="w-full text-left px-4 py-2 sm:text-sm flex items-center gap-2 hover:bg-primary-100 rounded-xl transition-colors cursor-pointer"
+						className="w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-primary-100 rounded-xl transition-colors cursor-pointer"
 					>
 						<Flag code={lang.countryCode} className="w-[20px] h-[14px] object-cover rounded-sm" />
 						<span>{lang.label}</span>

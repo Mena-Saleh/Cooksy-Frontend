@@ -43,7 +43,7 @@ export default function MobileNav() {
                         onClick={() => setOpen(false)}
                     />
                 </div>
-                <nav className="flex flex-col gap-4 text-basic-900 pl-6">
+                <nav className="flex flex-col gap-4 text-basic-900 pl-6 text-sm">
                     <Link to="/" className="text-basic-900 hover:text-secondary-500"
                         onClick={() => setOpen(false)}>Home</Link>
                     <Link to="/recipes" className="text-basic-900 hover:text-secondary-500"
