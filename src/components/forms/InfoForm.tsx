@@ -6,7 +6,6 @@ import Button from "../common/buttons/Button";
 import { useTranslation } from "react-i18next";
 
 export default function InfoForm() {
-	const { t: tButtons } = useTranslation("buttons");
 	const { t: tForms } = useTranslation("forms");
 
 	return (
@@ -56,8 +55,8 @@ export default function InfoForm() {
 				</div>
 
 				<div className="flex sm:flex-row flex-col w-[180px] sm:w-auto mx-auto justify-center gap-4 mt-8">
-					<Button>{tButtons("login")}</Button>
-					<Button>{tButtons("createAccount")}</Button>
+					<Button>{tForms("buttons.login")}</Button>
+					<Button>{tForms("buttons.createAccount")}</Button>
 				</div>
 			</div>
 		</BaseForm>

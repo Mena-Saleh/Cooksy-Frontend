@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 export default function ForgotPasswordForm() {
 	const { t: tForms } = useTranslation("forms");
-	
+
 	return (
 		<BaseForm>
 			<div className="text-center space-y-6">
@@ -26,7 +26,7 @@ export default function ForgotPasswordForm() {
 					/>
 
 					<Button type="submit" className="mt-2">
-						{tForms("forgotPassword.button")}
+						{tForms("buttons.sendResetLink")}
 					</Button>
 				</form>
 			</div>

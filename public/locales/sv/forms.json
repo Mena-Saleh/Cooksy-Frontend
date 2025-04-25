@@ -57,7 +57,14 @@
         "text": "Ange din e-postadress så skickar vi en länk för att återställa lösenordet",
         "fields": {
             "email": "E-post"
-        },
-        "button": "Skicka återställningslänk"
+        }
+    },
+    "buttons": {
+        "createAccount": "Skapa konto",
+        "login": "Logga in",
+        "logout": "Logga ut",
+        "forgot": "Glömt lösenord?",
+        "resetPassword": "Återställ lösenord",
+        "sendResetLink": "Skicka återställningslänk"
     }
 }

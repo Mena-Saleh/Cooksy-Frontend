@@ -56,7 +56,14 @@
         "text": "Enter your email address and we'll send you a link to reset your password",
         "fields": {
             "email": "Email"
-        },
-        "button": "Send reset link"
+        }
+    },
+    "buttons": {
+        "createAccount": "Create Account",
+        "login": "Log in",
+        "logout": "Logout",
+        "forgot": "Forgot password?",
+        "resetPassword": "Reset password",
+        "sendResetLink": "Send reset link"
     }
 }

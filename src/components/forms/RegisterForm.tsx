@@ -5,7 +5,6 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 
 export default function RegisterForm() {
-	const { t: tButtons } = useTranslation("buttons");
 	const { t: tForms } = useTranslation("forms");
 
 	return (
@@ -63,7 +62,7 @@ export default function RegisterForm() {
 
 					<div className="flex justify-center align-center">
 						<Button type="submit" className="mt-4">
-							{tButtons("createAccount")}
+							{tForms("buttons.createAccount")}
 						</Button>
 					</div>
 				</form>
@@ -71,7 +70,7 @@ export default function RegisterForm() {
 				<p className="text-base text-center mt-4">
 					{tForms("register.loginText")}
 					<Button variant="ghost" className="mx-1">
-						{tButtons("login")}
+						{tForms("buttons.login")}
 					</Button>
 				</p>
 

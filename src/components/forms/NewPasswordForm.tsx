@@ -4,9 +4,8 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 
 export default function NewPasswordForm() {
-		const { t: tButtons } = useTranslation("buttons");
 	const { t: tForms } = useTranslation("forms");
-	
+
 	return (
 		<BaseForm>
 			<div className="text-center space-y-6">
@@ -38,7 +37,9 @@ export default function NewPasswordForm() {
 					<div className="relative">
 						<input
 							type="password"
-							placeholder={tForms("newPassword.fields.confirmPassword")}
+							placeholder={tForms(
+								"newPassword.fields.confirmPassword"
+							)}
 							className="w-full input pr-10"
 						/>
 						<span className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
@@ -50,7 +51,7 @@ export default function NewPasswordForm() {
 					</div>
 
 					<Button type="submit" className="mx-auto block mt-4">
-						{tButtons("resetPassword")}
+						{tForms("buttons.resetPassword")}
 					</Button>
 				</form>
 			</div>

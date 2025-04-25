@@ -5,7 +5,6 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 
 export default function LoginForm() {
-	const { t: tButtons } = useTranslation("buttons");
 	const { t: tForms } = useTranslation("forms");
 
 	return (
@@ -37,19 +36,19 @@ export default function LoginForm() {
 
 					<div className="text-right text-sm">
 						<Button variant="ghost" className="text-secondary-500">
-							{tButtons("forgot")}
+							{tForms("buttons.forgot")}
 						</Button>
 					</div>
 
 					<div className="flex justify-center">
-						<Button type="submit">{tButtons("login")}</Button>
+						<Button type="submit">{tForms("buttons.login")}</Button>
 					</div>
 				</form>
 
 				<p className="text-base text-center mt-4">
 					{tForms("login.registerText")}
 					<Button variant="ghost" className="mx-1">
-						{tButtons("createAccount")}
+						{tForms("buttons.createAccount")}
 					</Button>
 				</p>
 
