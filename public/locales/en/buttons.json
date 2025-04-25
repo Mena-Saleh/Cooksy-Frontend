@@ -1,5 +1,7 @@
 {
     "createAccount": "Create Account",
-    "login": "Login",
-    "logout": "Logout"
+    "login": "Log in",
+    "logout": "Logout",
+    "forgot": "Forgot password?",
+    "resetPassword": "Reset password"
 }

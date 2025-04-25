@@ -6,7 +6,7 @@ import NavLang from "./NavLang";
 
 export default function NavBar() {
 	return (
-		<header className="w-full bg-basic-100/30 shadow-sm">
+		<header className="w-full bg-white/30 shadow-sm">
 			<nav className="flex items-center justify-between py-4 px-24">
 				{/* Navigation Links */}
 				<div className="flex items-center gap-6 text-sm">

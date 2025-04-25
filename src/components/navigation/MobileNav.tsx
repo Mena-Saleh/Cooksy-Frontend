@@ -67,7 +67,7 @@ export default function MobileNav() {
             {/* Backdrop */}
             {open && (
                 <div
-                    className="fixed inset-0 bg-black/20 z-40"
+                    className="fixed inset-0 bg-basic-900/20 z-40"
                     onClick={() => setOpen(false)}
                 />
             )}

@@ -1,0 +1,63 @@
+{
+    "info": {
+        "title": "Spara dina favoritrecept",
+        "subtitle": "– skapa ett gratis konto",
+        "items": {
+            "track": "Håll enkelt koll på dina recept genom att samla dem på ett och samma ställe",
+            "folders": "Spara dina favoriter i praktiska mappar! Skapa till exempel dina egna veckomenyer",
+            "articles": "Läs artiklar med information om näring och kost du behöver!"
+        }
+    },
+    "register": {
+        "title": "Skapa ett konto",
+        "fields": {
+            "firstName": "Förnamn",
+            "lastName": "Efternamn",
+            "email": "E-post",
+            "password": "Lösenord",
+            "confirmPassword": "Bekräfta lösenord"
+        },
+        "loginText": "Har du redan ett konto?",
+        "alternative": "Eller registrera dig med"
+    },
+    "login": {
+        "title": "Logga in",
+        "fields": {
+            "email": "E-post",
+            "password": "Lösenord"
+        },
+        "forgot": "Glömt lösenord?",
+        "registerText": "Har du inget konto?",
+        "alternative": "Eller logga in med"
+    },
+    "emailVerified": {
+        "title": "Din e-post har verifierats",
+        "text": "Ditt konto har aktiverats. Du kan nu logga in och få full tillgång till alla funktioner och personligt innehåll."
+    },
+    "verifyEmail": {
+        "title": "Bekräfta din e-post",
+        "text": "Vi har skickat en verifieringslänk till din e-post. Kontrollera din inkorg och klicka på länken för att aktivera ditt konto.",
+        "note": "Fick du inte mejlet? Kontrollera skräpposten eller",
+        "resend": "skicka det igen"
+    },
+    "resetLinkSent": {
+        "title": "Kolla din inkorg!",
+        "text": "Vi har skickat en länk för att återställa ditt lösenord. Kontrollera din e-post och följ instruktionerna för att skapa ett nytt lösenord."
+    },
+    "newPassword": {
+        "title": "Skapa ett nytt lösenord",
+        "text": "Ange ett nytt lösenord för ditt konto nedan. Se till att det är starkt och lätt att komma ihåg.",
+        "fields": {
+            "password": "Nytt lösenord",
+            "confirmPassword": "Bekräfta lösenord"
+        }
+    },
+    "forgotPassword": {
+        "title": "Glömt ditt lösenord?",
+        "text": "Ange din e-postadress så skickar vi en länk för att återställa lösenordet",
+        "fields": {
+            "email": "E-post"
+        },
+        "button": "Skicka återställningslänk"
+    }
+}

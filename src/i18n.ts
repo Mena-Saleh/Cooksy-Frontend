@@ -12,7 +12,7 @@ i18n
         fallbackLng: 'en',
         debug: true,
 
-        ns: ['buttons'], // register all namespaces (JSON files under locales)
+        ns: ['buttons', 'forms'], // register all namespaces (JSON files under locales)
         defaultNS: 'translations',
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json',

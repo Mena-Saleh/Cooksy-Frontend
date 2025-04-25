@@ -3,19 +3,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faFolder } from "@fortawesome/free-solid-svg-icons";
 import { Icon } from "@iconify/react";
 import Button from "../common/buttons/Button";
+import { useTranslation } from "react-i18next";
 
 export default function InfoForm() {
+	const { t: tButtons } = useTranslation("buttons");
+	const { t: tForms } = useTranslation("forms");
+
 	return (
 		<BaseForm>
 			<div className="space-y-6">
 				<div className="text-center">
-
 					<div className="space-y-2 text-left inline-block">
 						<h3 className="text-primary-500">
-							Save your favorite recipes
+							{tForms("info.title")}
 						</h3>
 						<p className="font-medium sm:text-xl">
-							– create a free account
+							{tForms("info.subtitle")}
 						</p>
 					</div>
 				</div>
@@ -28,10 +31,7 @@ export default function InfoForm() {
 								className="text-secondary-500"
 							/>
 						</div>
-						<p>
-							Easily keep track of your recipes by having them all
-							in one place
-						</p>
+						<p>{tForms("info.items.track")}</p>
 					</div>
 
 					<div className="flex items-start gap-4">
@@ -41,10 +41,7 @@ export default function InfoForm() {
 								className="text-primary-500"
 							/>
 						</div>
-						<p>
-							Save your favorites in practical folders! Why not
-							create your own weekly menus?
-						</p>
+						<p>{tForms("info.items.folders")}</p>
 					</div>
 
 					<div className="flex items-start gap-4">
@@ -54,16 +51,13 @@ export default function InfoForm() {
 								className="text-info-blue-500 scale-130"
 							/>
 						</div>
-						<p>
-							Read articles with information about the nutrition
-							you need!
-						</p>
+						<p>{tForms("info.items.articles")}</p>
 					</div>
 				</div>
 
 				<div className="flex sm:flex-row flex-col w-[180px] sm:w-auto mx-auto justify-center gap-4 mt-8">
-					<Button>Log in</Button>
-					<Button>Create account</Button>
+					<Button>{tButtons("login")}</Button>
+					<Button>{tButtons("createAccount")}</Button>
 				</div>
 			</div>
 		</BaseForm>

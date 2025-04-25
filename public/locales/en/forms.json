@@ -1,0 +1,62 @@
+{
+    "info": {
+        "title": "Save your favorite recipes",
+        "subtitle": "– create a free account",
+        "items": {
+            "track": "Easily keep track of your recipes by having them all in one place",
+            "folders": "Save your favorites in practical folders! Why not create your own weekly menus?",
+            "articles": "Read articles with information about the nutrition you need!"
+        }
+    },
+    "register": {
+        "title": "Create an account",
+        "fields": {
+            "firstName": "First name",
+            "lastName": "Last name",
+            "email": "Email",
+            "password": "Password",
+            "confirmPassword": "Confirm Password"
+        },
+        "loginText": "Already have an account?",
+        "alternative": "Or sign up with"
+    },
+    "login": {
+        "title": "Log in",
+        "fields": {
+            "email": "Email",
+            "password": "Password"
+        },
+        "registerText": "Don't have an account?",
+        "alternative": "Or sign in with"
+    },
+    "emailVerified": {
+        "title": "Your email has been verified",
+        "text": "Your account has been successfully activated. You can now log in and enjoy full access to all features and personalized content."
+    },
+    "verifyEmail": {
+        "title": "Verify your email",
+        "text": "We've sent a verification link to your email. Please check your inbox and click the link to activate your account.",
+        "note": "Didn't get the email? Check your spam folder or",
+        "resend": "resend it"
+    },
+    "resetLinkSent": {
+        "title": "Check your inbox!",
+        "text": "We've sent you a password reset link. Please check your email and follow the instructions to create a new password."
+    },
+    "newPassword": {
+        "title": "Create a new password",
+        "text": "Set a new password for your account below. Make sure it’s something strong and easy to remember.",
+        "fields": {
+            "password": "New password",
+            "confirmPassword": "Confirm password"
+        }
+    },
+    "forgotPassword": {
+        "title": "Forgot your password?",
+        "text": "Enter your email address and we'll send you a link to reset your password",
+        "fields": {
+            "email": "Email"
+        },
+        "button": "Send reset link"
+    }
+}

@@ -5,23 +5,26 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 
 export default function LoginForm() {
-	const { t } = useTranslation("buttons");
+	const { t: tButtons } = useTranslation("buttons");
+	const { t: tForms } = useTranslation("forms");
 
 	return (
 		<BaseForm>
 			<div>
-				<h3 className="text-center text-primary-500 mb-6">Log in</h3>
+				<h3 className="text-center text-primary-500 mb-6">
+					{tForms("login.title")}
+				</h3>
 
 				<form className="space-y-4">
 					<input
 						type="email"
-						placeholder="Email"
+						placeholder={tForms("login.fields.email")}
 						className="w-full input"
 					/>
 					<div className="relative">
 						<input
 							type="password"
-							placeholder="Password"
+							placeholder={tForms("login.fields.password")}
 							className="w-full input pr-10"
 						/>
 						<span className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
@@ -34,26 +37,26 @@ export default function LoginForm() {
 
 					<div className="text-right text-sm">
 						<Button variant="ghost" className="text-secondary-500">
-							Forgot password?
+							{tButtons("forgot")}
 						</Button>
 					</div>
 
 					<div className="flex justify-center">
-						<Button type="submit">{t("Log in")}</Button>
+						<Button type="submit">{tButtons("login")}</Button>
 					</div>
 				</form>
 
 				<p className="text-base text-center mt-4">
-					Dont have an account?
+					{tForms("login.registerText")}
 					<Button variant="ghost" className="mx-1">
-						Create account
+						{tButtons("createAccount")}
 					</Button>
 				</p>
 
 				<div className="flex items-center gap-4 mt-6">
 					<hr className="flex-1 border-basic-300 rounded-full" />
 					<span className="text-sm text-basic-400">
-						Or sign in with
+						{tForms("login.alternative")}
 					</span>
 					<hr className="flex-1 border-basic-300 rounded-full" />
 				</div>

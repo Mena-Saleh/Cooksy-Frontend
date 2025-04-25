@@ -1,17 +1,22 @@
 import BaseForm from "./BaseForm";
 import Button from "../common/buttons/Button";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 
 export default function NewPasswordForm() {
+		const { t: tButtons } = useTranslation("buttons");
+	const { t: tForms } = useTranslation("forms");
+	
 	return (
 		<BaseForm>
 			<div className="text-center space-y-6">
-				<h3 className="text-primary-500">Create a new password</h3>
+				<h3 className="text-primary-500">
+					{tForms("newPassword.title")}
+				</h3>
 
 				<div className="space-y-1">
 					<p className="text-basic-900">
-						Set a new password for your account below. Make sure
-						it’s something strong and easy to remember.
+						{tForms("newPassword.text")}
 					</p>
 				</div>
 
@@ -19,7 +24,7 @@ export default function NewPasswordForm() {
 					<div className="relative">
 						<input
 							type="password"
-							placeholder="New password"
+							placeholder={tForms("newPassword.fields.password")}
 							className="w-full input pr-10"
 						/>
 						<span className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
@@ -33,7 +38,7 @@ export default function NewPasswordForm() {
 					<div className="relative">
 						<input
 							type="password"
-							placeholder="Confirm password"
+							placeholder={tForms("newPassword.fields.confirmPassword")}
 							className="w-full input pr-10"
 						/>
 						<span className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
@@ -45,7 +50,7 @@ export default function NewPasswordForm() {
 					</div>
 
 					<Button type="submit" className="mx-auto block mt-4">
-						Reset password
+						{tButtons("resetPassword")}
 					</Button>
 				</form>
 			</div>

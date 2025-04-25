@@ -2,38 +2,39 @@ import BaseForm from "./BaseForm";
 import Button from "../common/buttons/Button";
 import OAuthButton from "../common/buttons/OAuthButton";
 import { Icon } from "@iconify/react";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 export default function RegisterForm() {
-	const { t } = useTranslation('buttons');
+	const { t: tButtons } = useTranslation("buttons");
+	const { t: tForms } = useTranslation("forms");
 
 	return (
 		<BaseForm>
 			<div>
 				<h3 className="text-center text-primary-500 mb-6">
-					Create an account
+					{tForms("register.title")}
 				</h3>
 
 				<form className="space-y-4">
 					<input
 						type="text"
-						placeholder="First name"
+						placeholder={tForms("register.fields.firstName")}
 						className="w-full input"
 					/>
 					<input
 						type="text"
-						placeholder="Last name"
+						placeholder={tForms("register.fields.lastName")}
 						className="w-full input"
 					/>
 					<input
 						type="email"
-						placeholder="Email"
+						placeholder={tForms("register.fields.email")}
 						className="w-full input"
 					/>
 					<div className="relative">
 						<input
 							type="password"
-							placeholder="Password"
+							placeholder={tForms("register.fields.password")}
 							className="w-full input pr-10"
 						/>
 						{/* Eye Toggle */}
@@ -47,7 +48,9 @@ export default function RegisterForm() {
 					<div className="relative">
 						<input
 							type="password"
-							placeholder="Confirm Password"
+							placeholder={tForms(
+								"register.fields.confirmPassword"
+							)}
 							className="w-full input pr-10"
 						/>
 						<span className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
@@ -60,22 +63,22 @@ export default function RegisterForm() {
 
 					<div className="flex justify-center align-center">
 						<Button type="submit" className="mt-4">
-							{t("createAccount")}
+							{tButtons("createAccount")}
 						</Button>
 					</div>
 				</form>
 
 				<p className="text-base text-center mt-4">
-					Already have an account?
+					{tForms("register.loginText")}
 					<Button variant="ghost" className="mx-1">
-						Log in
+						{tButtons("login")}
 					</Button>
 				</p>
 
 				<div className="flex items-center gap-4 mt-6">
 					<hr className="flex-1 border-basic-300 rounded-full" />
 					<span className="text-sm text-basic-400">
-						Or sign up with
+						{tForms("register.alternative")}
 					</span>
 					<hr className="flex-1 border-basic-300 rounded-full" />
 				</div>
