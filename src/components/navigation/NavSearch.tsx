@@ -1,40 +1,94 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 export default function NavSearch() {
 	const [open, setOpen] = useState(false);
+	const [mobileOpen, setMobileOpen] = useState(false);
 	const [query, setQuery] = useState("");
+	const { t: tNavigation } = useTranslation("navigation");
 
 	return (
-		<div className="relative flex items-center justify-center w-10">
-			{/* Input Field */}
-			<input
-				type="text"
-				value={query}
-				onChange={(e) => setQuery(e.target.value)}
-				placeholder="Search"
-				className={clsx(
-					"input absolute right-0 transition-300 pr-10 shadow-md bg-neutral-50",
-					open
-						? "2xl:w-64 w-48 opacity-100 px-4"
-						: "w-0 opacity-0 px-0 pointer-events-none"
-				)}
-			/>
+		<>
+			{/* Desktop Search */}
+			<div className="relative hidden items-center justify-center w-10 sm:flex">
+				{/* Input Field */}
+				<input
+					type="text"
+					value={query}
+					onChange={(e) => setQuery(e.target.value)}
+					placeholder={tNavigation("searchPlaceholder")}
+					className={clsx(
+						"input absolute right-0 transition-300 pr-10 shadow-md bg-neutral-50",
+						open
+							? "2xl:w-64 w-48 opacity-100 px-4"
+							: "w-0 opacity-0 px-0 pointer-events-none"
+					)}
+				/>
 
-			{/* Toggle Button */}
-			<button
-				type="button"
-				onClick={() => setOpen((prev) => !prev)}
+				{/* Toggle Button */}
+				<button
+					type="button"
+					onClick={() => setOpen((prev) => !prev)}
+					className={clsx(
+						"z-10 w-7 h-7 flex items-center justify-center rounded-full transition-300 cursor-pointer outline-none",
+						open
+							? "bg-secondary-500 text-basic-100 shadow-md"
+							: "text-basic-900 bg-transparent"
+					)}
+				>
+					<Icon icon="mdi:magnify" className="w-5 h-5" />
+				</button>
+			</div>
+
+			{/* Mobile Search Button */}
+			<div className="flex sm:hidden">
+				<button
+					type="button"
+					onClick={() => setMobileOpen(true)}
+					className="text-basic-900"
+				>
+					<Icon icon="mdi:magnify" className="w-6 h-6" />
+				</button>
+			</div>
+
+			{/* Mobile Fullscreen Search Overlay */}
+			<div
 				className={clsx(
-					"z-10 w-7 h-7 flex items-center justify-center rounded-full transition-300 cursor-pointer",
-					open
-						? "bg-secondary-500 text-basic-100 shadow-md"
-						: "text-basic-900 bg-transparent"
+					"fixed inset-0 h-16 bg-basic-100 shadow-sm px-4 py-3 z-50 flex flex-col justify-center transition-300",
+					mobileOpen
+						? "opacity-100 translate-y-0"
+						: "opacity-0 -translate-y-8 pointer-events-none"
 				)}
 			>
-				<Icon icon="mdi:magnify" className="w-5 h-5" />
-			</button>
-		</div>
+				<div className="flex items-center gap-4">
+					{/* Input Field */}
+					<div className="flex-1 flex items-center border border-basic-300 rounded-full px-4 py-2 shadow-md">
+						<input
+							type="text"
+							value={query}
+							onChange={(e) => setQuery(e.target.value)}
+							placeholder={tNavigation("searchPlaceholder")}
+							className="flex-1 bg-transparent outline-none text-sm"
+						/>
+						<button type="submit">
+							<Icon
+								icon="mdi:magnify"
+								className="w-5 h-5 text-basic-100 bg-secondary-500 rounded-full p-1"
+							/>
+						</button>
+					</div>
+
+					{/* Close Button */}
+					<button onClick={() => setMobileOpen(false)}>
+						<Icon
+							icon="mdi:close"
+							className="w-6 h-6 text-basic-900"
+						/>
+					</button>
+				</div>
+			</div>
+		</>
 	);
 }

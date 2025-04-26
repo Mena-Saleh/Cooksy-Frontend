@@ -3,8 +3,11 @@ import NavSearch from "./NavSearch";
 import Button from "../common/buttons/Button";
 import NavProfile from "./NavProfile";
 import NavLang from "./NavLang";
+import { useTranslation } from "react-i18next";
 
-export default function NavBar() {
+export default function DesktopNav() {
+	const { t: tNavigation } = useTranslation("navigation");
+
 	return (
 		<header className="w-full bg-white/30 shadow-sm">
 			<nav className="flex items-center justify-between py-4 px-24">
@@ -14,25 +17,25 @@ export default function NavBar() {
 						to="/"
 						className="text-basic-900 hover:text-secondary-500 transition-300"
 					>
-						Home
+						{tNavigation("home")}
 					</Link>
 					<Link
 						to="/recipes"
 						className="text-basic-900 hover:text-secondary-500 transition-300"
 					>
-						Recipes
+						{tNavigation("recipes")}
 					</Link>
 					<Link
 						to="/articles"
 						className="text-basic-900 hover:text-secondary-500 transition-300"
 					>
-						Articles
+						{tNavigation("articles")}
 					</Link>
 					<Link
 						to="/categories"
 						className="text-basic-900 hover:text-secondary-500 transition-300"
 					>
-						Categories
+						{tNavigation("categories")}
 					</Link>
 				</div>
 
@@ -44,7 +47,7 @@ export default function NavBar() {
 				{/* Right Actions */}
 				<div className="flex items-center gap-6">
 					<NavSearch />
-					<Button size="sm">Add Recipe</Button>
+					<Button size="sm">{tNavigation("addRecipe")}</Button>
 					<NavProfile />
 					<NavLang />
 				</div>

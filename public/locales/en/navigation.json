@@ -1,3 +1,8 @@
 {
-    
+    "home": "Home",
+    "recipes": "Recipes",
+    "articles": "Articles",
+    "categories": "Categories",
+    "searchPlaceholder": "Search",
+    "addRecipe": "Add Recipe"
 }

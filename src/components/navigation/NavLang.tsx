@@ -41,7 +41,7 @@ export default function NavLang() {
 				<span className="text-sm font-medium">
 					{currentLang.toUpperCase()}
 				</span>
-				<Icon icon="mdi:chevron-down" className="w-4 h-4" />
+				<Icon icon="tabler:chevron-down" className="w-4 h-4" />
 			</button>
 
 			<div

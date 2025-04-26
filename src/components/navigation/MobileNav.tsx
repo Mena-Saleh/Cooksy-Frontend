@@ -7,24 +7,32 @@ import NavProfile from "./NavProfile";
 import NavSearch from "./NavSearch";
 import Button from "../common/buttons/Button";
 import XButton from "../common/buttons/XButton";
+import { useTranslation } from "react-i18next";
 
 export default function MobileNav() {
 	const [open, setOpen] = useState(false);
+	const { t: tNavigation } = useTranslation("navigation");
 
 	return (
 		<header className="w-screen bg-basic-100/30 shadow-sm px-4 py-3 flex items-center justify-between">
 			{/* Hamburger */}
 			<Icon
-				icon="mdi:menu"
+				icon="charm:menu-hamburger"
 				className="w-6 h-6 cursor-pointer"
 				onClick={() => setOpen(true)}
 			/>
+			<div className="flex justify-between items-center w-full ml-4">
+				{/* Logo */}
+				<div className="w-20 h-auto flex justify-start ml-2 ">
+					<img src="/logo.svg" alt="Cooksy Logo" className="" />
+				</div>
 
-			{/* Right: Actions */}
-			<div className="flex items-center gap-0.5">
-				<NavSearch></NavSearch>
-				<Button size="xs">Add Recipe</Button>
-				<NavProfile />
+				{/* Right: Actions */}
+				<div className="flex items-center gap-2">
+					<NavSearch />
+					<Button size="xs">{tNavigation("addRecipe")}</Button>
+					<NavProfile />
+				</div>
 			</div>
 
 			{/* Slide-out menu */}
@@ -52,28 +60,28 @@ export default function MobileNav() {
 						className="text-basic-900 hover:text-secondary-500"
 						onClick={() => setOpen(false)}
 					>
-						Home
+						{tNavigation("home")}
 					</Link>
 					<Link
 						to="/recipes"
 						className="text-basic-900 hover:text-secondary-500"
 						onClick={() => setOpen(false)}
 					>
-						Recipes
+						{tNavigation("recipes")}
 					</Link>
 					<Link
 						to="/articles"
 						className="text-basic-900 hover:text-secondary-500"
 						onClick={() => setOpen(false)}
 					>
-						Articles
+						{tNavigation("articles")}
 					</Link>
 					<Link
 						to="/categories"
 						className="text-basic-900 hover:text-secondary-500"
 						onClick={() => setOpen(false)}
 					>
-						Categories
+						{tNavigation("categories")}
 					</Link>
 					<div className="mt-4">
 						<NavLang />
