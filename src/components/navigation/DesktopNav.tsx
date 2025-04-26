@@ -12,25 +12,25 @@ export default function NavBar() {
 				<div className="flex items-center gap-6 text-sm">
 					<Link
 						to="/"
-						className="text-basic-900 hover:text-secondary-500"
+						className="text-basic-900 hover:text-secondary-500 transition-300"
 					>
 						Home
 					</Link>
 					<Link
 						to="/recipes"
-						className="text-basic-900 hover:text-secondary-500"
+						className="text-basic-900 hover:text-secondary-500 transition-300"
 					>
 						Recipes
 					</Link>
 					<Link
 						to="/articles"
-						className="text-basic-900 hover:text-secondary-500"
+						className="text-basic-900 hover:text-secondary-500 transition-300"
 					>
 						Articles
 					</Link>
 					<Link
 						to="/categories"
-						className="text-basic-900 hover:text-secondary-500"
+						className="text-basic-900 hover:text-secondary-500 transition-300"
 					>
 						Categories
 					</Link>

@@ -1,19 +1,15 @@
-import MobileNav from './MobileNav';
-import DesktopNav from './DesktopNav';
-import NavSearch from './NavSearch';
+import MobileNav from "./MobileNav";
+import DesktopNav from "./DesktopNav";
 
 export default function NavBarWrapper() {
-    return (
-        <>
-            <div className="xl:hidden">
-                <MobileNav />
-                <div className='fixed bottom-5 right-5 z-10'>
-                    <NavSearch />
-                </div>
-            </div>
-            <div className="hidden xl:block">
-                <DesktopNav />
-            </div>
-        </>
-    );
+	return (
+		<>
+			<div className="xl:hidden">
+				<MobileNav />
+			</div>
+			<div className="hidden xl:block">
+				<DesktopNav />
+			</div>
+		</>
+	);
 }

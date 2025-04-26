@@ -15,7 +15,7 @@ export default function NavSearch() {
 				onChange={(e) => setQuery(e.target.value)}
 				placeholder="Search"
 				className={clsx(
-					"input absolute right-0 transition-all duration-300 ease-in-out pr-10 shadow-md",
+					"input absolute right-0 transition-300 pr-10 shadow-md bg-neutral-50",
 					open
 						? "2xl:w-64 w-48 opacity-100 px-4"
 						: "w-0 opacity-0 px-0 pointer-events-none"
@@ -27,10 +27,10 @@ export default function NavSearch() {
 				type="button"
 				onClick={() => setOpen((prev) => !prev)}
 				className={clsx(
-					"z-10 w-7 h-7 flex items-center justify-center rounded-full transition-all duration-300 ease-in-out cursor-pointer",
+					"z-10 w-7 h-7 flex items-center justify-center rounded-full transition-300 cursor-pointer",
 					open
 						? "bg-secondary-500 text-basic-100 shadow-md"
-						: "xl:text-basic-900 text-basic-100 bg-secondary-500 xl:bg-transparent"
+						: "text-basic-900 bg-transparent"
 				)}
 			>
 				<Icon icon="mdi:magnify" className="w-5 h-5" />

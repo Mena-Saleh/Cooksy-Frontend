@@ -7,7 +7,7 @@ type OAuthButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const styles = {
-	base: "flex items-center gap-2 justify-center px-6 py-2 rounded-full border text-sm text-center transition-colors duration-200 cursor-pointer w-full sm:w-auto",
+	base: "flex items-center gap-2 justify-center px-6 py-2 rounded-full border text-sm text-center transition-300 cursor-pointer w-full sm:w-auto",
 	google: "border-basic-200 text-basic-900 hover:border-basic-300 hover:text-basic-700",
 	facebook:
 		"border-basic-200 text-basic-900 hover:border-basic-300 hover:text-basic-700",

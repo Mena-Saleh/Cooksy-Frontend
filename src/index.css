@@ -61,4 +61,17 @@
   .input {
     @apply px-4 py-2 rounded-full border border-basic-300 text-sm outline-none focus:ring-1 focus:ring-primary-500;
   }
+
+  /* Global transition classes */
+  .transition-300 {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .transition-500 {
+    @apply transition-all duration-500 ease-in-out;
+  }
+
+  .transition-700 {
+    @apply transition-all duration-700 ease-in-out;
+  }
 }

@@ -13,8 +13,7 @@ export default function Button({
 	size = "md",
 	...props
 }: ButtonProps) {
-	const base =
-		"rounded-full text-center transition-colors duration-200 cursor-pointer";
+	const base = "rounded-full text-center transition-300 cursor-pointer";
 
 	const variants = {
 		primary:
@@ -25,13 +24,12 @@ export default function Button({
 		ghost: "text-secondary-500 hover:underline",
 	};
 
-const sizes = {
-	xs: "px-3 py-1 text-xs",
-	sm: "px-4 py-2 text-sm",
-	md: variant === "ghost" ? "p-0 text-base" : "px-6 py-2 text-base",
-	lg: "px-8 py-3 text-lg",
-};
-
+	const sizes = {
+		xs: "px-3 py-1 text-xs",
+		sm: "px-4 py-2 text-sm",
+		md: variant === "ghost" ? "p-0 text-base" : "px-6 py-2 text-base",
+		lg: "px-8 py-3 text-lg",
+	};
 
 	return (
 		<button
