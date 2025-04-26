@@ -8,6 +8,7 @@ import NavBarWrapper from "./components/navigation/NavBarWrapper";
 // import ResetLinkSentForm from "./components/forms/ResetLinkSentForm";
 // import NewPasswordForm from "./components/forms/NewPasswordForm";
 // import ForgotPasswordForm from "./components/forms/ForgotPasswordForm";
+import XButton from "./components/common/buttons/XButton";
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 			<LoginForm />
 			<RegisterForm />
 			<InfoForm /> */}
+			<XButton></XButton>
 		</div>
 	);
 }
