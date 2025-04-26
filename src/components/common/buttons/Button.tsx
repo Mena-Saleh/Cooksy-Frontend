@@ -25,7 +25,7 @@ export default function Button({
 	};
 
 	const sizes = {
-		xs: "px-3 py-1 text-xs",
+		xs: "px-3 py-2 text-xs",
 		sm: "px-4 py-2 text-sm",
 		md: variant === "ghost" ? "p-0 text-base" : "px-6 py-2 text-base",
 		lg: "px-8 py-3 text-lg",

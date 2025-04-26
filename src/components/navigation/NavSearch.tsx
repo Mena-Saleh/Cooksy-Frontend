@@ -62,9 +62,9 @@ export default function NavSearch() {
 						: "opacity-0 -translate-y-8 pointer-events-none"
 				)}
 			>
-				<div className="flex items-center gap-4">
+				<div className="flex items-center gap-3">
 					{/* Input Field */}
-					<div className="flex-1 flex items-center border border-basic-300 rounded-full px-4 py-2 shadow-md">
+					<div className="flex-1 flex items-center border border-basic-300 rounded-full px-4 py-1.5 shadow-md">
 						<input
 							type="text"
 							value={query}
@@ -75,7 +75,7 @@ export default function NavSearch() {
 						<button type="submit">
 							<Icon
 								icon="mdi:magnify"
-								className="w-5 h-5 text-basic-100 bg-secondary-500 rounded-full p-1"
+								className="w-7 h-7 text-basic-100 bg-secondary-500 rounded-full p-1"
 							/>
 						</button>
 					</div>
@@ -83,7 +83,7 @@ export default function NavSearch() {
 					{/* Close Button */}
 					<button onClick={() => setMobileOpen(false)}>
 						<Icon
-							icon="mdi:close"
+							icon="iconoir:cancel"
 							className="w-6 h-6 text-basic-900"
 						/>
 					</button>

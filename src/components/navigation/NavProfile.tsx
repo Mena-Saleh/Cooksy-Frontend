@@ -79,7 +79,7 @@ export default function NavProfile() {
 			{/* Dropdown */}
 			<div
 				className={clsx(
-					"absolute right-[-8px] sm:left-[-16px] mt-2 w-56 bg-white rounded-xl shadow-md border border-basic-100 z-50 transition-300",
+					"absolute right-[-8px] xl:left-[-16px] mt-2 w-56 bg-white rounded-xl shadow-md border border-basic-100 z-50 transition-300",
 					open
 						? "opacity-100 translate-y-0"
 						: "opacity-0 -translate-y-4 pointer-events-none"
