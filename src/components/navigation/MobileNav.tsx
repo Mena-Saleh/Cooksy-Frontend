@@ -24,7 +24,7 @@ export default function MobileNav() {
 			<div className="flex justify-between items-center w-full ml-4">
 				{/* Logo */}
 				<div className="w-20 h-auto flex justify-start ml-2 ">
-					<img src="/logo.svg" alt="Cooksy Logo" className="" />
+					<img src="./logo.svg" alt="Cooksy Logo" className="" />
 				</div>
 
 				{/* Right: Actions */}
@@ -47,7 +47,7 @@ export default function MobileNav() {
 					{/* Logo */}
 					<Link to="/">
 						<img
-							src="/logo.svg"
+							src="./logo.svg"
 							alt="Cooksy Logo"
 							className="w-28"
 						/>
@@ -89,7 +89,7 @@ export default function MobileNav() {
 				</nav>
 				{/* Bottom swoosh */}
 				<img
-					src="/svg/Swooshes/BottomSwooshMobileNav.svg"
+					src="./svg/Swooshes/BottomSwooshMobileNav.svg"
 					className="absolute bottom-0 left-0 w-full h-auto object-cover z-[-1]"
 				/>
 			</div>

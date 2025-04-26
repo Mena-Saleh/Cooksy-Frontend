@@ -41,7 +41,7 @@ export default function DesktopNav() {
 
 				{/* Logo */}
 				<Link to="/">
-					<img src="/logo.svg" alt="Cooksy Logo" className="w-28" />
+					<img src="./logo.svg" alt="Cooksy Logo" className="w-28" />
 				</Link>
 
 				{/* Right Actions */}

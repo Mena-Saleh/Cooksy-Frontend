@@ -15,7 +15,7 @@ i18n
         ns: ['forms', 'navigation'], // register all namespaces (JSON files under locales)
         defaultNS: 'translations',
         backend: {
-            loadPath: '/locales/{{lng}}/{{ns}}.json',
+            loadPath: './locales/{{lng}}/{{ns}}.json',
         },
 
         detection: {

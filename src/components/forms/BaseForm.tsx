@@ -5,7 +5,7 @@ export default function BaseForm({ children }: { children?: React.ReactNode }) {
 		<div className="relative text-sm sm:text-base bg-white shadow-2xl w-[95%] md:w-[600px] h-auto rounded-[20px] overflow-hidden">
 			{/* Top swoosh */}
 			<img
-				src="/svg/Swooshes/TopSwoosh.svg"
+				src="./svg/Swooshes/TopSwoosh.svg"
 				alt="Top swoosh"
 				className="absolute top-0 left-0 w-[150px] sm:w-[180px] object-cover z-0"
 			/>
@@ -24,7 +24,7 @@ export default function BaseForm({ children }: { children?: React.ReactNode }) {
 
 			{/* Bottom swoosh */}
 			<img
-				src="/svg/Swooshes/BottomSwoosh.svg"
+				src="./svg/Swooshes/BottomSwoosh.svg"
 				className="absolute bottom-0 left-0 w-full h-auto object-cover z-0"
 			/>
 		</div>
