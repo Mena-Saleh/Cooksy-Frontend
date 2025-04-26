@@ -10,36 +10,23 @@ type NavProfileItem = {
 };
 
 const icons: NavProfileItem[] = [
-	{ icon: "clarity:avatar-solid", label: "myProfile" },
-	{
-		icon: "iconoir:bell-notification-solid",
-		label: "notifications",
-		badge: 10
-	},
-	{
-		icon: "material-symbols:upload-rounded",
-		label: "uploadedRecipes",
-	},
-	{
-		icon: "line-md:heart",
-		label: "savedRecipes",
-	},
-	{
-		icon: "solar:calendar-linear",
-		label: "mealPlanner",
-	},
-	{
-		icon: "arcticons:reciper",
-		label: "recipeFeed",
-	},
-	{
-		icon: "mdi-light:settings",
-		label: "settings",
-	},
-	{
-		icon: "hugeicons:logout-04",
-		label: "logout",
-	},
+	// { icon: "solar:user-outline", label: "myProfile" },
+	// { icon: "solar:bell-outline", label: "notifications", badge: 10 },
+	// { icon: "solar:upload-outline", label: "uploadedRecipes" },
+	// { icon: "solar:heart-outline", label: "savedRecipes" },
+	// { icon: "solar:calendar-outline", label: "mealPlanner" },
+	// { icon: "solar:book-outline", label: "recipeFeed" },
+	// { icon: "solar:settings-outline", label: "settings" },
+	// { icon: "solar:logout-3-outline", label: "logout" },
+
+	{ icon: "mdi-light:account", label: "myProfile" },
+	{ icon: "mdi-light:bell", label: "notifications", badge: 10 },
+	{ icon: "mdi-light:upload", label: "uploadedRecipes" },
+	{ icon: "mdi-light:heart", label: "savedRecipes" },
+	{ icon: "mdi-light:calendar", label: "mealPlanner" },
+	{ icon: "mdi:book-open-variant-outline", label: "recipeFeed" },
+	{ icon: "mdi-light:settings", label: "settings" },
+	{ icon: "mdi-light:logout", label: "logout" },
 ];
 
 export default function NavProfile() {
