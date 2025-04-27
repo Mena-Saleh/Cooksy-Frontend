@@ -43,24 +43,25 @@
   }
 
   h1 {
-    @apply text-3xl sm:text-6xl font-pacifico text-basic-900
+    @apply text-3xl sm:text-6xl font-pacifico
   }
 
   h2 {
-    @apply text-2xl sm:text-5xl font-pacifico text-basic-900;
+    @apply text-2xl sm:text-5xl font-pacifico;
   }
 
   h3 {
-    @apply text-xl sm:text-3xl font-pacifico text-basic-900;
+    @apply text-xl sm:text-3xl font-pacifico;
   }
 
   p {
-    @apply text-base text-basic-900 leading-relaxed;
+    @apply text-base leading-relaxed;
   }
 
   .input {
     @apply px-4 py-2 rounded-full border border-basic-300 text-sm outline-none focus:ring-1 focus:ring-primary-500;
   }
+
 
   /* Global transition classes */
   .transition-300 {

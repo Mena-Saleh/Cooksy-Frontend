@@ -1,6 +1,4 @@
 import BaseForm from "./BaseForm";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faFolder } from "@fortawesome/free-solid-svg-icons";
 import { Icon } from "@iconify/react";
 import Button from "../common/buttons/Button";
 import { useTranslation } from "react-i18next";
@@ -25,8 +23,8 @@ export default function InfoForm() {
 				<div className="space-y-4">
 					<div className="flex items-start gap-4">
 						<div className="bg-secondary-100 p-2 w-8 h-8 rounded-full flex items-center justify-center align-center">
-							<FontAwesomeIcon
-								icon={faHeart}
+							<Icon
+								icon="mdi:heart"
 								className="text-secondary-500"
 							/>
 						</div>
@@ -35,8 +33,10 @@ export default function InfoForm() {
 
 					<div className="flex items-start gap-4">
 						<div className="bg-primary-100 p-2 w-8 h-8 rounded-full flex items-center justify-center align-center">
-							<FontAwesomeIcon
-								icon={faFolder}
+						
+
+							<Icon
+								icon="mdi:folder"
 								className="text-primary-500"
 							/>
 						</div>
@@ -46,7 +46,7 @@ export default function InfoForm() {
 					<div className="flex items-start gap-4">
 						<div className="bg-info-blue-100 p-2 w-8 h-8 rounded-full flex items-center justify-center">
 							<Icon
-								icon="mynaui:book-open"
+								icon="mdi:book-open"
 								className="text-info-blue-500 scale-130"
 							/>
 						</div>

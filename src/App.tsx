@@ -8,10 +8,11 @@ import NavBarWrapper from "./components/navigation/NavBarWrapper";
 // import ResetLinkSentForm from "./components/forms/ResetLinkSentForm";
 // import NewPasswordForm from "./components/forms/NewPasswordForm";
 // import ForgotPasswordForm from "./components/forms/ForgotPasswordForm";
+import RecipeCard from "./components/recipes/RecipeCard";
 
 function App() {
 	return (
-		<div className="">
+		<div>
 			<NavBarWrapper />
 			{/* <ForgotPasswordForm />
 			<NewPasswordForm />
@@ -21,6 +22,23 @@ function App() {
 			<LoginForm />
 			<RegisterForm />
 			<InfoForm /> */}
+
+			<div className="flex justify-center mt-10">
+				<RecipeCard
+					imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy4zLy1vwGVqeoDOiaOHkndS_t0rO53nmKCw&s"
+					title="Shishkebab med baba ganoush shishkebab med shakalala"
+					category="Meat"
+					time="60 min"
+					rating={3}
+					reviews={25}
+					comments={1}
+					author={{
+						name: "Maximillian Arthur",
+						avatarUrl:
+							"https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg",
+					}}
+				/>
+			</div>
 		</div>
 	);
 }
