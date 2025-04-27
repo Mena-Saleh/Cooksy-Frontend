@@ -23,11 +23,11 @@ function App() {
 			<RegisterForm />
 			<InfoForm /> */}
 
-			<div className="flex justify-center mt-10">
+			<div className="flex justify-center mt-10  ">
 				<RecipeCard
 					imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy4zLy1vwGVqeoDOiaOHkndS_t0rO53nmKCw&s"
-					title="Shishkebab med baba ganoush shishkebab med shakalala"
-					category="Meat"
+					title="Shishkebab med baba ganoush"
+					categories={["Meat", "Dessert"]}
 					time="60 min"
 					rating={3}
 					reviews={25}

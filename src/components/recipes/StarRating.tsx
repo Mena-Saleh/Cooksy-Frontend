@@ -17,11 +17,11 @@ export default function StarRating({ rating, reviews }: StarRatingProps) {
 								? "material-symbols-light:star-rounded"
 								: "material-symbols-light:star-outline-rounded"
 						}
-						className="text-primary-500 w-10 h-10 -mr-2"
+						className="text-primary-500 w-8 h-8 -mr-2"
 					/>
 				))}
 			</div>
-			<span className="ml-2 text-basic-900 text-sm flex items-center h-10">
+			<span className="ml-2 text-basic-900 text-sm flex items-center justify-center h-10">
 				({reviews})
 			</span>
 		</div>
