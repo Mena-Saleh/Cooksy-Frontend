@@ -4,5 +4,15 @@
     "articles": "Articles",
     "categories": "Categories",
     "searchPlaceholder": "Search",
-    "addRecipe": "Add Recipe"
+    "addRecipe": "Add Recipe",
+    "profileDropdown": {
+        "myProfile": "My profile",
+        "notifications": "Notifications",
+        "uploadedRecipes": "My uploaded recipes",
+        "savedRecipes": "My saved recipes",
+        "mealPlanner": "Meal planner",
+        "recipeFeed": "Recipe feed",
+        "settings": "Settings",
+        "logout": "Log out"
+    }
 }

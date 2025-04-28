@@ -4,5 +4,15 @@
     "articles": "Artiklar",
     "categories": "Kategorier",
     "searchPlaceholder": "Sök",
-    "addRecipe": "Lägg till recept"
+    "addRecipe": "Lägg till recept",
+    "profileDropdown": {
+        "myProfile": "Min profil",
+        "notifications": "Aviseringar",
+        "uploadedRecipes": "Mina uppladdade recept",
+        "savedRecipes": "Mina sparade recept",
+        "mealPlanner": "Måltidsplanerare",
+        "recipeFeed": "Receptflöde",
+        "settings": "Inställningar",
+        "logout": "Logga ut"
+    }
 }
