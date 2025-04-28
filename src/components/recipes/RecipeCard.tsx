@@ -1,6 +1,6 @@
 import StarRating from "./StarRating";
 import { Icon } from "@iconify/react";
-import { Category, categoryIcons } from "../../constants/CategoryIcons";
+import { Category, categoryIcons } from "../../constants/categoryIcons";
 import ActionButton from "./ActionButton";
 import { uiIcons } from "../../constants/uiIcons";
 
@@ -41,14 +41,14 @@ export default function RecipeCard({
 				/>
 				<div className="absolute top-2 right-2 flex flex-col gap-2">
 					<ActionButton
-						icon="heartOutline"
+						icon={uiIcons.content.heartOutline}
 						bgColor="bg-white"
 						iconColor="text-secondary-500"
 						hoverBgColor="bg-secondary-100"
 						hoverIconColor="text-secondary-600"
 					/>
 					<ActionButton
-						icon="addRounded"
+						icon={uiIcons.actions.add}
 						bgColor="bg-secondary-500"
 						iconColor="text-basic-100"
 						hoverBgColor="bg-secondary-600"
@@ -97,7 +97,7 @@ export default function RecipeCard({
 					</div>
 
 					<div className="flex items-center gap-1">
-						<Icon icon={uiIcons.clockOutline} className="w-4 h-4" />
+						<Icon icon={uiIcons.content.clock} className="w-4 h-4" />
 						<span>{time}</span>
 					</div>
 				</div>
@@ -108,7 +108,7 @@ export default function RecipeCard({
 				<StarRating rating={rating} reviews={reviews} />
 				<div className="flex items-center gap-1">
 					<Icon
-						icon={uiIcons.commentLight}
+						icon={uiIcons.content.comment}
 						className="w-5 h-5 text-basic-600"
 					/>
 					<span className="text-basic-600">{comments}</span>

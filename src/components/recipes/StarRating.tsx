@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import { uiIcons } from "../../constants/uiIcons";
 
 interface StarRatingProps {
 	rating: number;
@@ -14,8 +15,8 @@ export default function StarRating({ rating, reviews }: StarRatingProps) {
 						key={i}
 						icon={
 							i < rating
-								? "material-symbols-light:star-rounded"
-								: "material-symbols-light:star-outline-rounded"
+								? uiIcons.star.filled
+								: uiIcons.star.outline
 						}
 						className="text-primary-500 w-8 h-8 -mr-2"
 					/>

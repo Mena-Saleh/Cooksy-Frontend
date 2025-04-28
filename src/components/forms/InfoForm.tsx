@@ -2,6 +2,7 @@ import BaseForm from "./BaseForm";
 import { Icon } from "@iconify/react";
 import Button from "../common/buttons/Button";
 import { useTranslation } from "react-i18next";
+import { uiIcons } from "../../constants/uiIcons";
 
 export default function InfoForm() {
 	const { t: tForms } = useTranslation("forms");
@@ -24,7 +25,7 @@ export default function InfoForm() {
 					<div className="flex items-start gap-4">
 						<div className="bg-secondary-100 p-2 w-8 h-8 rounded-full flex items-center justify-center align-center">
 							<Icon
-								icon="mdi:heart"
+								icon={uiIcons.content.heartFilled}
 								className="text-secondary-500"
 							/>
 						</div>
@@ -36,7 +37,7 @@ export default function InfoForm() {
 						
 
 							<Icon
-								icon="mdi:folder"
+								icon={uiIcons.content.folder}
 								className="text-primary-500"
 							/>
 						</div>
@@ -46,7 +47,7 @@ export default function InfoForm() {
 					<div className="flex items-start gap-4">
 						<div className="bg-info-blue-100 p-2 w-8 h-8 rounded-full flex items-center justify-center">
 							<Icon
-								icon="mdi:book-open"
+								icon={uiIcons.content.bookFilled}
 								className="text-info-blue-500 scale-130"
 							/>
 						</div>

@@ -1,8 +1,7 @@
 import { Icon } from "@iconify/react";
-import { uiIcons } from "../../constants/uiIcons";
 
 interface ActionButtonProps {
-	icon: keyof typeof uiIcons;
+	icon: string;
 	bgColor: string;
 	iconColor: string;
 	hoverBgColor?: string;
@@ -26,7 +25,7 @@ export default function ActionButton({
 			onClick={onClick}
 		>
 			<Icon
-				icon={uiIcons[icon]}
+				icon={icon}
 				className={`w-6 h-6 ${iconColor} ${
 					hoverIconColor ? `hover:${hoverIconColor}` : ""
 				}`}

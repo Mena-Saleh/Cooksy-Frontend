@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
+import { uiIcons } from "../../constants/uiIcons";
 
 export default function NavSearch() {
 	const [open, setOpen] = useState(false);
@@ -38,7 +39,7 @@ export default function NavSearch() {
 							: "text-basic-900 bg-transparent"
 					)}
 				>
-					<Icon icon="mdi:magnify" className="w-5 h-5" />
+					<Icon icon={uiIcons.nav.magnify} className="w-5 h-5" />
 				</button>
 			</div>
 
@@ -49,7 +50,7 @@ export default function NavSearch() {
 					onClick={() => setMobileOpen(true)}
 					className="text-basic-900"
 				>
-					<Icon icon="mdi:magnify" className="w-6 h-6" />
+					<Icon icon={uiIcons.nav.magnify} className="w-6 h-6" />
 				</button>
 			</div>
 
@@ -74,7 +75,7 @@ export default function NavSearch() {
 						/>
 						<button type="submit">
 							<Icon
-								icon="mdi:magnify"
+								icon={uiIcons.nav.magnify}
 								className="w-7 h-7 text-basic-100 bg-secondary-500 rounded-full p-1"
 							/>
 						</button>
@@ -83,7 +84,7 @@ export default function NavSearch() {
 					{/* Close Button */}
 					<button onClick={() => setMobileOpen(false)}>
 						<Icon
-							icon="iconoir:cancel"
+							icon={uiIcons.actions.cancel}
 							className="w-6 h-6 text-basic-900"
 						/>
 					</button>

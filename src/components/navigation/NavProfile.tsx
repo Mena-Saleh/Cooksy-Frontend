@@ -20,14 +20,14 @@ const icons: NavProfileItem[] = [
 	// { icon: "solar:settings-outline", label: "settings" },
 	// { icon: "solar:logout-3-outline", label: "logout" },
 
-	{ icon: uiIcons.profileLight, label: "myProfile" },
-	{ icon: uiIcons.bellLight, label: "notifications", badge: 10 },
-	{ icon: uiIcons.uploadLight, label: "uploadedRecipes" },
-	{ icon: uiIcons.heartLight, label: "savedRecipes" },
-	{ icon: uiIcons.calendarLight, label: "mealPlanner" },
-	{ icon: uiIcons.bookOutline, label: "recipeFeed" },
-	{ icon: uiIcons.settingsLight, label: "settings" },
-	{ icon: uiIcons.logoutLight, label: "logout" },
+	{ icon: uiIcons.profile.account, label: "myProfile" },
+	{ icon: uiIcons.profile.bell, label: "notifications", badge: 10 },
+	{ icon: uiIcons.profile.upload, label: "uploadedRecipes" },
+	{ icon: uiIcons.content.heartOutline, label: "savedRecipes" },
+	{ icon: uiIcons.content.calendar, label: "mealPlanner" },
+	{ icon: uiIcons.content.bookOutline, label: "recipeFeed" },
+	{ icon: uiIcons.profile.settings, label: "settings" },
+	{ icon: uiIcons.profile.logout, label: "logout" },
 ];
 
 export default function NavProfile() {

@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
 import { Icon } from "@iconify/react";
+import { uiIcons } from "../../../constants/uiIcons";
 
 type OAuthButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	provider: "google" | "facebook";
@@ -14,8 +15,8 @@ const styles = {
 };
 
 const icons = {
-	google: "flat-color-icons:google",
-	facebook: "logos:facebook",
+	google: uiIcons.auth.google,
+	facebook: uiIcons.auth.facebook,
 };
 
 export default function OAuthButton({
