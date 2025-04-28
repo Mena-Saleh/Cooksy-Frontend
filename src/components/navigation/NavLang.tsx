@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import i18n from "i18next";
 import Flag from "react-world-flags";
 import clsx from "clsx";
+import { uiIcons } from "../../constants/uiIcons";
 
 const languages = [
 	{ code: "en", label: "English", countryCode: "GB" },
@@ -37,11 +38,11 @@ export default function NavLang() {
 				onClick={() => setOpen(!open)}
 				className="flex items-center gap-2 text-basic-900 hover:text-secondary-500 transition-300 cursor-pointer"
 			>
-				<Icon icon="material-symbols:globe" className="w-6 h-6" />
+				<Icon icon={uiIcons.nav.globe}className="w-6 h-6" />
 				<span className="text-sm font-medium">
 					{currentLang.toUpperCase()}
 				</span>
-				<Icon icon="tabler:chevron-down" className="w-4 h-4" />
+				<Icon icon={uiIcons.nav.chevronDown} className="w-4 h-4" />
 			</button>
 
 			<div

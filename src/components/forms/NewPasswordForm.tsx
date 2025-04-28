@@ -2,6 +2,7 @@ import BaseForm from "./BaseForm";
 import Button from "../common/buttons/Button";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
+import { uiIcons } from "../../constants/uiIcons";
 
 export default function NewPasswordForm() {
 	const { t: tForms } = useTranslation("forms");
@@ -28,7 +29,7 @@ export default function NewPasswordForm() {
 						/>
 						<span className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
 							<Icon
-								icon="lucide:eye"
+								icon={uiIcons.visibility.eyeOpen}
 								className="w-5 h-5 text-basic-400"
 							/>
 						</span>
@@ -44,7 +45,7 @@ export default function NewPasswordForm() {
 						/>
 						<span className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
 							<Icon
-								icon="lucide:eye-off"
+								icon={uiIcons.visibility.eyeClosed}
 								className="w-5 h-5 text-basic-400"
 							/>
 						</span>

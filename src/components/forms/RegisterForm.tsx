@@ -3,6 +3,7 @@ import Button from "../common/buttons/Button";
 import OAuthButton from "../common/buttons/OAuthButton";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
+import { uiIcons } from "../../constants/uiIcons";
 
 export default function RegisterForm() {
 	const { t: tForms } = useTranslation("forms");
@@ -39,7 +40,7 @@ export default function RegisterForm() {
 						{/* Eye Toggle */}
 						<span className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
 							<Icon
-								icon="lucide:eye-off"
+								icon={uiIcons.visibility.eyeClosed}
 								className="w-5 h-5 text-basic-400"
 							/>
 						</span>
@@ -54,7 +55,7 @@ export default function RegisterForm() {
 						/>
 						<span className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
 							<Icon
-								icon="lucide:eye"
+								icon={uiIcons.visibility.eyeOpen}
 								className="w-5 h-5 text-basic-900"
 							/>
 						</span>

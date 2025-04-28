@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
+import { uiIcons } from "../../constants/uiIcons";
 
 type NavProfileItem = {
 	icon: string;
@@ -9,39 +11,27 @@ type NavProfileItem = {
 };
 
 const icons: NavProfileItem[] = [
-	{ icon: "clarity:avatar-solid", label: "My profile" },
-	{
-		icon: "iconoir:bell-notification-solid",
-		label: "Notifications",
-		badge: 10,
-	},
-	{
-		icon: "material-symbols:upload-rounded",
-		label: "My uploaded recipes",
-	},
-	{
-		icon: "line-md:heart",
-		label: "My saved recipes",
-	},
-	{
-		icon: "solar:calendar-linear",
-		label: "Meal planner",
-	},
-	{
-		icon: "arcticons:reciper",
-		label: "Recipe feed",
-	},
-	{
-		icon: "mdi-light:settings",
-		label: "Settings",
-	},
-	{
-		icon: "hugeicons:logout-04",
-		label: "Log out",
-	},
+	// { icon: "solar:user-outline", label: "myProfile" },
+	// { icon: "solar:bell-outline", label: "notifications", badge: 10 },
+	// { icon: "solar:upload-outline", label: "uploadedRecipes" },
+	// { icon: "solar:heart-outline", label: "savedRecipes" },
+	// { icon: "solar:calendar-outline", label: "mealPlanner" },
+	// { icon: "solar:book-outline", label: "recipeFeed" },
+	// { icon: "solar:settings-outline", label: "settings" },
+	// { icon: "solar:logout-3-outline", label: "logout" },
+
+	{ icon: uiIcons.profile.account, label: "myProfile" },
+	{ icon: uiIcons.profile.bell, label: "notifications", badge: 10 },
+	{ icon: uiIcons.profile.upload, label: "uploadedRecipes" },
+	{ icon: uiIcons.content.heartOutline, label: "savedRecipes" },
+	{ icon: uiIcons.content.calendar, label: "mealPlanner" },
+	{ icon: uiIcons.content.bookOutline, label: "recipeFeed" },
+	{ icon: uiIcons.profile.settings, label: "settings" },
+	{ icon: uiIcons.profile.logout, label: "logout" },
 ];
 
 export default function NavProfile() {
+	const { t: tNavigation } = useTranslation("navigation");
 	const [open, setOpen] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -59,6 +49,11 @@ export default function NavProfile() {
 			document.removeEventListener("mousedown", handleClickOutside);
 	}, []);
 
+	// Find notification badge
+	const notificationItem = icons.find(
+		(item) => item.label === "notifications"
+	);
+
 	return (
 		<div className="relative" ref={dropdownRef}>
 			{/* Avatar */}
@@ -71,9 +66,12 @@ export default function NavProfile() {
 					alt="User avatar"
 					className="w-full h-full rounded-full object-cover"
 				/>
-				<div className="absolute -top-1 -right-2 border border-basic-100 bg-secondary-500 text-basic-100 text-xs w-5 h-5 rounded-full flex items-center justify-center font-pacifico">
-					10
-				</div>
+
+				{notificationItem?.badge && notificationItem.badge > 0 && (
+					<div className="absolute -top-1 -right-2 border border-basic-100 bg-secondary-500 text-basic-100 text-xs w-5 h-5 rounded-full flex items-center justify-center font-pacifico">
+						{notificationItem.badge}
+					</div>
+				)}
 			</div>
 
 			{/* Dropdown */}
@@ -91,9 +89,11 @@ export default function NavProfile() {
 						className="flex items-center gap-3 px-4 py-2 text-sm text-basic-900 hover:bg-primary-100 cursor-pointer rounded-xl transition-300"
 					>
 						<Icon icon={icon} className="w-5 h-5" />
-						<span className="flex-1">{label}</span>
+						<span className="flex-1">
+							{tNavigation(`profileDropdown.${label}`)}
+						</span>
 						{!!badge && badge > 0 && (
-							<span className="bg-secondary-500 text-basic-100 text-xs px-2 py-0.5 rounded-full font-pacifico border border-basic-100 w-5 h-5  flex items-center justify-center">
+							<span className="bg-secondary-500 text-basic-100 text-xs px-2 py-0.5 rounded-full font-pacifico border border-basic-100 w-5 h-5 flex items-center justify-center">
 								{badge}
 							</span>
 						)}

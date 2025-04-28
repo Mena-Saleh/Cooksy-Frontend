@@ -1,6 +1,7 @@
 import BaseForm from "./BaseForm";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
+import { uiIcons } from "../../constants/uiIcons";
 
 export default function EmailVerifiedForm() {
 	const { t: tForms } = useTranslation("forms");
@@ -18,7 +19,7 @@ export default function EmailVerifiedForm() {
 					</p>
 
 					<Icon
-						icon="lucide:check"
+						icon={uiIcons.actions.check}
 						className="text-primary-300 w-52 h-52 mx-auto"
 					/>
 				</div>
