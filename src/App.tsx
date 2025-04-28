@@ -9,7 +9,7 @@ import NavBarWrapper from "./components/navigation/NavBarWrapper";
 // import NewPasswordForm from "./components/forms/NewPasswordForm";
 // import ForgotPasswordForm from "./components/forms/ForgotPasswordForm";
 // import RecipeCard from "./components/recipes/RecipeCard";
-import Hero from "./components/home/hero";
+import Hero from "./components/home/Hero";
 
 function App() {
 	return (
