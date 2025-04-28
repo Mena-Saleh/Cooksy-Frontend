@@ -3,6 +3,7 @@ export const uiIcons = {
 		add: "material-symbols:add-rounded",
 		cancel: "iconoir:cancel",
 		check: "lucide:check",
+		magnify: "mdi:magnify",
 	},
 	auth: {
 		google: "flat-color-icons:google",
@@ -33,7 +34,6 @@ export const uiIcons = {
 		hamburger: "charm:menu-hamburger",
 		globe: "material-symbols:globe",
 		chevronDown: "tabler:chevron-down",
-		magnify: "mdi:magnify",
 	},
 	visibility: {
 		eyeOpen: "lucide:eye",

@@ -39,7 +39,7 @@ export default function NavSearch() {
 							: "text-basic-900 bg-transparent"
 					)}
 				>
-					<Icon icon={uiIcons.nav.magnify} className="w-5 h-5" />
+					<Icon icon={uiIcons.actions.magnify} className="w-5 h-5" />
 				</button>
 			</div>
 
@@ -50,7 +50,7 @@ export default function NavSearch() {
 					onClick={() => setMobileOpen(true)}
 					className="text-basic-900"
 				>
-					<Icon icon={uiIcons.nav.magnify} className="w-6 h-6" />
+					<Icon icon={uiIcons.actions.magnify} className="w-6 h-6" />
 				</button>
 			</div>
 
@@ -75,7 +75,7 @@ export default function NavSearch() {
 						/>
 						<button type="submit">
 							<Icon
-								icon={uiIcons.nav.magnify}
+								icon={uiIcons.actions.magnify}
 								className="w-7 h-7 text-basic-100 bg-secondary-500 rounded-full p-1"
 							/>
 						</button>

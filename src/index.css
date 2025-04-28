@@ -37,13 +37,15 @@
   --color-info-blue-500: #78a7ff;
 }
 
+
+
 @layer base {
   body {
     @apply bg-white text-basic-900 font-poppins;
   }
 
   h1 {
-    @apply text-3xl sm:text-6xl font-pacifico
+    @apply text-xl sm:text-6xl font-pacifico
   }
 
   h2 {
@@ -59,7 +61,7 @@
   }
 
   .input {
-    @apply px-4 py-2 rounded-full border border-basic-300 text-sm outline-none focus:ring-1 focus:ring-primary-500;
+    @apply px-4 py-2 rounded-full border border-basic-300 text-xs sm:text-sm outline-none focus:ring-1 focus:ring-primary-500;
   }
 
 
