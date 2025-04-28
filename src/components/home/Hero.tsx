@@ -22,7 +22,7 @@ export default function Hero() {
 					</div>
 
 					{/* Search bar or other hero content */}
-					<div className="w-full max-w-xl mt-4 z-50">
+					<div className="w-full max-w-xl mt-4">
 						<SearchBar />
 					</div>
 				</div>
@@ -35,7 +35,7 @@ export default function Hero() {
 			<img
 				src="./svg/Mascot/MascotStandingOnSwoosh.svg"
 				alt="Mascot"
-				className="absolute top-20 sm:top-10 xl:top-0 w-full left-0"
+				className="absolute top-20 sm:top-10 xl:top-0 w-full left-0 -z-10"
 			/>
 		</div>
 	);
