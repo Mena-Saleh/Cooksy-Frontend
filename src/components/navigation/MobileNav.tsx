@@ -8,6 +8,7 @@ import NavSearch from "./NavSearch";
 import Button from "../common/buttons/Button";
 import XButton from "../common/buttons/XButton";
 import { useTranslation } from "react-i18next";
+import { uiIcons } from "../../constants/uiIcons";
 
 export default function MobileNav() {
 	const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ export default function MobileNav() {
 		<header className="w-screen bg-basic-100/30 shadow-sm px-4 py-3 flex items-center justify-between">
 			{/* Hamburger */}
 			<Icon
-				icon="charm:menu-hamburger"
+				icon={uiIcons.nav.hamburger}
 				className="w-6 h-6 cursor-pointer"
 				onClick={() => setOpen(true)}
 			/>

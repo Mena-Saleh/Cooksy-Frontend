@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
+import { uiIcons } from "../../constants/uiIcons";
 
 type NavProfileItem = {
 	icon: string;
@@ -19,14 +20,14 @@ const icons: NavProfileItem[] = [
 	// { icon: "solar:settings-outline", label: "settings" },
 	// { icon: "solar:logout-3-outline", label: "logout" },
 
-	{ icon: "mdi-light:account", label: "myProfile" },
-	{ icon: "mdi-light:bell", label: "notifications", badge: 10 },
-	{ icon: "mdi-light:upload", label: "uploadedRecipes" },
-	{ icon: "mdi-light:heart", label: "savedRecipes" },
-	{ icon: "mdi-light:calendar", label: "mealPlanner" },
-	{ icon: "mdi:book-open-variant-outline", label: "recipeFeed" },
-	{ icon: "mdi-light:settings", label: "settings" },
-	{ icon: "mdi-light:logout", label: "logout" },
+	{ icon: uiIcons.profile.account, label: "myProfile" },
+	{ icon: uiIcons.profile.bell, label: "notifications", badge: 10 },
+	{ icon: uiIcons.profile.upload, label: "uploadedRecipes" },
+	{ icon: uiIcons.content.heartOutline, label: "savedRecipes" },
+	{ icon: uiIcons.content.calendar, label: "mealPlanner" },
+	{ icon: uiIcons.content.bookOutline, label: "recipeFeed" },
+	{ icon: uiIcons.profile.settings, label: "settings" },
+	{ icon: uiIcons.profile.logout, label: "logout" },
 ];
 
 export default function NavProfile() {
