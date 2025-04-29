@@ -9,7 +9,8 @@ import NavBarWrapper from "./components/navigation/NavBarWrapper";
 // import NewPasswordForm from "./components/forms/NewPasswordForm";
 // import ForgotPasswordForm from "./components/forms/ForgotPasswordForm";
 // import RecipeCard from "./components/recipes/RecipeCard";
-import Hero from "./components/home/Hero";
+// import Hero from "./components/home/Hero";
+import HomePage from "./pages/HomePage";
 
 function App() {
 	return (
@@ -24,7 +25,7 @@ function App() {
 			<RegisterForm />
 			<InfoForm /> */}
 
-			<Hero />
+			<HomePage />
 
 			{/* <div className="flex justify-center mt-10  ">
 				<RecipeCard

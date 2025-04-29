@@ -2,7 +2,7 @@ import SearchBar from "../common/SearchBar";
 
 export default function Hero() {
 	return (
-		<div className="relative mx-auto w-full mt-12">
+		<div className="relative mx-auto w-full mt-24">
 			{/* Left content container with hero text and search bar */}
 			<div className="pl-[10%] pt-[5%] flex flex-col w-[70%]">
 				{/* Hero Text with background swoosh */}
@@ -21,14 +21,11 @@ export default function Hero() {
 						</div>
 					</div>
 
-					{/* Search bar or other hero content */}
+					{/* Search bar*/}
 					<div className="w-full max-w-xl mt-4">
 						<SearchBar />
 					</div>
 				</div>
-
-				{/* Search */}
-				{/* <div className="w-4/5 h-10 bg-primary-300 rounded-full"></div> */}
 			</div>
 
 			{/* Mascot on swoosh */}
