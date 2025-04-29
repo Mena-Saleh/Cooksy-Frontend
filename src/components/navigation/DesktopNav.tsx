@@ -9,7 +9,7 @@ export default function DesktopNav() {
 	const { t: tNavigation } = useTranslation("navigation");
 
 	return (
-		<header className="w-full bg-white/30 shadow-sm">
+		<header className="w-full bg-white/40 shadow-sm fixed top-0 z-100 backdrop-blur-sm">
 			<nav className="flex items-center justify-between py-4 px-24">
 				{/* Navigation Links */}
 				<div className="flex items-center gap-6 text-sm">
@@ -47,7 +47,7 @@ export default function DesktopNav() {
 				{/* Right Actions */}
 				<div className="flex items-center gap-6">
 					<NavSearch />
-					<Button size="sm">{tNavigation("addRecipe")}</Button>
+					<Button>{tNavigation("addRecipe")}</Button>
 					<NavProfile />
 					<NavLang />
 				</div>

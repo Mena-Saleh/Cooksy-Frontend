@@ -15,26 +15,28 @@ export default function MobileNav() {
 	const { t: tNavigation } = useTranslation("navigation");
 
 	return (
-		<header className="w-screen bg-basic-100/30 shadow-sm px-4 py-3 flex items-center justify-between">
-			{/* Hamburger */}
-			<Icon
-				icon={uiIcons.nav.hamburger}
-				className="w-6 h-6 cursor-pointer"
-				onClick={() => setOpen(true)}
-			/>
-			<div className="flex justify-between items-center w-full ml-4">
-				{/* Logo */}
-				<div className="w-20 h-auto flex justify-start ml-2 ">
-					<img src="./logo.svg" alt="Cooksy Logo" className="" />
-				</div>
+		<div>
+			<header className="w-screen bg-basic-100/40 shadow-sm px-4 py-3 flex items-center justify-between fixed top-0 z-30 backdrop-blur-sm">
+				{/* Hamburger */}
+				<Icon
+					icon={uiIcons.nav.hamburger}
+					className="w-6 h-6 cursor-pointer"
+					onClick={() => setOpen(true)}
+				/>
+				<div className="flex justify-between items-center w-full ml-4">
+					{/* Logo */}
+					<div className="w-20 h-auto flex justify-start ml-2 ">
+						<img src="./logo.svg" alt="Cooksy Logo" className="" />
+					</div>
 
-				{/* Right: Actions */}
-				<div className="flex items-center gap-2">
-					<NavSearch />
-					<Button size="xs">{tNavigation("addRecipe")}</Button>
-					<NavProfile />
+					{/* Right: Actions */}
+					<div className="flex items-center gap-2">
+						<NavSearch />
+						<Button>{tNavigation("addRecipe")}</Button>
+						<NavProfile />
+					</div>
 				</div>
-			</div>
+			</header>
 
 			{/* Slide-out menu */}
 			<div
@@ -102,6 +104,6 @@ export default function MobileNav() {
 					onClick={() => setOpen(false)}
 				/>
 			)}
-		</header>
+		</div>
 	);
 }

@@ -26,7 +26,7 @@ export default function ActionButton({
 		>
 			<Icon
 				icon={icon}
-				className={`w-6 h-6 ${iconColor} ${
+				className={`w-4 h-4 sm:w-6 sm:h-6 ${iconColor} ${
 					hoverIconColor ? `hover:${hoverIconColor}` : ""
 				}`}
 			/>
