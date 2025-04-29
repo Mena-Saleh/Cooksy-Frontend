@@ -3,5 +3,13 @@
     "showMore": "Show more",
     "heroLine1": "Cook, share, and",
     "heroLine2": "inspire with Cooksy",
-    "searchPlaceholder": "Search"
+    "searchPlaceholder": "Search",
+    "pickMainIngredient": "Pick Your Main Ingredient",
+    "categories": {
+        "Fish": "Fish",
+        "Vegetables": "Vegetables",
+        "Chicken": "Chicken",
+        "Meat": "Meat"
+    }
 }
+

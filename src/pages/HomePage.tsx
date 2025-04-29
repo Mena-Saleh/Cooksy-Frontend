@@ -1,5 +1,6 @@
 import Hero from "../components/home/Hero";
 import FeaturedRecipes from "../components/home/FeaturedRecipes";
+import MainIngredientPicker from "../components/home/MainIngredientPicker";
 
 export default function HomePage() {
 	return (
@@ -7,7 +8,8 @@ export default function HomePage() {
 			<Hero />
 
 			<FeaturedRecipes onShowMore={() => {}} />
-			<div className="h-100"></div>
+
+			<MainIngredientPicker onShowMore={() => {}} />
 		</div>
 	);
 }
