@@ -34,6 +34,7 @@ export const uiIcons = {
 		hamburger: "charm:menu-hamburger",
 		globe: "material-symbols:globe",
 		chevronDown: "tabler:chevron-down",
+		chevronRight: "tabler:chevron-right",
 	},
 	visibility: {
 		eyeOpen: "lucide:eye",

@@ -1,0 +1,20 @@
+{
+    "Appetizer": "Förrätt",
+    "BBQ": "Grill",
+    "Beverage": "Dryck",
+    "Breakfast": "Frukost",
+    "Chicken": "Kyckling",
+    "Dessert": "Efterrätt",
+    "FastFood": "Snabbmat",
+    "GlutenFree": "Glutenfri",
+    "Healthy": "Hälsosamt",
+    "Meat": "Kött",
+    "Pasta": "Pasta",
+    "Salad": "Sallad",
+    "Seafood": "Skaldjur",
+    "Snack": "Mellanmål",
+    "Soup": "Soppa",
+    "Vegan": "Vegan",
+    "Vegetarian": "Vegetarisk",
+    "Wraps": "Wraps"
+}

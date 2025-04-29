@@ -64,7 +64,6 @@
     @apply px-4 py-2 rounded-full border border-basic-300 text-xs sm:text-sm outline-none focus:ring-1 focus:ring-primary-500;
   }
 
-
   /* Global transition classes */
   .transition-300 {
     @apply transition-all duration-300 ease-in-out;

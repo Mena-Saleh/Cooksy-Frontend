@@ -1,6 +1,9 @@
 import SearchBar from "../common/SearchBar";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+	const { t: tHome } = useTranslation("home")
+	
 	return (
 		<div className="relative mx-auto w-full mt-24">
 			{/* Left content container with hero text and search bar */}
@@ -16,7 +19,7 @@ export default function Hero() {
 						/>
 						<div className="absolute inset-0 flex items-center justify-center p-4">
 							<h1 className="px-2 leading-snug text-nowrap text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-								Cook, share, and <br /> inspire with Cooksy
+								{tHome("heroLine1")} <br /> {tHome("heroLine2")}
 							</h1>
 						</div>
 					</div>
