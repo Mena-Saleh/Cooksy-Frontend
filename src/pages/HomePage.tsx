@@ -9,7 +9,9 @@ export default function HomePage() {
 
 			<FeaturedRecipes onShowMore={() => {}} />
 
-			<MainIngredientPicker onShowMore={() => {}} />
+			<MainIngredientPicker onShowMore={() => { }} />
+			
+			<div className="h-30"></div>
 		</div>
 	);
 }

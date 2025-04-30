@@ -1,4 +1,4 @@
-import HomeCategoryCard from "./HomeCategoryCard";
+import CategoryCard from "./CategoryCard";
 import UnderlinedHeading from "../common/UnderlinedHeading";
 import Button from "../common/buttons/Button";
 import { Icon } from "@iconify/react";
@@ -60,7 +60,7 @@ export default function MainIngredientPicker({
 			{/* Ingredients Grid */}
 			<div className="grid justify-center items-center gap-4 sm:gap-12 px-4 sm:px-10 lg:px-24 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto">
 				{mainIngredients.map((ingredient) => (
-					<HomeCategoryCard
+					<CategoryCard
 						key={ingredient.id}
 						label={tHome(`categories.${ingredient.label}`)}
 						imageUrl={ingredient.imageUrl}
