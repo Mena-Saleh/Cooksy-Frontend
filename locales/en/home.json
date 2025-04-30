@@ -10,6 +10,12 @@
         "Vegetables": "Vegetables",
         "Chicken": "Chicken",
         "Meat": "Meat"
-    }
+    },
+    "viewRecipe": "View recipe",
+    "contributeMessage": "Share and publish your own recipes",
+    "addRecipe": "Add recipe",
+    "recipes": "recipes",
+    "followers": "followers",
+    "follow": "Follow",
+    "topContributors": "Top Contributors"
 }
-
