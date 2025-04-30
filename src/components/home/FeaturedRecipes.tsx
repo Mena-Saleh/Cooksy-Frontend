@@ -45,7 +45,7 @@ export default function FeaturedRecipes({ onShowMore }: FeaturedRecipesProps) {
 			</div>
 
 			{/* Show More Button */}
-			<div className="flex items-center justify-end px-6 sm:px-24 ">
+			<div className="flex items-center justify-end px-6 sm:px-24">
 				<Button onClick={onShowMore} className="flex items-center">
 					{tHome("showMore")}
 					<Icon icon={uiIcons.nav.chevronRight} className="w-4 h-4" />
