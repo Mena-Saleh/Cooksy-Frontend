@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 
 export default function Hero() {
 	const { t: tHome } = useTranslation("home")
-	
+
 	return (
-		<div className="relative mx-auto w-full mt-24">
+		<div className="relative mx-auto w-full mt-24 sm:mt-[10%]">
 			{/* Left content container with hero text and search bar */}
 			<div className="pl-[10%] pt-[5%] flex flex-col w-[70%]">
 				{/* Hero Text with background swoosh */}
@@ -25,7 +25,7 @@ export default function Hero() {
 					</div>
 
 					{/* Search bar*/}
-					<div className="w-full max-w-xl mt-4">
+					<div className="w-[165%] sm:w-full max-w-xl mt-4">
 						<SearchBar />
 					</div>
 				</div>
@@ -35,7 +35,7 @@ export default function Hero() {
 			<img
 				src="./svg/Mascot/MascotStandingOnSwoosh.svg"
 				alt="Mascot"
-				className="absolute top-20 sm:top-10 xl:top-0 w-full left-0 -z-10"
+				className="absolute top-0 sm:top-10 xl:top-0 w-full left-0 -z-10"
 			/>
 		</div>
 	);
