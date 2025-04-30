@@ -25,6 +25,8 @@ export const uiIcons = {
 		bookFilled: "mdi:book-open",
 		folder: "mdi:folder",
 		comment: "iconamoon:comment-light",
+		chefHat: "hugeicons:chef-hat",
+		usersGroup: "flowbite:users-group-outline",
 	},
 	star: {
 		filled: "material-symbols-light:star-rounded",

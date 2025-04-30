@@ -10,6 +10,12 @@
         "Vegetables": "Grönsaker",
         "Chicken": "Kyckling",
         "Meat": "Kött"
-    }
+    },
+    "viewRecipe": "Visa recept",
+    "contributeMessage": "Dela och publicera dina egna recept",
+    "addRecipe": "Lägg till recept",
+    "recipes": "recept",
+    "followers": "följare",
+    "follow": "Följ",
+    "topContributors": "Toppkreatörer"
 }
-
