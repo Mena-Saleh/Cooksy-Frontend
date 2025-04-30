@@ -1,0 +1,15 @@
+{
+    "discoverRecipes": "Upptäck nya recept",
+    "showMore": "Visa fler",
+    "heroLine1": "Laga mat, dela och",
+    "heroLine2": "inspireras med Cooksy",
+    "searchPlaceholder": "Sök",
+    "pickMainIngredient": "Välj din huvudingrediens",
+    "categories": {
+        "Fish": "Fisk",
+        "Vegetables": "Grönsaker",
+        "Chicken": "Kyckling",
+        "Meat": "Kött"
+    }
+}
+
