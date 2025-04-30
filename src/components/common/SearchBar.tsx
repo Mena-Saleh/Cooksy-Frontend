@@ -1,13 +1,15 @@
 import { Icon } from "@iconify/react";
 import { uiIcons } from "../../constants/uiIcons";
+import { useTranslation } from "react-i18next";
 
 export default function SearchBar() {
+	const {t: tHome} = useTranslation("home")
 	return (
 		<div className="relative flex items-center justify-center w-full">
 			{/* Input Field */}
 			<input
 				type="text"
-				placeholder="Search"
+				placeholder={tHome("searchPlaceholder")}
 				className="input border-basic-900 w-full pr-10 px-4 py-1 sm:py-2 rounded-full bg-white focus:outline-none transition-300"
 			/>
 

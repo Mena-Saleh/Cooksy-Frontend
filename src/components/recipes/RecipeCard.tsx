@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import { Category, categoryIcons } from "../../constants/categoryIcons";
 import ActionButton from "../common/buttons/ActionButton";
 import { uiIcons } from "../../constants/uiIcons";
-
+import { useTranslation } from "react-i18next";
 interface Author {
 	name: string;
 	avatarUrl: string;
@@ -30,6 +30,8 @@ export default function RecipeCard({
 	comments,
 	author,
 }: RecipeCardProps) {
+	const { t: tCategories } = useTranslation("categories");
+
 	return (
 		<div className="rounded-2xl shadow-md bg-white flex flex-col w-auto max-w-48 sm:max-w-full sm:w-68 xl:w-72 h-auto cursor-pointer">
 			{/* Image */}
@@ -37,7 +39,7 @@ export default function RecipeCard({
 				<img
 					src={imageUrl}
 					alt={title}
-					className="w-full h-30 sm:h-50 object-cover rounded-t-2xl"
+					className="w-full h-35 sm:h-50 object-cover rounded-t-2xl"
 				/>
 				{/* Buttons */}
 				<div className="absolute top-2 right-2 flex flex-col gap-2">
@@ -85,7 +87,9 @@ export default function RecipeCard({
 									icon={categoryIcons[category].icon}
 									className="w-4 h-4"
 								/>
-								<span>{categoryIcons[category].label}</span>
+								<span>
+									<span>{tCategories(category)}</span>
+								</span>
 							</div>
 						))}
 					</div>

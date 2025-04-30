@@ -4,6 +4,8 @@ import { Icon } from "@iconify/react";
 import { dummyRecipes } from "../../constants/dummyRecipes";
 import { Category } from "../../constants/categoryIcons";
 import UnderlinedHeading from "../common/UnderlinedHeading";
+import { uiIcons } from "../../constants/uiIcons";
+import { useTranslation } from "react-i18next";
 
 interface FeaturedRecipesProps {
 	onShowMore: () => void;
@@ -25,11 +27,12 @@ interface Recipe {
 }
 
 export default function FeaturedRecipes({ onShowMore }: FeaturedRecipesProps) {
+	const {t: tHome} = useTranslation("home")
 	return (
 		<section className="flex flex-col gap-6 mt-[40%] sm:mt-[30%]">
 			<div className="px-6 sm:px-24">
 				<UnderlinedHeading
-					text="Discover new recipes"
+					text={tHome("discoverRecipes")}
 					variant="medium2"
 				/>
 			</div>
@@ -44,8 +47,8 @@ export default function FeaturedRecipes({ onShowMore }: FeaturedRecipesProps) {
 			{/* Show More Button */}
 			<div className="flex items-center justify-end px-6 sm:px-24 ">
 				<Button onClick={onShowMore} className="flex items-center">
-					Show more
-					<Icon icon="tabler:chevron-right" className="w-4 h-4" />
+					{tHome("showMore")}
+					<Icon icon={uiIcons.nav.chevronRight} className="w-4 h-4" />
 				</Button>
 			</div>
 		</section>
