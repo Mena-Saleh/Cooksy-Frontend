@@ -1,0 +1,20 @@
+{
+    "Appetizer": "Appetizer",
+    "BBQ": "BBQ",
+    "Beverage": "Beverage",
+    "Breakfast": "Breakfast",
+    "Chicken": "Chicken",
+    "Dessert": "Dessert",
+    "FastFood": "Fast food",
+    "GlutenFree": "Gluten-free",
+    "Healthy": "Healthy",
+    "Meat": "Meat",
+    "Pasta": "Pasta",
+    "Salad": "Salad",
+    "Seafood": "Seafood",
+    "Snack": "Snack",
+    "Soup": "Soup",
+    "Vegan": "Vegan",
+    "Vegetarian": "Vegetarian",
+    "Wraps": "Wraps"
+}
