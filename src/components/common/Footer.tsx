@@ -59,13 +59,16 @@ export default function Footer() {
 				</div>
 
 				{/* Logo */}
-				<div className="flex items-center align-self-center h-full justify-center basis-full w-full lg:basis-1/3 border-border-red-900">
+				<Link
+					to="/"
+					className="flex items-center align-self-center h-full justify-center basis-full w-full lg:basis-1/3 border-border-red-900"
+				>
 					<img
 						src="./logo.svg"
 						alt="Cooksy Logo"
-						className="w-full max-w-70 mb-4 mr-4 h-auto object-contain"
+						className="w-full max-w-50 mb-4 mr-4 h-auto object-contain"
 					/>
-				</div>
+				</Link>
 			</div>
 		</footer>
 	);
