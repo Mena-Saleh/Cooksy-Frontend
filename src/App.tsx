@@ -11,6 +11,7 @@ import NavBarWrapper from "./components/navigation/NavBarWrapper";
 // import RecipeCard from "./components/recipes/RecipeCard";
 // import Hero from "./components/home/Hero";
 import HomePage from "./pages/HomePage";
+import Footer from "./components/common/Footer";
 
 function App() {
 	return (
@@ -43,6 +44,7 @@ function App() {
 					}}
 				/>
 			</div> */}
+			<Footer />
 		</div>
 	);
 }

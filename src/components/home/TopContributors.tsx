@@ -61,7 +61,7 @@ export default function TopContributors({ onShowMore }: TopContributorsProps) {
 			{/* Show More Button */}
 			<div className="flex items-center justify-end px-6 sm:px-24">
 				<Button onClick={onShowMore} className="flex items-center">
-					{tHome("showMore")}
+					{tHome("seeAllContributors")}
 					<Icon icon={uiIcons.nav.chevronRight} className="w-4 h-4" />
 				</Button>
 			</div>
