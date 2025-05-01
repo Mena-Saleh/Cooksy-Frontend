@@ -37,15 +37,15 @@ export default function RecipeCard({
 		<div className="rounded-2xl shadow-md bg-white flex flex-col w-auto max-w-48 sm:max-w-full sm:w-68 xl:w-72 h-auto cursor-pointer">
 			{/* Image */}
 			<div className="relative w-full">
-				<div className="relative overflow-hidden rounded-t-2xl">
+				<div className="group relative overflow-hidden rounded-t-2xl">
 					<img
 						src={imageUrl}
 						alt={title}
-						className="w-full h-35 sm:h-50 object-cover rounded-t-2xl transition-300 hover:scale-105"
+						className="w-full h-35 sm:h-50 object-cover rounded-t-2xl transition-500 group-hover:scale-110"
 					/>
 
 					{/* Overlay with text */}
-					<div className="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-300 flex items-center justify-center">
+					<div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-500 flex items-center justify-center">
 						<span className="text-basic-100 font-medium text-base sm:text-lg font-pacifico">
 							{tHome("viewRecipe")}
 						</span>

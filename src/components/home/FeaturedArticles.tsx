@@ -25,10 +25,20 @@ export default function FeaturedArticles() {
 	const { t: tHome } = useTranslation("home");
 	return (
 		<section className="flex flex-col gap-6 px-4 sm:px-10 lg:px-24 my-20">
-			<UnderlinedHeading
-				text={tHome("articlesHeading")}
-				variant="large1"
-			/>
+			{/* Mobile heading */}
+			<div className="block sm:hidden">
+				<UnderlinedHeading
+					text={tHome("articlesHeading")}
+					variant="medium2"
+				/>
+			</div>
+			{/* Desktop heading */}
+			<div className="hidden sm:block">
+				<UnderlinedHeading
+					text={tHome("articlesHeading")}
+					variant="large1"
+				/>
+			</div>
 
 			<div className="flex flex-col gap-6">
 				{articles.map((article) => (
