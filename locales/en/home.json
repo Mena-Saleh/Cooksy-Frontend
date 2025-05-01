@@ -1,6 +1,7 @@
 {
     "discoverRecipes": "Discover new recipes",
     "showMore": "Show more",
+    "seeAllContributors": "See all Top Contributors",
     "heroLine1": "Cook, share, and",
     "heroLine2": "inspire with Cooksy",
     "searchPlaceholder": "Search",
@@ -17,5 +18,7 @@
     "recipes": "recipes",
     "followers": "followers",
     "follow": "Follow",
-    "topContributors": "Top Contributors"
+    "topContributors": "Top Contributors",
+    "readMore": "Read more",
+    "articlesHeading": "Food and Health: Research & Findings"
 }

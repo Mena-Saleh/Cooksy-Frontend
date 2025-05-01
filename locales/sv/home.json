@@ -1,6 +1,7 @@
 {
     "discoverRecipes": "Upptäck nya recept",
     "showMore": "Visa fler",
+    "seeAllContributors": "Se alla toppkreatörer",
     "heroLine1": "Laga mat, dela och",
     "heroLine2": "inspireras med Cooksy",
     "searchPlaceholder": "Sök",
@@ -17,5 +18,7 @@
     "recipes": "recept",
     "followers": "följare",
     "follow": "Följ",
-    "topContributors": "Toppkreatörer"
+    "topContributors": "Toppkreatörer",
+    "readMore": "Läs mer",
+    "articlesHeading": "Mat och hälsa: Forskning och insikter"
 }
