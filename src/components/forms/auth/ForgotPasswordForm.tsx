@@ -1,5 +1,5 @@
-import BaseForm from "./BaseForm";
-import Button from "../common/buttons/Button";
+import BaseForm from "../BaseForm";
+import Button from "../../common/buttons/Button";
 import { useTranslation } from "react-i18next";
 
 

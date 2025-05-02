@@ -1,8 +1,8 @@
-import BaseForm from "./BaseForm";
-import Button from "../common/buttons/Button";
+import BaseForm from "../BaseForm";
+import Button from "../../common/buttons/Button";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
-import { uiIcons } from "../../constants/uiIcons";
+import { uiIcons } from "../../../constants/uiIcons";
 
 interface NewPasswordFormProps {
 	onClose: () => void;

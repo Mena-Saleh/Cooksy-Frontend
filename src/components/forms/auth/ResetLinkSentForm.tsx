@@ -1,7 +1,7 @@
-import BaseForm from "./BaseForm";
+import BaseForm from "../BaseForm";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
-import { uiIcons } from "../../constants/uiIcons";
+import { uiIcons } from "../../../constants/uiIcons";
 
 interface ResetLinkSentFormProps {
 	onClose: () => void;

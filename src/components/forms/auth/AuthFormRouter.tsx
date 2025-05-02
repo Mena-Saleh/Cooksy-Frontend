@@ -6,10 +6,10 @@ import NewPasswordForm from "./NewPasswordForm";
 import VerifyEmailForm from "./VerifyEmailForm";
 import EmailVerifiedForm from "./EmailVerifiedForm";
 import InfoForm from "./InfoForm";
-import { FormType } from "../../types/FormType";
+import { FormType } from "../../../types/FormType";
 
 
-export default function FormRouter({ formType, onClose, setFormType }: {
+export default function AuthFormRouter({ formType, onClose, setFormType }: {
     formType: FormType;
     onClose: () => void;
     setFormType: (type: FormType) => void;

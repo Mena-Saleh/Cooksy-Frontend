@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { uiIcons } from "../../constants/uiIcons";
 import { useAppSelector } from '../../redux/hooks';
-import FormContainer from "../forms/FormContainer";
+import AuthFormContainer from "../forms/auth/AuthFormContainer";
 import { FormType } from "../../types/FormType";
 
 type NavProfileItem = {
@@ -117,7 +117,7 @@ export default function NavProfile() {
 			</div>
 
 			{/* Not Authenticated: Show InfoForm in overlay */}
-			<FormContainer
+			<AuthFormContainer
 				isOpen={formType !== null && !isAuthenticated}
 				formType={formType}
 				onClose={() => setFormType(null)}

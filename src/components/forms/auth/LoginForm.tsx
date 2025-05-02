@@ -1,9 +1,9 @@
-import BaseForm from "./BaseForm";
-import Button from "../common/buttons/Button";
-import OAuthButton from "../common/buttons/OAuthButton";
+import BaseForm from "../BaseForm";
+import Button from "../../common/buttons/Button";
+import OAuthButton from "../../common/buttons/OAuthButton";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
-import { uiIcons } from "../../constants/uiIcons";
+import { uiIcons } from "../../../constants/uiIcons";
 
 interface LoginFormProps {
 	onClose: () => void;

@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { createPortal } from "react-dom";
 import clsx from "clsx";
-import FormRouter from "./FormRouter";
-import { FormType } from "../../types/FormType";
+import AuthFormRouter from "./AuthFormRouter";
+import { FormType } from "../../../types/FormType";
 
 type OverlayPortalProps = {
     isOpen: boolean;
@@ -11,7 +11,7 @@ type OverlayPortalProps = {
     setFormType: (type: FormType) => void;
 };
 
-export default function FormContainer({
+export default function AuthFormContainer({
     isOpen,
     formType,
     onClose,
@@ -42,7 +42,7 @@ export default function FormContainer({
                 onClick={(e) => e.stopPropagation()}
                 className="transition duration-300 z-110 flex items-center justify-center"
             >
-                <FormRouter
+                <AuthFormRouter
                     formType={formType}
                     onClose={onClose}
                     setFormType={setFormType}
