@@ -3,6 +3,8 @@ import { Icon } from "@iconify/react";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { uiIcons } from "../../constants/uiIcons";
+import { useAppSelector } from '../../redux/hooks';
+import InfoForm from '../forms/InfoForm';
 
 type NavProfileItem = {
 	icon: string;
