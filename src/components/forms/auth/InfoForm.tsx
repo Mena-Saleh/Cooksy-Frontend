@@ -39,8 +39,6 @@ export default function InfoForm({ onClose, onLoginClick, onRegisterClick }: Inf
 
 					<div className="flex items-start gap-4">
 						<div className="bg-primary-100 p-2 w-8 h-8 rounded-full flex items-center justify-center align-center">
-
-
 							<Icon
 								icon={uiIcons.content.folder}
 								className="text-primary-500"

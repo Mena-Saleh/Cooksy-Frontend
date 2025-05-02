@@ -7,8 +7,9 @@ import { uiIcons } from "../../../constants/uiIcons";
 
 interface RegisterFormProps {
 	onClose: () => void;
+	onLoginClick?: () => void;
 }
-export default function RegisterForm({ onClose }: RegisterFormProps) {
+export default function RegisterForm({ onClose, onLoginClick }: RegisterFormProps) {
 	const { t: tForms } = useTranslation("forms");
 
 	return (
@@ -19,16 +20,19 @@ export default function RegisterForm({ onClose }: RegisterFormProps) {
 				</h3>
 
 				<form className="space-y-4">
-					<input
-						type="text"
-						placeholder={tForms("register.fields.firstName")}
-						className="w-full input"
-					/>
-					<input
-						type="text"
-						placeholder={tForms("register.fields.lastName")}
-						className="w-full input"
-					/>
+					<div className="flex flex-col sm:flex-row gap-4">
+						<input
+							type="text"
+							placeholder={tForms("register.fields.firstName")}
+							className="w-full input"
+						/>
+						<input
+							type="text"
+							placeholder={tForms("register.fields.lastName")}
+							className="w-full input"
+						/>
+					</div>
+
 					<input
 						type="email"
 						placeholder={tForms("register.fields.email")}
@@ -71,9 +75,9 @@ export default function RegisterForm({ onClose }: RegisterFormProps) {
 					</div>
 				</form>
 
-				<p className="text-base text-center mt-4">
+				<p className="text-center mt-4">
 					{tForms("register.loginText")}
-					<Button variant="ghost" className="mx-1">
+					<Button onClick={onLoginClick} variant="ghost" className="mx-1">
 						{tForms("buttons.login")}
 					</Button>
 				</p>

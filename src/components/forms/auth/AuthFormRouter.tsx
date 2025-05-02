@@ -24,9 +24,18 @@ export default function AuthFormRouter({ formType, onClose, setFormType }: {
                 />
             );
         case "login":
-            return <LoginForm onClose={onClose} />;
+            return (
+                <LoginForm
+                    onClose={onClose}
+                    onRegisterClick={() => setFormType("register")}
+                    onForgetPasswordClick={() => setFormType("forgot")}
+                />);
         case "register":
-            return <RegisterForm onClose={onClose} />;
+            return (
+                <RegisterForm
+                    onLoginClick={() => setFormType("login")}
+                    onClose={onClose} />)
+                ;
         case "forgot":
             return <ForgotPasswordForm onClose={onClose} />;
         case "resetSent":

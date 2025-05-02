@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function Footer() {
-    const {t: tFooter} = useTranslation("footer")
+	const { t: tFooter } = useTranslation("footer")
 	return (
 		<footer className="border-t border-basic-900/10 text-xs px-6 lg:px-24 pt-24 pb-36 flex  lg:gap-24 flex-col lg:flex-row lg:text-sm">
 			{/* Navigation Links */}
@@ -12,29 +12,29 @@ export default function Footer() {
 					<h4 className="text-base lg:text-lg font-semibold text-basic-900">
 						{tFooter("explore")}
 					</h4>
-					<Link to="/">{tFooter("home")}</Link>
-					<Link to="/recipes">{tFooter("recipes")}</Link>
-					<Link to="/articles">{tFooter("articles")}</Link>
-					<Link to="/categories">{tFooter("categories")}</Link>
+					<Link className="transition-300 hover:text-secondary-500" to="/">{tFooter("home")}</Link>
+					<Link className="transition-300 hover:text-secondary-500" to="/recipes">{tFooter("recipes")}</Link>
+					<Link className="transition-300 hover:text-secondary-500" to="/articles">{tFooter("articles")}</Link>
+					<Link className="transition-300 hover:text-secondary-500" to="/categories">{tFooter("categories")}</Link>
 				</div>
 
 				<div className="flex flex-col gap-2">
 					<h4 className="text-base lg:text-lg font-semibold text-basic-900">
 						{tFooter("about")}
 					</h4>
-					<Link to="/about">{tFooter("aboutUs")}</Link>
-					<Link to="/contact">{tFooter("contact")}</Link>
-					<Link to="/newsletter">{tFooter("newsletter")}</Link>
+					<Link className="transition-300 hover:text-secondary-500" to="/about">{tFooter("aboutUs")}</Link>
+					<Link className="transition-300 hover:text-secondary-500" to="/contact">{tFooter("contact")}</Link>
+					<Link className="transition-300 hover:text-secondary-500" to="/newsletter">{tFooter("newsletter")}</Link>
 				</div>
 
 				<div className="flex flex-col gap-2">
 					<h4 className="text-base lg:text-lg font-semibold text-basic-900">
 						{tFooter("preferences")}
 					</h4>
-					<Link to="/cookies">{tFooter("cookies")}</Link>
-					<Link to="/privacy">{tFooter("privacyPolicy")}</Link>
-					<Link to="/terms">{tFooter("terms")}</Link>
-					<Link to="/faq">{tFooter("faq")}</Link>
+					<Link className="transition-300 hover:text-secondary-500" to="/cookies">{tFooter("cookies")}</Link>
+					<Link className="transition-300 hover:text-secondary-500" to="/privacy">{tFooter("privacyPolicy")}</Link>
+					<Link className="transition-300 hover:text-secondary-500" to="/terms">{tFooter("terms")}</Link>
+					<Link className="transition-300 hover:text-secondary-500" to="/faq">{tFooter("faq")}</Link>
 				</div>
 			</div>
 

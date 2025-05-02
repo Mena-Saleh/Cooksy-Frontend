@@ -7,8 +7,10 @@ import { uiIcons } from "../../../constants/uiIcons";
 
 interface LoginFormProps {
 	onClose: () => void;
+	onForgetPasswordClick: () => void;
+	onRegisterClick: () => void;
 }
-export default function LoginForm({ onClose }: LoginFormProps) {
+export default function LoginForm({ onClose, onForgetPasswordClick, onRegisterClick }: LoginFormProps) {
 	const { t: tForms } = useTranslation("forms");
 
 	return (
@@ -39,7 +41,7 @@ export default function LoginForm({ onClose }: LoginFormProps) {
 					</div>
 
 					<div className="text-right text-sm">
-						<Button variant="ghost" className="text-secondary-500">
+						<Button variant="ghost" className="text-secondary-500" onClick={onForgetPasswordClick}>
 							{tForms("buttons.forgot")}
 						</Button>
 					</div>
@@ -49,9 +51,9 @@ export default function LoginForm({ onClose }: LoginFormProps) {
 					</div>
 				</form>
 
-				<p className="text-base text-center mt-4">
+				<p className="text-center mt-4">
 					{tForms("login.registerText")}
-					<Button variant="ghost" className="mx-1">
+					<Button variant="ghost" className="mx-1" onClick={onRegisterClick}>
 						{tForms("buttons.createAccount")}
 					</Button>
 				</p>

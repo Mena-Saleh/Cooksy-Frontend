@@ -40,9 +40,6 @@ export default function NavProfile() {
 	const { isAuthenticated } = useAppSelector((state) => state.auth);
 	const [formType, setFormType] = useState<FormType>(null);
 
-	const openForm = (type: FormType) => setFormType(type);
-	const closeForm = () => setFormType(null);
-
 	useEffect(() => {
 		if (!isAuthenticated) return;
 
@@ -77,12 +74,18 @@ export default function NavProfile() {
 					setOpen(!open)
 				}}
 			>
-				<img
-					src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
-					alt="User avatar"
-					className="w-full h-full rounded-full object-cover"
-				/>
-				{notificationItem?.badge && notificationItem.badge > 0 && (
+				{isAuthenticated ?
+					<img
+						src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
+						alt="User avatar"
+						className="w-full h-full rounded-full object-cover"
+					/>
+
+					:
+					< Icon icon="mingcute:user-4-fill" className="w-full h-full text-secondary-500"></Icon>
+
+				}
+				{isAuthenticated && notificationItem?.badge && notificationItem.badge > 0 && (
 					<div className="absolute -top-1 -right-2 border border-basic-100 bg-secondary-500 text-basic-100 text-xs w-5 h-5 rounded-full flex items-center justify-center font-pacifico">
 						{notificationItem.badge}
 					</div>
@@ -125,7 +128,7 @@ export default function NavProfile() {
 			/>
 
 
-		</div>
+		</div >
 	);
 
 }

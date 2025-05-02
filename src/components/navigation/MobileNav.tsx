@@ -9,10 +9,12 @@ import Button from "../common/buttons/Button";
 import XButton from "../common/buttons/XButton";
 import { useTranslation } from "react-i18next";
 import { uiIcons } from "../../constants/uiIcons";
+import { useAppSelector } from '../../redux/hooks';
 
 export default function MobileNav() {
 	const [open, setOpen] = useState(false);
 	const { t: tNavigation } = useTranslation("navigation");
+	const { isAuthenticated } = useAppSelector((state) => state.auth);
 
 	return (
 		<div>
@@ -32,7 +34,7 @@ export default function MobileNav() {
 					{/* Right: Actions */}
 					<div className="flex items-center gap-2">
 						<NavSearch />
-						<Button>{tNavigation("addRecipe")}</Button>
+						{isAuthenticated && <Button>{tNavigation("addRecipe")}</Button>}
 						<NavProfile />
 					</div>
 				</div>

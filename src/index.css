@@ -57,7 +57,7 @@
   }
 
   p {
-    @apply sm:text-base leading-relaxed;
+    @apply text-xs sm:text-sm leading-relaxed;
   }
 
   .input {

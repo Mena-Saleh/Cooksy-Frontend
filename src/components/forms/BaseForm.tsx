@@ -6,7 +6,7 @@ interface BaseFormProps {
 }
 export default function BaseForm({ children, onClose }: BaseFormProps) {
 	return (
-		<div className="relative text-sm sm:text-base bg-white shadow-2xl w-[95%] md:w-[600px] h-auto rounded-[20px] overflow-hidden">
+		<div className="relative text-sm sm:text-base bg-white shadow-2xl w-[90vw] md:w-[520px] h-auto rounded-[20px] overflow-hidden">
 			{/* Top swoosh */}
 			<img
 				src="./svg/Swooshes/TopSwoosh.svg"
@@ -20,8 +20,8 @@ export default function BaseForm({ children, onClose }: BaseFormProps) {
 			</div>
 
 			{/* Form content */}
-			<div className="relative z-1 px-12 py-12 flex flex-col align-center justify-center">
-				<div className="space-y-4 py-8 mx-auto sm:w-[80%]">
+			<div className="relative z-1 px-12 flex flex-col align-center justify-center">
+				<div className="py-16 mx-auto sm:w-[85%]">
 					{children}
 				</div>
 			</div>
