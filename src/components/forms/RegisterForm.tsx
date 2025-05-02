@@ -5,11 +5,14 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import { uiIcons } from "../../constants/uiIcons";
 
-export default function RegisterForm() {
+interface RegisterFormProps {
+	onClose: () => void;
+}
+export default function RegisterForm({ onClose }: RegisterFormProps) {
 	const { t: tForms } = useTranslation("forms");
 
 	return (
-		<BaseForm>
+		<BaseForm onClose={onClose}>
 			<div>
 				<h3 className="text-center text-primary-500 mb-6">
 					{tForms("register.title")}

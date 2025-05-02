@@ -2,11 +2,15 @@ import BaseForm from "./BaseForm";
 import Button from "../common/buttons/Button";
 import { useTranslation } from "react-i18next";
 
-export default function ForgotPasswordForm() {
+
+interface ForgotPasswordFormProps {
+	onClose: () => void;
+}
+export default function ForgotPasswordForm({ onClose }: ForgotPasswordFormProps) {
 	const { t: tForms } = useTranslation("forms");
 
 	return (
-		<BaseForm>
+		<BaseForm onClose={onClose}>
 			<div className="text-center space-y-6">
 				<h3 className="text-primary-500">
 					{tForms("forgotPassword.title")}

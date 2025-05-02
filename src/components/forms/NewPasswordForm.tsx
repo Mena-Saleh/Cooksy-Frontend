@@ -4,11 +4,15 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import { uiIcons } from "../../constants/uiIcons";
 
-export default function NewPasswordForm() {
+interface NewPasswordFormProps {
+	onClose: () => void;
+
+}
+export default function NewPasswordForm({ onClose }: NewPasswordFormProps) {
 	const { t: tForms } = useTranslation("forms");
 
 	return (
-		<BaseForm>
+		<BaseForm onClose={onClose}>
 			<div className="text-center space-y-6">
 				<h3 className="text-primary-500">
 					{tForms("newPassword.title")}

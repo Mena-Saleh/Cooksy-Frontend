@@ -1,6 +1,10 @@
 import XButton from "../common/buttons/XButton";
 
-export default function BaseForm({ children }: { children?: React.ReactNode }) {
+interface BaseFormProps {
+	children: React.ReactNode;
+	onClose?: () => void;
+}
+export default function BaseForm({ children, onClose }: BaseFormProps) {
 	return (
 		<div className="relative text-sm sm:text-base bg-white shadow-2xl w-[95%] md:w-[600px] h-auto rounded-[20px] overflow-hidden">
 			{/* Top swoosh */}
@@ -12,7 +16,7 @@ export default function BaseForm({ children }: { children?: React.ReactNode }) {
 
 			{/* X Button */}
 			<div className="absolute top-4 right-4 z-2">
-				<XButton />
+				<XButton onClick={onClose} />
 			</div>
 
 			{/* Form content */}

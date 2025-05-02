@@ -5,6 +5,8 @@ import { useTranslation } from "react-i18next";
 import { uiIcons } from "../../constants/uiIcons";
 import { useAppSelector } from '../../redux/hooks';
 import InfoForm from '../forms/InfoForm';
+import OverlayPortal from "../common/OverlayPortal";
+
 
 type NavProfileItem = {
 	icon: string;
@@ -36,8 +38,11 @@ export default function NavProfile() {
 	const { t: tNavigation } = useTranslation("navigation");
 	const [open, setOpen] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
+	const { isAuthenticated } = useAppSelector((state) => state.auth);
 
 	useEffect(() => {
+		if (!isAuthenticated) return;
+
 		function handleClickOutside(e: MouseEvent) {
 			if (
 				dropdownRef.current &&
@@ -56,6 +61,7 @@ export default function NavProfile() {
 		(item) => item.label === "notifications"
 	);
 
+
 	return (
 		<div className="relative" ref={dropdownRef}>
 			{/* Avatar */}
@@ -68,7 +74,6 @@ export default function NavProfile() {
 					alt="User avatar"
 					className="w-full h-full rounded-full object-cover"
 				/>
-
 				{notificationItem?.badge && notificationItem.badge > 0 && (
 					<div className="absolute -top-1 -right-2 border border-basic-100 bg-secondary-500 text-basic-100 text-xs w-5 h-5 rounded-full flex items-center justify-center font-pacifico">
 						{notificationItem.badge}
@@ -76,11 +81,11 @@ export default function NavProfile() {
 				)}
 			</div>
 
-			{/* Dropdown */}
+			{/* Authenticated: Show dropdown */}
 			<div
 				className={clsx(
 					"absolute right-[-8px] xl:left-[-16px] mt-2 w-56 bg-white rounded-xl shadow-md border border-basic-100 z-50 transition-300",
-					open
+					open && isAuthenticated
 						? "opacity-100 translate-y-0"
 						: "opacity-0 -translate-y-4 pointer-events-none"
 				)}
@@ -102,6 +107,15 @@ export default function NavProfile() {
 					</div>
 				))}
 			</div>
+
+			{/* Not Authenticated: Show InfoForm in overlay */}
+			<OverlayPortal isOpen={open && !isAuthenticated}
+				onClose={() => setOpen(false)}
+			>
+				<InfoForm onClose={() => setOpen(false)} />
+			</OverlayPortal>
+
 		</div>
 	);
+
 }

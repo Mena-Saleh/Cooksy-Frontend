@@ -4,11 +4,14 @@ import Button from "../common/buttons/Button";
 import { useTranslation } from "react-i18next";
 import { uiIcons } from "../../constants/uiIcons";
 
-export default function InfoForm() {
+interface InfoFormProps {
+	onClose: () => void;
+}
+export default function InfoForm({ onClose }: InfoFormProps) {
 	const { t: tForms } = useTranslation("forms");
 
 	return (
-		<BaseForm>
+		<BaseForm onClose={onClose}>
 			<div className="space-y-6">
 				<div className="text-center">
 					<div className="space-y-2 text-left inline-block">
@@ -34,7 +37,7 @@ export default function InfoForm() {
 
 					<div className="flex items-start gap-4">
 						<div className="bg-primary-100 p-2 w-8 h-8 rounded-full flex items-center justify-center align-center">
-						
+
 
 							<Icon
 								icon={uiIcons.content.folder}

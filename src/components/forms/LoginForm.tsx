@@ -5,11 +5,14 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import { uiIcons } from "../../constants/uiIcons";
 
-export default function LoginForm() {
+interface LoginFormProps {
+	onClose: () => void;
+}
+export default function LoginForm({ onClose }: LoginFormProps) {
 	const { t: tForms } = useTranslation("forms");
 
 	return (
-		<BaseForm>
+		<BaseForm onClose={onClose}>
 			<div>
 				<h3 className="text-center text-primary-500 mb-6">
 					{tForms("login.title")}
