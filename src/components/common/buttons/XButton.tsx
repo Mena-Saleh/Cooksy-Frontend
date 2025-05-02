@@ -9,9 +9,9 @@ export default function XButton({ onClick }: XButtonProps) {
 	return (
 		<div
 			onClick={onClick}
-			className="rounded-full sm:w-7 sm:h-7 w-6 h-6 bg-primary-300 hover:bg-primary-400 transition-300 cursor-pointer flex justify-center items-center"
+			className="rounded-full sm:w-9 sm:h-9 w-8 h-8 bg-primary-300 hover:bg-primary-400 transition-300 cursor-pointer flex justify-center items-center"
 		>
-			<Icon icon={uiIcons.actions.cancel} />
+			<Icon icon={uiIcons.actions.cancel} className="w-3/5 h-3/5" />
 		</div>
 	);
 }
