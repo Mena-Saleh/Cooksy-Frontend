@@ -12,7 +12,7 @@ export default function DesktopNav() {
 		<header className="w-full bg-white/40 shadow-sm fixed top-0 z-100 backdrop-blur-sm">
 			<nav className="flex items-center justify-between py-4 px-24">
 				{/* Navigation Links */}
-				<div className="flex items-center gap-6 text-sm">
+				<div className="flex items-center gap-6 text-base">
 					<Link
 						to="/"
 						className="text-basic-900 hover:text-secondary-500 transition-300"
