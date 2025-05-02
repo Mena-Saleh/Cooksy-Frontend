@@ -4,9 +4,8 @@ import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { uiIcons } from "../../constants/uiIcons";
 import { useAppSelector } from '../../redux/hooks';
-import InfoForm from '../forms/InfoForm';
-import OverlayPortal from "../common/OverlayPortal";
-
+import FormContainer from "../forms/FormContainer";
+import { FormType } from "../../types/FormType";
 
 type NavProfileItem = {
 	icon: string;
@@ -39,6 +38,10 @@ export default function NavProfile() {
 	const [open, setOpen] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
 	const { isAuthenticated } = useAppSelector((state) => state.auth);
+	const [formType, setFormType] = useState<FormType>(null);
+
+	const openForm = (type: FormType) => setFormType(type);
+	const closeForm = () => setFormType(null);
 
 	useEffect(() => {
 		if (!isAuthenticated) return;
@@ -67,7 +70,12 @@ export default function NavProfile() {
 			{/* Avatar */}
 			<div
 				className="relative w-8 h-8 rounded-full cursor-pointer"
-				onClick={() => setOpen(!open)}
+				onClick={() => {
+					if (!isAuthenticated) {
+						setFormType("info");
+					}
+					setOpen(!open)
+				}}
 			>
 				<img
 					src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
@@ -109,11 +117,13 @@ export default function NavProfile() {
 			</div>
 
 			{/* Not Authenticated: Show InfoForm in overlay */}
-			<OverlayPortal isOpen={open && !isAuthenticated}
-				onClose={() => setOpen(false)}
-			>
-				<InfoForm onClose={() => setOpen(false)} />
-			</OverlayPortal>
+			<FormContainer
+				isOpen={formType !== null && !isAuthenticated}
+				formType={formType}
+				onClose={() => setFormType(null)}
+				setFormType={setFormType}
+			/>
+
 
 		</div>
 	);

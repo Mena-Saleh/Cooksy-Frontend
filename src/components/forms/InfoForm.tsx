@@ -6,8 +6,10 @@ import { uiIcons } from "../../constants/uiIcons";
 
 interface InfoFormProps {
 	onClose: () => void;
+	onLoginClick: () => void;
+	onRegisterClick: () => void;
 }
-export default function InfoForm({ onClose }: InfoFormProps) {
+export default function InfoForm({ onClose, onLoginClick, onRegisterClick }: InfoFormProps) {
 	const { t: tForms } = useTranslation("forms");
 
 	return (
@@ -59,8 +61,8 @@ export default function InfoForm({ onClose }: InfoFormProps) {
 				</div>
 
 				<div className="flex sm:flex-row flex-col w-[180px] sm:w-auto mx-auto justify-center gap-4 mt-8">
-					<Button>{tForms("buttons.login")}</Button>
-					<Button>{tForms("buttons.createAccount")}</Button>
+					<Button onClick={onLoginClick}>{tForms("buttons.login")}</Button>
+					<Button onClick={onRegisterClick}>{tForms("buttons.createAccount")}</Button>
 				</div>
 			</div>
 		</BaseForm>

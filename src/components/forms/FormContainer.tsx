@@ -1,15 +1,22 @@
-import { ReactNode, useEffect, useRef } from 'react';
-import { createPortal } from 'react-dom';
-import clsx from 'clsx';
+import { useRef } from "react";
+import { createPortal } from "react-dom";
+import clsx from "clsx";
+import FormRouter from "./FormRouter";
+import { FormType } from "../../types/FormType";
 
 type OverlayPortalProps = {
-    children: ReactNode;
     isOpen: boolean;
-    onClose?: () => void;
-    className?: string;
+    formType: FormType;
+    onClose: () => void;
+    setFormType: (type: FormType) => void;
 };
 
-export default function OverlayPortal({ children, isOpen, onClose, className }: OverlayPortalProps) {
+export default function FormContainer({
+    isOpen,
+    formType,
+    onClose,
+    setFormType,
+}: OverlayPortalProps) {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const handleClickOutside = (e: React.MouseEvent) => {
@@ -20,6 +27,7 @@ export default function OverlayPortal({ children, isOpen, onClose, className }: 
             onClose?.();
         }
     };
+
 
     return createPortal(
         <div
@@ -32,9 +40,13 @@ export default function OverlayPortal({ children, isOpen, onClose, className }: 
             <div
                 ref={containerRef}
                 onClick={(e) => e.stopPropagation()}
-                className={clsx('transition-500 z-110 flex items-center justify-center', className)}
+                className="transition duration-300 z-110 flex items-center justify-center"
             >
-                {children}
+                <FormRouter
+                    formType={formType}
+                    onClose={onClose}
+                    setFormType={setFormType}
+                />
             </div>
         </div>,
         document.body
