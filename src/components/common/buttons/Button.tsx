@@ -19,7 +19,7 @@ export default function Button({
 			"bg-secondary-500 hover:bg-secondary-600 text-basic-100 font-medium",
 		secondary: "bg-primary-500 hover:bg-primary-600 text-basic-100",
 		outline:
-			"border border-secondary-500 text-secondary-500 hover:bg-secondary-100",
+			"border border-secondary-500 text-basic-900 hover:bg-secondary-100",
 		ghost: "text-secondary-500 hover:underline p-0! text-base!",
 	};
 
