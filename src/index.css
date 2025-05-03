@@ -57,7 +57,7 @@
   }
 
   p {
-    @apply sm:text-base leading-relaxed;
+    @apply text-xs sm:text-sm leading-relaxed;
   }
 
   .input {
@@ -77,5 +77,3 @@
     @apply transition-all duration-700 ease-in-out;
   }
 }
-
-

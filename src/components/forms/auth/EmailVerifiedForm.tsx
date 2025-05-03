@@ -1,21 +1,24 @@
-import BaseForm from "./BaseForm";
+import BaseForm from "../BaseForm";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
-import { uiIcons } from "../../constants/uiIcons";
+import { uiIcons } from "../../../constants/uiIcons";
 
-export default function EmailVerifiedForm() {
+interface EmailVerifiedFormProps {
+	onClose: () => void;
+}
+export default function EmailVerifiedForm({ onClose }: EmailVerifiedFormProps) {
 	const { t: tForms } = useTranslation("forms");
 
 	return (
-		<BaseForm>
+		<BaseForm onClose={onClose}>
 			<div className="text-center space-y-6">
 				<h3 className="text-primary-500">
-					 {tForms("emailVerified.title")}
+					{tForms("emailVerified.title")}
 				</h3>
 
 				<div>
 					<p className="text-basic-900">
-						 {tForms("emailVerified.text")}
+						{tForms("emailVerified.text")}
 					</p>
 
 					<Icon

@@ -46,7 +46,7 @@ export default function RecipeCard({
 
 					{/* Overlay with text */}
 					<div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-500 flex items-center justify-center">
-						<span className="text-basic-100 font-medium text-base sm:text-lg font-pacifico">
+						<span className="text-basic-100 font-medium text-base sm:text-lg font-pacifico select-none">
 							{tHome("viewRecipe")}
 						</span>
 					</div>
