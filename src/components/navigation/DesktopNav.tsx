@@ -47,7 +47,10 @@ export default function DesktopNav() {
 				{/* Right Actions */}
 				<div className="flex items-center gap-6">
 					<NavSearch />
-					<Button>{tNavigation("addRecipe")}</Button>
+					<Link to="add-recipe">
+						<Button>{tNavigation("addRecipe")}</Button>
+					</Link>
+
 					<NavProfile />
 					<NavLang />
 				</div>

@@ -4,6 +4,8 @@ export const uiIcons = {
 		cancel: "iconoir:cancel",
 		check: "lucide:check",
 		magnify: "mdi:magnify",
+		delete: "mingcute:delete-2-line",
+		upload: "solar:upload-linear"
 	},
 	auth: {
 		google: "flat-color-icons:google",
