@@ -12,9 +12,10 @@ import { Register as RegisterModel } from "../../../models/auth/Register";
 
 interface RegisterFormProps {
 	onClose: () => void;
-	onLoginClick?: () => void;
+	onLoginClick: () => void;
+	onRegisterDone: () => void;
 }
-export default function RegisterForm({ onClose, onLoginClick }: RegisterFormProps) {
+export default function RegisterForm({ onClose, onLoginClick, onRegisterDone }: RegisterFormProps) {
 	const { t: tForms } = useTranslation("forms");
 	const dispatch = useAppDispatch();
 
@@ -23,7 +24,6 @@ export default function RegisterForm({ onClose, onLoginClick }: RegisterFormProp
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
-	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 
 	const handleSubmit = async (e: React.FormEvent) => {
@@ -34,7 +34,6 @@ export default function RegisterForm({ onClose, onLoginClick }: RegisterFormProp
 			return;
 		}
 
-		setLoading(true);
 		setError(null);
 
 		const payload: RegisterModel = {
@@ -47,11 +46,9 @@ export default function RegisterForm({ onClose, onLoginClick }: RegisterFormProp
 
 		const response = await registerAPI(payload);
 
-		setLoading(false);
-
 		if (response.success) {
-			dispatch(login(email));
-			onClose();
+			//dispatch(login(email));
+			onRegisterDone();
 		} else {
 			setError(response.message ?? "Registration failed");
 		}
@@ -72,6 +69,7 @@ export default function RegisterForm({ onClose, onLoginClick }: RegisterFormProp
 							className="w-full input"
 							value={firstName}
 							onChange={(e) => setFirstName(e.target.value)}
+							required
 						/>
 						<input
 							type="text"
@@ -79,6 +77,7 @@ export default function RegisterForm({ onClose, onLoginClick }: RegisterFormProp
 							className="w-full input"
 							value={lastName}
 							onChange={(e) => setLastName(e.target.value)}
+							required
 						/>
 					</div>
 
@@ -88,6 +87,7 @@ export default function RegisterForm({ onClose, onLoginClick }: RegisterFormProp
 						className="w-full input"
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
+						required
 					/>
 					<div className="relative">
 						<input
@@ -96,14 +96,8 @@ export default function RegisterForm({ onClose, onLoginClick }: RegisterFormProp
 							className="w-full input pr-10"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
+							required
 						/>
-						{/* Eye Toggle */}
-						<span className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
-							<Icon
-								icon={uiIcons.visibility.eyeClosed}
-								className="w-5 h-5 text-basic-400"
-							/>
-						</span>
 					</div>
 					<div className="relative mb-2">
 						<input
@@ -114,13 +108,8 @@ export default function RegisterForm({ onClose, onLoginClick }: RegisterFormProp
 							className="w-full input pr-10"
 							value={confirmPassword}
 							onChange={(e) => setConfirmPassword(e.target.value)}
+							required
 						/>
-						<span className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
-							<Icon
-								icon={uiIcons.visibility.eyeOpen}
-								className="w-5 h-5 text-basic-900"
-							/>
-						</span>
 					</div>
 
 					{error && <p className="text-red-500 text-sm text-center mt-2">{error}</p>}

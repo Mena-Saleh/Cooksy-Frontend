@@ -3,7 +3,6 @@ import XButton from "../common/buttons/XButton";
 interface BaseFormProps {
 	children: React.ReactNode;
 	onClose?: () => void;
-	onFormSubmit?: (e: React.FormEvent) => void;
 }
 export default function BaseForm({ children, onClose }: BaseFormProps) {
 	return (
