@@ -9,13 +9,15 @@ import InstructionsList from "./InstructionsList";
 import CategorySelector from "./CategorySelector";
 import SharingOptions from "./SharingOptions";
 import Button from "../../common/buttons/Button";
+import { useTranslation } from "react-i18next";
 
 export default function CreateRecipeForm() {
+	const { t: tRecipes } = useTranslation("recipes");
 	return (
 		<div className="mt-40">
 			<div className="sm:px-24 px-4">
 				<UnderlinedHeading
-					text="Create your own recipe"
+					text={tRecipes("create.title")}
 					variant="medium1"
 				/>
 			</div>
@@ -29,7 +31,7 @@ export default function CreateRecipeForm() {
 				<InstructionsList />
 				<CategorySelector />
 				<SharingOptions />
-				<Button className="w-1/5">Post</Button>
+				<Button className="w-1/5">{tRecipes("create.button")}</Button>
 			</form>
 		</div>
 	);

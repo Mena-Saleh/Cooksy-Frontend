@@ -1,31 +1,40 @@
 import Button from "../../common/buttons/Button";
+import { useTranslation } from "react-i18next";
 
 export default function CategorySelector() {
-	const categories = [
-		"Low-calorie",
-		"Low-sugar",
-		"High-fiber",
-		"Low-carb",
-		"High protein",
-		"American",
-		"Mediterranian",
-		"Asian",
-		"Middle-east",
-		"Vegan",
-		"Vegetarian",
-		"Glutenfree",
-		"Christmas",
-		"Thanksgiving",
-		"Easter",
+	const { t: tRecipes } = useTranslation("recipes");
+	const categoryKeys = [
+		"lowCalorie",
+		"lowSugar",
+		"highFiber",
+		"lowCarb",
+		"highProtein",
+		"american",
+		"mediterranian",
+		"asian",
+		"middleEast",
+		"vegan",
+		"vegetarian",
+		"glutenFree",
+		"christmas",
+		"thanksgiving",
+		"easter",
 	];
 
 	return (
 		<section className="flex flex-col gap-4">
-			<label className="mb-1 font-semibold">Add category</label>
+			<label className="mb-1 font-semibold">
+				{tRecipes("create.category.title")}
+			</label>
 			<div className="flex flex-wrap gap-2">
-				{categories.map((category) => (
-				
-					<Button key={category} variant="outline">{category}</Button>
+				{categoryKeys.map((key) => (
+					<Button
+						key={key}
+						variant="outline"
+						className="text-basic-900!"
+					>
+						{tRecipes(`create.category.categories.${key}`)}
+					</Button>
 				))}
 			</div>
 		</section>
