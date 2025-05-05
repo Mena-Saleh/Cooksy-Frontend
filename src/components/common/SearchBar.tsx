@@ -10,7 +10,7 @@ export default function SearchBar() {
 			<input
 				type="text"
 				placeholder={tHome("searchPlaceholder")}
-				className="input border-basic-900 w-full pr-10 px-4 py-2 rounded-full bg-white focus:outline-none transition-300 sm:text-base"
+				className="input w-full pr-10 sm:text-base"
 			/>
 
 			{/* Search Button */}

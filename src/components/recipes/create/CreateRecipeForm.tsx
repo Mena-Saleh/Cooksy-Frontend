@@ -31,7 +31,7 @@ export default function CreateRecipeForm() {
 				<InstructionsList />
 				<CategorySelector />
 				<SharingOptions />
-				<Button className="w-1/5">{tRecipes("create.button")}</Button>
+				<Button className="w-1/5 ">{tRecipes("create.button")}</Button>
 			</form>
 		</div>
 	);

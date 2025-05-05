@@ -3,6 +3,7 @@ import NavBarWrapper from "./components/navigation/NavBarWrapper";
 import HomePage from "./pages/HomePage";
 import Footer from "./components/common/Footer";
 import CreateRecipePage from "./pages/CreateRecipePage";
+import RecipesPage from "./pages/RecipesPage";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -15,6 +16,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<HomePage />} />
 					<Route path="/add-recipe" element={<CreateRecipePage />} />
+					<Route path="/recipes" element={<RecipesPage />} />
 				</Routes>
 			</main>
 
