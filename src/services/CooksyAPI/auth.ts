@@ -13,6 +13,14 @@ export const register = (data: Register): Promise<APIResult<null>> => {
 };
 
 /**
+ * Resend email verification email to a user
+ */
+export const resendVerification = (email: string): Promise<APIResult<null>> => {
+    return handleApiCall(http.post('/api/auth/resend-verification', email));
+};
+
+
+/**
  * Log in a user
  */
 export const login = (data: Login): Promise<APIResult<null>> => {

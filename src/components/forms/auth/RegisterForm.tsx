@@ -47,9 +47,9 @@ export default function RegisterForm({ onClose, onLoginClick, onRegisterDone }: 
 		const response = await registerAPI(payload);
 
 		if (response.success) {
-			//dispatch(login(email));
 			onRegisterDone();
 		} else {
+			console.log(response);
 			setError(response.message ?? "Registration failed");
 		}
 	};
@@ -112,9 +112,9 @@ export default function RegisterForm({ onClose, onLoginClick, onRegisterDone }: 
 						/>
 					</div>
 
-					{error && <p className="text-red-500 text-sm text-center mt-2">{error}</p>}
+					{error && <p className="text-red-500 text-sm text-center mt-2 mb-0">{error}</p>}
 
-					<div className="flex justify-center align-center">
+					<div className="flex justify-center align-center mt-4">
 						<Button type="submit">
 							{tForms("buttons.createAccount")}
 						</Button>
