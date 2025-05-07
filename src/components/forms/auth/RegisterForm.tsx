@@ -44,7 +44,7 @@ export default function RegisterForm({ onClose, onLoginClick, onRegisterDone }: 
 			dispatch(setPendingEmail(data.email));
 			onRegisterDone();
 		} else {
-			setApiError(response.message ?? "The server has encountered an error.");
+			setApiError(`errors.${response.message ?? "serverError"}`);
 		}
 	};
 
@@ -118,7 +118,7 @@ export default function RegisterForm({ onClose, onLoginClick, onRegisterDone }: 
 					</div>
 
 					{apiError && (
-						<ErrorMessage message={tApi(`errors.${apiError}`)} className="text-center mb-0" />
+						<ErrorMessage message={tApi(`${apiError}`)} className="text-center mb-0" />
 					)}
 
 					<div className="flex justify-center mt-4">

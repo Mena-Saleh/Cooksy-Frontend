@@ -13,9 +13,10 @@ interface VerifyEmailFormProps {
 
 export default function ConfirmEmailForm({ onClose }: VerifyEmailFormProps) {
 	const { t: tForms } = useTranslation("forms");
-	const { t: tAuth } = useTranslation("auth");
+	const { t: tApi } = useTranslation("api");
 	const email = useAppSelector((state) => state.auth.userEmail);
 	const [success, setSuccess] = useState<boolean>(false);
+	const [apiError, setApiError] = useState<string | null>(null);
 	const [cooldown, setCooldown] = useState(0);
 	const [hasTried, setHasTried] = useState(false);
 
@@ -28,13 +29,15 @@ export default function ConfirmEmailForm({ onClose }: VerifyEmailFormProps) {
 
 	const handleResend = async () => {
 		if (!email || cooldown > 0) return;
-		setCooldown(5);
+		setCooldown(30);
 		setHasTried(true);
 		const response = await resendVerification({ email });
 		if (response.success) {
 			setSuccess(true);
+			setApiError(null);
 		} else {
 			setSuccess(false);
+			setApiError(`errors.${response.message ?? "serverError"}`);
 		}
 	};
 
@@ -60,14 +63,18 @@ export default function ConfirmEmailForm({ onClose }: VerifyEmailFormProps) {
 				</p>
 
 				{hasTried && (
-					success ? (
-						<p className="text-primary-500 text-xs">
-							{tAuth("confirmEmailForm.successMessage")}
-						</p>
-					) : (
-						<ErrorMessage message={tAuth("confirmEmailForm.errorMessage")} className="m-0" />
-					)
+					<>
+						{success && (
+							<p className="text-primary-500 text-xs">
+								{tApi(`success.verificationResentSuccessfully`)}
+							</p>
+						)}
+						{apiError && (
+							<ErrorMessage message={tApi(`${apiError}`)} className="m-0" />
+						)}
+					</>
 				)}
+
 
 			</div>
 		</BaseForm>

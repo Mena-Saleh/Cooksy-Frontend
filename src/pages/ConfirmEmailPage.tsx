@@ -7,7 +7,8 @@ import UnderlinedHeading from "../components/common/UnderlinedHeading";
 export default function ConfirmEmailPage() {
 	const [searchParams] = useSearchParams();
 	const navigate = useNavigate();
-	const { t: tAuth } = useTranslation("auth");
+	const { t: tConfirmEmail } = useTranslation("confirmEmail");
+	const { t: tApi } = useTranslation("api");
 
 	const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 	const [message, setMessage] = useState<string | null>(null);
@@ -19,7 +20,7 @@ export default function ConfirmEmailPage() {
 
 		if (!userId || !token) {
 			setStatus("error");
-			setMessage(tAuth("confirmEmailPage.invalidParams"));
+			setMessage(tConfirmEmail("invalidParams"));
 			return;
 		}
 
@@ -28,13 +29,13 @@ export default function ConfirmEmailPage() {
 		confirmEmail(userId, token).then((response) => {
 			if (response.success) {
 				setStatus("success");
-				setMessage(tAuth("confirmEmailPage.success"));
+				setMessage(tConfirmEmail("success"));
 			} else {
 				setStatus("error");
-				setMessage(tAuth(response.message ?? "confirmEmailPage.failure"));
+				setMessage(tApi(`errors.${response.message ?? "serverError"}`));
 			}
 		});
-	}, [searchParams, navigate, tAuth]);
+	}, [searchParams, navigate, tConfirmEmail]);
 
 	// Countdown and redirect logic
 	useEffect(() => {
@@ -58,9 +59,9 @@ export default function ConfirmEmailPage() {
 			<div className="flex items-center justify-center">
 				<div className="p-6 flex flex-col">
 					<div className="mb-5">
-						<UnderlinedHeading text={tAuth("confirmEmailPage.title")} variant="medium1"></UnderlinedHeading>
+						<UnderlinedHeading text={tConfirmEmail("title")} variant="medium1"></UnderlinedHeading>
 					</div>
-					{status === "loading" && <p>{tAuth("confirmEmailPage.loading")}</p>}
+					{status === "loading" && <p>{tConfirmEmail("loading")}</p>}
 					{message && (
 						<p className={status === "error" ? "text-warning-500" : "text-primary-500"}>
 							{message}
@@ -68,7 +69,7 @@ export default function ConfirmEmailPage() {
 					)}
 					{status === "success" && (
 						<p className="mt-2 text-sm text-basic-900">
-							{tAuth("confirmEmailPage.redirecting", { seconds: redirectCountdown })}
+							{tConfirmEmail("redirecting", { seconds: redirectCountdown })}
 						</p>
 					)}
 				</div>

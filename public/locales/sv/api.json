@@ -1,6 +1,14 @@
 {
     "errors": {
         "emailTaken": "E-postadressen är redan upptagen.",
-        "passwordMinLen6": "Lösenordet måste vara minst 6 tecken långt."
+        "passwordMinLen6": "Lösenordet måste vara minst 6 tecken långt.",
+        "serverError": "Ett serverfel har inträffat. Försök igen senare.",
+        "userNotFound": "Användaren kunde inte hittas.",
+        "emailAlreadyVerified": "E-postadressen är redan verifierad.",
+        "failed": "Ett fel uppstod vid behandlingen av din begäran."
+    },
+    "success": {
+        "verificationResentSuccessfully": "Verifieringsmejlet har skickats på nytt.",
+        "successful": "Åtgärden genomfördes framgångsrikt."
     }
 }

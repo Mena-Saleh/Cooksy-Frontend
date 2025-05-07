@@ -2,7 +2,7 @@ import http, { handleApiCall } from './base';
 import { APIResult } from '../../models/common/APIResult';
 import { Register } from '../../models/auth/Register';
 import { Login } from '../../models/auth/Login';
-import { Email } from '../../models/auth/ForgotPassword';
+import { Email } from '../../models/auth/Email';
 import { ResetPassword } from '../../models/auth/ResetPassword';
 
 /**
