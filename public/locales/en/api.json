@@ -1,0 +1,6 @@
+{
+    "errors": {
+        "emailTaken": "Email is already taken.",
+        "passwordMinLen6": "Password must be at least 6 characters long."
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "errors": {
+        "emailTaken": "E-postadressen är redan upptagen.",
+        "passwordMinLen6": "Lösenordet måste vara minst 6 tecken långt."
+    }
+}

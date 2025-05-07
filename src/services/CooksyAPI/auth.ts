@@ -2,7 +2,7 @@ import http, { handleApiCall } from './base';
 import { APIResult } from '../../models/common/APIResult';
 import { Register } from '../../models/auth/Register';
 import { Login } from '../../models/auth/Login';
-import { ForgotPassword } from '../../models/auth/ForgotPassword';
+import { Email } from '../../models/auth/ForgotPassword';
 import { ResetPassword } from '../../models/auth/ResetPassword';
 
 /**
@@ -15,8 +15,8 @@ export const register = (data: Register): Promise<APIResult<null>> => {
 /**
  * Resend email verification email to a user
  */
-export const resendVerification = (email: string): Promise<APIResult<null>> => {
-    return handleApiCall(http.post('/api/auth/resend-verification', email));
+export const resendVerification = (data: Email): Promise<APIResult<null>> => {
+    return handleApiCall(http.post('/api/auth/resend-verification', data));
 };
 
 
@@ -37,7 +37,7 @@ export const logout = (): Promise<APIResult<null>> => {
 /**
  * Send forgot password email
  */
-export const forgotPassword = (data: ForgotPassword): Promise<APIResult<null>> => {
+export const forgotPassword = (data: Email): Promise<APIResult<null>> => {
     return handleApiCall(http.post('/api/auth/forgot-password', data));
 };
 
