@@ -34,7 +34,7 @@ export async function handleApiCall<T>(promise: Promise<APIResult<T>>): Promise<
 
         return {
             success: false,
-            message: 'Something went wrong. Please try again later.',
+            message: 'serverError',
             data: undefined,
             errors: [],
         };

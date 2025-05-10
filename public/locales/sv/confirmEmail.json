@@ -1,0 +1,8 @@
+{
+    "title": "E-postbekräftelse",
+    "loading": "Bearbetar...",
+    "success": "Din e-post har bekräftats!",
+    "failure": "Hoppsan! Något gick fel när vi försökte bekräfta din e-post. Försök igen.",
+    "invalidParams": "Hoppsan! Ett fel uppstod när vi försökte bekräfta din e-post. Försök igen.",
+    "redirecting": "Omdirigerar om {{seconds}} sekunder..."
+}

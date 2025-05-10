@@ -2,8 +2,9 @@ import http, { handleApiCall } from './base';
 import { APIResult } from '../../models/common/APIResult';
 import { Register } from '../../models/auth/Register';
 import { Login } from '../../models/auth/Login';
-import { ForgotPassword } from '../../models/auth/ForgotPassword';
+import { Email } from '../../models/auth/Email';
 import { ResetPassword } from '../../models/auth/ResetPassword';
+import { LoggedInUser } from '../../models/auth/LoggedInUser';
 
 /**
  * Register a new user
@@ -11,6 +12,14 @@ import { ResetPassword } from '../../models/auth/ResetPassword';
 export const register = (data: Register): Promise<APIResult<null>> => {
     return handleApiCall(http.post('/api/auth/register', data));
 };
+
+/**
+ * Resend email verification email to a user
+ */
+export const resendVerification = (data: Email): Promise<APIResult<null>> => {
+    return handleApiCall(http.post('/api/auth/resend-verification', data));
+};
+
 
 /**
  * Log in a user
@@ -29,7 +38,7 @@ export const logout = (): Promise<APIResult<null>> => {
 /**
  * Send forgot password email
  */
-export const forgotPassword = (data: ForgotPassword): Promise<APIResult<null>> => {
+export const forgotPassword = (data: Email): Promise<APIResult<null>> => {
     return handleApiCall(http.post('/api/auth/forgot-password', data));
 };
 
@@ -43,7 +52,7 @@ export const resetPassword = (data: ResetPassword): Promise<APIResult<null>> => 
 /**
  * Confirm email with token
  */
-export const confirmEmail = (userId: string, token: string): Promise<APIResult<null>> => {
+export const confirmEmail = (userId: string, token: string): Promise<APIResult<LoggedInUser>> => {
     return handleApiCall(http.get('/api/auth/confirm-email', {
         params: { userId, token }
     }));
@@ -58,4 +67,11 @@ export const getGoogleLoginUrl = (): string => {
 
 export const getFacebookLoginUrl = (): string => {
     return `${import.meta.env.VITE_COOKSY_API_BASE_URL}/api/auth/login/facebook`;
+};
+
+/**
+ * Get the current authenticated user
+ */
+export const getCurrentUser = (): Promise<APIResult<LoggedInUser>> => {
+    return handleApiCall(http.get('/api/auth/me'));
 };
