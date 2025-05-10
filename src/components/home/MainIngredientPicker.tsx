@@ -70,7 +70,7 @@ export default function MainIngredientPicker({
 
 			{/* Show More Button */}
 			<div className="flex items-center justify-end px-6 sm:px-24 ">
-				<Button onClick={onShowMore} className="flex items-center">
+				<Button onClick={onShowMore}>
 					{tHome("showMore")}
 					<Icon icon={uiIcons.nav.chevronRight} className="w-4 h-4" />
 				</Button>

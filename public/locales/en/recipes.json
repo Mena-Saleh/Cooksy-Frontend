@@ -1,0 +1,101 @@
+{
+    "create": {
+        "title": "Create your own recipe",
+        "category": {
+            "title": "Add category",
+            "categories": {
+                "lowCalorie": "Low-calorie",
+                "lowSugar": "Low-sugar",
+                "highFiber": "High-fiber",
+                "lowCarb": "Low-carb",
+                "highProtein": "High protein",
+                "american": "American",
+                "mediterranian": "Mediterranian",
+                "asian": "Asian",
+                "middleEast": "Middle-east",
+                "vegan": "Vegan",
+                "vegetarian": "Vegetarian",
+                "glutenFree": "Glutenfree",
+                "christmas": "Christmas",
+                "thanksgiving": "Thanksgiving",
+                "easter": "Easter"
+            }
+        },
+        "imageUploader": {
+            "chooseFile": "Choose a file",
+            "orDrag": "or drag it here"
+        },
+        "ingredients": {
+            "title": "Add the ingredients",
+            "notFound": "Can’t find your ingredient?",
+            "addNow": "Add it now",
+            "volume": "Volume",
+            "unit": "Unit",
+            "ingredient": "Ingredient",
+            "volumePlaceholder": "e.g. 2.5",
+            "unitPlaceholder": "Select unit",
+            "ingredientPlaceholder": "e.g. Carrots",
+            "units": [
+                "tsp",
+                "tbsp",
+                "cup",
+                "ml",
+                "l",
+                "g",
+                "kg",
+                "oz",
+                "lb",
+                "pinch",
+                "dash",
+                "piece",
+                "slice",
+                "clove",
+                "can",
+                "package"
+            ]
+        },
+        "instructions": {
+            "title": "Instructions",
+            "placeholder": "e.g. Mix the dry ingredients together."
+        },
+        "nutrition": {
+            "title": "Nutrition information",
+            "calculate": "Calculate nutrition value",
+            "protein": "Protein",
+            "carbs": "Carbs",
+            "fat": "Fat",
+            "energy": "Energy",
+            "unit": {
+                "grams": "g",
+                "kjkcal": "kJ/kcal"
+            },
+            "placeholder": "0"
+        },
+        "description": {
+            "title": "Recipe Description",
+            "placeholder": "Write a short description..."
+        },
+        "recipeTitle": {
+            "title": "Recipe Title",
+            "placeholder": "Enter your recipe title"
+        },
+        "servingTime": {
+            "servingsTitle": "Servings",
+            "servingsPlaceholder": "e.g. 4",
+            "timeTitle": "Time (min)",
+            "timePlaceholder": "e.g. 45"
+        },
+        "sharing": {
+            "title": "Sharing options",
+            "private": {
+                "label": "Private",
+                "description": "Not visible for others"
+            },
+            "public": {
+                "label": "Public",
+                "description": "Accessible for all visitors"
+            }
+        },
+        "button": "Post"
+    }
+}

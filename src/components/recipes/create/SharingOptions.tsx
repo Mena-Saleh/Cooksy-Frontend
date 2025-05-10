@@ -1,11 +1,15 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function SharingOptions() {
 	const [selected, setSelected] = useState("public");
+	const { t: tRecipes } = useTranslation("recipes");
 
 	return (
 		<section className="flex flex-col gap-4">
-			<label className="mb-1 font-semibold">Sharing options</label>
+			<label className="mb-1 font-semibold">
+				{tRecipes("create.sharing.title")}
+			</label>
 
 			<div className="flex flex-col gap-3 text-sm">
 				<label className="flex items-center gap-2 cursor-pointer">
@@ -18,7 +22,10 @@ export default function SharingOptions() {
 						className="appearance-none w-4 h-4 rounded-full border-1 border-basic-300 checked:border-basic-300 checked:bg-secondary-500 transition-300 shadow-sm"
 					/>
 					<span>
-						<strong>Private</strong> – Not visible for others
+						<strong>
+							{tRecipes("create.sharing.private.label")}
+						</strong>{" "}
+						– {tRecipes("create.sharing.private.description")}
 					</span>
 				</label>
 
@@ -32,7 +39,10 @@ export default function SharingOptions() {
 						className="appearance-none w-4 h-4 rounded-full border-1 border-basic-300 checked:border-basic-300 checked:bg-secondary-500 transition-300 shadow-sm"
 					/>
 					<span>
-						<strong>Public</strong> – Accessible for all visitors
+						<strong>
+							{tRecipes("create.sharing.public.label")}
+						</strong>{" "}
+						– {tRecipes("create.sharing.public.description")}
 					</span>
 				</label>
 			</div>
