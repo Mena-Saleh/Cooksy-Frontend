@@ -1,13 +1,16 @@
-import BaseForm from "./BaseForm";
-import Button from "../common/buttons/Button";
+import BaseForm from "../BaseForm";
+import Button from "../../common/buttons/Button";
 import { useTranslation } from "react-i18next";
 
+interface VerifyEmailFormProps {
+	onClose: () => void;
 
-export default function VerifyEmailForm() {
+}
+export default function VerifyEmailForm({ onClose }: VerifyEmailFormProps) {
 	const { t: tForms } = useTranslation("forms");
 
 	return (
-		<BaseForm>
+		<BaseForm onClose={onClose}>
 			<div>
 				<div className="text-center space-y-6">
 					<h3 className="text-primary-500">

@@ -1,14 +1,19 @@
-import BaseForm from "./BaseForm";
+import BaseForm from "../BaseForm";
 import { Icon } from "@iconify/react";
-import Button from "../common/buttons/Button";
+import Button from "../../common/buttons/Button";
 import { useTranslation } from "react-i18next";
-import { uiIcons } from "../../constants/uiIcons";
+import { uiIcons } from "../../../constants/uiIcons";
 
-export default function InfoForm() {
+interface InfoFormProps {
+	onClose: () => void;
+	onLoginClick: () => void;
+	onRegisterClick: () => void;
+}
+export default function InfoForm({ onClose, onLoginClick, onRegisterClick }: InfoFormProps) {
 	const { t: tForms } = useTranslation("forms");
 
 	return (
-		<BaseForm>
+		<BaseForm onClose={onClose}>
 			<div className="space-y-6">
 				<div className="text-center">
 					<div className="space-y-2 text-left inline-block">
@@ -34,8 +39,6 @@ export default function InfoForm() {
 
 					<div className="flex items-start gap-4">
 						<div className="bg-primary-100 p-2 w-8 h-8 rounded-full flex items-center justify-center align-center">
-						
-
 							<Icon
 								icon={uiIcons.content.folder}
 								className="text-primary-500"
@@ -56,8 +59,8 @@ export default function InfoForm() {
 				</div>
 
 				<div className="flex sm:flex-row flex-col w-[180px] sm:w-auto mx-auto justify-center gap-4 mt-8">
-					<Button>{tForms("buttons.login")}</Button>
-					<Button>{tForms("buttons.createAccount")}</Button>
+					<Button onClick={onLoginClick}>{tForms("buttons.login")}</Button>
+					<Button onClick={onRegisterClick}>{tForms("buttons.createAccount")}</Button>
 				</div>
 			</div>
 		</BaseForm>

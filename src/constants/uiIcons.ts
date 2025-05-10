@@ -4,6 +4,8 @@ export const uiIcons = {
 		cancel: "iconoir:cancel",
 		check: "lucide:check",
 		magnify: "mdi:magnify",
+		delete: "mingcute:delete-2-line",
+		upload: "solar:upload-linear",
 	},
 	auth: {
 		google: "flat-color-icons:google",
@@ -37,6 +39,8 @@ export const uiIcons = {
 		globe: "material-symbols:globe",
 		chevronDown: "tabler:chevron-down",
 		chevronRight: "tabler:chevron-right",
+		chevronLeft: "tabler:chevron-left",
+		filter: "majesticons:filter-line",
 	},
 	visibility: {
 		eyeOpen: "lucide:eye",

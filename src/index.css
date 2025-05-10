@@ -14,6 +14,7 @@
 
   /* Secondary Colors */
   --color-secondary-100: #ffe0e9;
+  --color-secondary-200: #ffcddc;
   --color-secondary-500: #e12f6b;
   --color-secondary-600: #b12453;
 
@@ -57,11 +58,11 @@
   }
 
   p {
-    @apply sm:text-base leading-relaxed;
+    @apply text-xs sm:text-sm leading-relaxed;
   }
 
   .input {
-    @apply px-4 py-2 rounded-full border border-basic-300 text-xs sm:text-sm outline-none focus:ring-1 focus:ring-primary-500;
+    @apply px-3 py-2 rounded-full border border-basic-300 text-xs sm:text-sm outline-none focus:ring-1 focus-within:border-primary-500 focus-within:ring-primary-500 focus-within:ring-1 transition-all duration-300 ease-in-out;
   }
 
   /* Global transition classes */
@@ -77,5 +78,3 @@
     @apply transition-all duration-700 ease-in-out;
   }
 }
-
-

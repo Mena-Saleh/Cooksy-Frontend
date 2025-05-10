@@ -21,7 +21,7 @@ export default function NavSearch() {
 					onChange={(e) => setQuery(e.target.value)}
 					placeholder={tNavigation("searchPlaceholder")}
 					className={clsx(
-						"input absolute right-0 transition-300 pr-10 shadow-md bg-neutral-50",
+						"input absolute right-0 pr-10 shadow-md",
 						open
 							? "2xl:w-64 w-48 opacity-100 px-4"
 							: "w-0 opacity-0 px-0 pointer-events-none"

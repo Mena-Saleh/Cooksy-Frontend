@@ -27,7 +27,7 @@ interface Recipe {
 }
 
 export default function FeaturedRecipes({ onShowMore }: FeaturedRecipesProps) {
-	const { t: tHome } = useTranslation("home")
+	const { t: tHome } = useTranslation("home");
 	return (
 		<section className="flex flex-col gap-6 mt-[20%] sm:mt-[30%]">
 			<div className="px-6 sm:px-24">
@@ -46,7 +46,7 @@ export default function FeaturedRecipes({ onShowMore }: FeaturedRecipesProps) {
 
 			{/* Show More Button */}
 			<div className="flex items-center justify-end px-6 sm:px-24">
-				<Button onClick={onShowMore} className="flex items-center">
+				<Button onClick={onShowMore}>
 					{tHome("showMore")}
 					<Icon icon={uiIcons.nav.chevronRight} className="w-4 h-4" />
 				</Button>

@@ -1,0 +1,112 @@
+{
+    "title": "Filter",
+    "sections": {
+        "calories": {
+            "title": "Kalorier (per portion)",
+            "options": {
+                "<100": "< 100 kcal",
+                "100–200": "100–200 kcal",
+                "200–300": "200–300 kcal",
+                "400–500": "400–500 kcal",
+                "500–600": "500–600 kcal",
+                "600+": "600+ kcal"
+            }
+        },
+        "time": {
+            "title": "Tid",
+            "options": {
+                "0–30": "0–30 min",
+                "30–45": "30–45 min",
+                "45–60": "45–60 min",
+                "60–90": "60–90 min",
+                "90+": "90+ min"
+            }
+        },
+        "mainCategory": {
+            "title": "Huvudkategori",
+            "options": {
+                "Breakfast": "Frukost",
+                "Drinks": "Dryck",
+                "Meat": "Kött",
+                "Chicken": "Kyckling",
+                "Fish": "Fisk",
+                "Seafood": "Skaldjur",
+                "Vegetarian": "Vegetarisk",
+                "Vegan": "Vegansk"
+            }
+        },
+        "mealType": {
+            "title": "Måltidstyp",
+            "options": {
+                "Appetizer": "Förrätt",
+                "Main Course": "Huvudrätt",
+                "Dessert": "Efterrätt",
+                "Snack": "Mellanmål",
+                "Brunch": "Brunch",
+                "Side dish": "Sidorätt",
+                "Soup": "Soppa",
+                "Buffet": "Buffé"
+            }
+        },
+        "proteinType": {
+            "title": "Proteintyp",
+            "options": {
+                "Chicken": "Kyckling",
+                "Beef": "Nötkött",
+                "Pork": "Fläsk",
+                "Lamb": "Lamm",
+                "Seafood": "Skaldjur",
+                "Eggs": "Ägg",
+                "Plant Based": "Växtbaserat",
+                "Legumes": "Baljväxter"
+            }
+        },
+        "without": {
+            "title": "Utan följande",
+            "options": {
+                "Fish": "Fisk",
+                "Onion": "Lök",
+                "Lactose": "Laktos",
+                "Peanuts": "Jordnötter",
+                "Milk Protein": "Mjölkprotein",
+                "Mustard Seeds": "SENAP",
+                "Wheat": "Vete",
+                "Sugar": "Socker",
+                "Soy": "Soja",
+                "Tree Nuts": "Nötter",
+                "Vegetables": "Grönsaker",
+                "Yogurt": "Yoghurt"
+            }
+        },
+        "ingredient": {
+            "title": "Ingrediens",
+            "options": {
+                "Bacon": "Bacon",
+                "Beef Tenderloin": "Oxfilé",
+                "Turkey": "Kalkon",
+                "Sausage": "Korv",
+                "Pork Chop": "Fläskkotlett",
+                "Minced Meat": "Färs",
+                "Chicken": "Kyckling",
+                "Lamb": "Lamm",
+                "Mushroom": "Svamp",
+                "Tuna": "Tonfisk",
+                "Shrimp": "Räkor"
+            }
+        },
+        "cuisine": {
+            "title": "Världskök",
+            "options": {
+                "Africa": "Afrika",
+                "America": "Amerika",
+                "Asia": "Asien",
+                "France": "Frankrike",
+                "Italy": "Italien",
+                "Sweden": "Sverige",
+                "Middle East": "Mellanöstern",
+                "Mexico": "Mexiko",
+                "Spain": "Spanien"
+            }
+        }
+    }
+}
