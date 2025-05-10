@@ -1,0 +1,11 @@
+{
+    "sortBy": {
+        "label": "Sort by",
+        "mostPopular": "Most Popular",
+        "newest": "Newest",
+        "totalTime": "Total Time",
+        "rating": "Highest Rated",
+        "alphabetical": "A–Z",
+        "reverseAlphabetical": "Z–A"
+    }
+}

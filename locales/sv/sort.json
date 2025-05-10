@@ -1,0 +1,11 @@
+{
+    "sortBy": {
+        "label": "Sortera efter",
+        "mostPopular": "Mest populära",
+        "newest": "Nyast",
+        "totalTime": "Total tid",
+        "rating": "Högst betyg",
+        "alphabetical": "A–Ö",
+        "reverseAlphabetical": "Ö–A"
+    }
+}

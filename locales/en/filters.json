@@ -1,0 +1,112 @@
+{
+    "title": "Filter",
+    "sections": {
+        "calories": {
+            "title": "Calories (per portion)",
+            "options": {
+                "<100": "< 100 kcal",
+                "100–200": "100–200 kcal",
+                "200–300": "200–300 kcal",
+                "400–500": "400–500 kcal",
+                "500–600": "500–600 kcal",
+                "600+": "600+ kcal"
+            }
+        },
+        "time": {
+            "title": "Time",
+            "options": {
+                "0–30": "0–30 min",
+                "30–45": "30–45 min",
+                "45–60": "45–60 min",
+                "60–90": "60–90 min",
+                "90+": "90+ min"
+            }
+        },
+        "mainCategory": {
+            "title": "Main category",
+            "options": {
+                "Breakfast": "Breakfast",
+                "Drinks": "Drinks",
+                "Meat": "Meat",
+                "Chicken": "Chicken",
+                "Fish": "Fish",
+                "Seafood": "Seafood",
+                "Vegetarian": "Vegetarian",
+                "Vegan": "Vegan"
+            }
+        },
+        "mealType": {
+            "title": "Meal type",
+            "options": {
+                "Appetizer": "Appetizer",
+                "Main Course": "Main Course",
+                "Dessert": "Dessert",
+                "Snack": "Snack",
+                "Brunch": "Brunch",
+                "Side dish": "Side dish",
+                "Soup": "Soup",
+                "Buffet": "Buffet"
+            }
+        },
+        "proteinType": {
+            "title": "Protein Type",
+            "options": {
+                "Chicken": "Chicken",
+                "Beef": "Beef",
+                "Pork": "Pork",
+                "Lamb": "Lamb",
+                "Seafood": "Seafood",
+                "Eggs": "Eggs",
+                "Plant Based": "Plant Based",
+                "Legumes": "Legumes"
+            }
+        },
+        "without": {
+            "title": "Keep recipes without",
+            "options": {
+                "Fish": "Fish",
+                "Onion": "Onion",
+                "Lactose": "Lactose",
+                "Peanuts": "Peanuts",
+                "Milk Protein": "Milk Protein",
+                "Mustard Seeds": "Mustard Seeds",
+                "Wheat": "Wheat",
+                "Sugar": "Sugar",
+                "Soy": "Soy",
+                "Tree Nuts": "Tree Nuts",
+                "Vegetables": "Vegetables",
+                "Yogurt": "Yogurt"
+            }
+        },
+        "ingredient": {
+            "title": "Ingredient",
+            "options": {
+                "Bacon": "Bacon",
+                "Beef Tenderloin": "Beef Tenderloin",
+                "Turkey": "Turkey",
+                "Sausage": "Sausage",
+                "Pork Chop": "Pork Chop",
+                "Minced Meat": "Minced Meat",
+                "Chicken": "Chicken",
+                "Lamb": "Lamb",
+                "Mushroom": "Mushroom",
+                "Tuna": "Tuna",
+                "Shrimp": "Shrimp"
+            }
+        },
+        "cuisine": {
+            "title": "World Cuisine",
+            "options": {
+                "Africa": "Africa",
+                "America": "America",
+                "Asia": "Asia",
+                "France": "France",
+                "Italy": "Italy",
+                "Sweden": "Sweden",
+                "Middle East": "Middle East",
+                "Mexico": "Mexico",
+                "Spain": "Spain"
+            }
+        }
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "create": {
+        "title": "Skapa ditt eget recept",
+        "category": {
+            "title": "Lägg till kategori",
+            "categories": {
+                "lowCalorie": "Lågkalori",
+                "lowSugar": "Lågsocker",
+                "highFiber": "Fiberrik",
+                "lowCarb": "Lågkolhydrat",
+                "highProtein": "Hög proteinhalt",
+                "american": "Amerikansk",
+                "mediterranian": "Medelhavskost",
+                "asian": "Asiatisk",
+                "middleEast": "Mellanöstern",
+                "vegan": "Vegan",
+                "vegetarian": "Vegetarisk",
+                "glutenFree": "Glutenfri",
+                "christmas": "Jul",
+                "thanksgiving": "Thanksgiving",
+                "easter": "Påsk"
+            }
+        },
+        "imageUploader": {
+            "chooseFile": "Välj en fil",
+            "orDrag": "eller dra den hit"
+        },
+        "ingredients": {
+            "title": "Lägg till ingredienser",
+            "notFound": "Hittar du inte din ingrediens?",
+            "addNow": "Lägg till den nu",
+            "volume": "Volym",
+            "unit": "Enhet",
+            "ingredient": "Ingrediens",
+            "volumePlaceholder": "t.ex. 2,5",
+            "unitPlaceholder": "Välj enhet",
+            "ingredientPlaceholder": "t.ex. Morötter",
+            "units": [
+                "tsk",
+                "msk",
+                "kopp",
+                "ml",
+                "l",
+                "g",
+                "kg",
+                "oz",
+                "lb",
+                "nypa",
+                "skvätt",
+                "styck",
+                "skiva",
+                "klyfta",
+                "burk",
+                "förpackning"
+            ]
+        },
+        "instructions": {
+            "title": "Instruktioner",
+            "placeholder": "t.ex. Blanda de torra ingredienserna."
+        },
+        "nutrition": {
+            "title": "Näringsinformation",
+            "calculate": "Beräkna näringsvärde",
+            "protein": "Protein",
+            "carbs": "Kolhydrater",
+            "fat": "Fett",
+            "energy": "Energi",
+            "unit": {
+                "grams": "g",
+                "kjkcal": "kJ/kcal"
+            },
+            "placeholder": "0"
+        },
+        "description": {
+            "title": "Receptbeskrivning",
+            "placeholder": "Skriv en kort beskrivning..."
+        },
+        "recipeTitle": {
+            "title": "Recepttitel",
+            "placeholder": "Ange receptets titel"
+        },
+        "servingTime": {
+            "servingsTitle": "Portioner",
+            "servingsPlaceholder": "t.ex. 4",
+            "timeTitle": "Tid (min)",
+            "timePlaceholder": "t.ex. 45"
+        },
+        "sharing": {
+            "title": "Delningsalternativ",
+            "private": {
+                "label": "Privat",
+                "description": "Inte synlig för andra"
+            },
+            "public": {
+                "label": "Offentlig",
+                "description": "Tillgänglig för alla besökare"
+            }
+        },
+        "button": "Publicera"
+    }
+}

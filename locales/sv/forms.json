@@ -34,7 +34,7 @@
         "title": "Din e-post har verifierats",
         "text": "Ditt konto har aktiverats. Du kan nu logga in och få full tillgång till alla funktioner och personligt innehåll."
     },
-    "verifyEmail": {
+    "confirmEmail": {
         "title": "Bekräfta din e-post",
         "text": "Vi har skickat en verifieringslänk till din e-post. Kontrollera din inkorg och klicka på länken för att aktivera ditt konto.",
         "note": "Fick du inte mejlet? Kontrollera skräpposten eller",

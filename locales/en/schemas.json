@@ -1,0 +1,9 @@
+{
+    "required": "Required",
+    "invalidEmail": "Invalid email",
+    "minPassword": "Minimum 6 characters",
+    "uppercase": "At least one uppercase letter",
+    "number": "At least one number",
+    "special": "At least one special character",
+    "passwordMismatch": "Passwords do not match"
+}

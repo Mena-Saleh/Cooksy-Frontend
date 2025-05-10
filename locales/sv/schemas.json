@@ -1,0 +1,9 @@
+{
+    "required": "Obligatoriskt",
+    "invalidEmail": "Ogiltig e-postadress",
+    "minPassword": "Minst 6 tecken",
+    "uppercase": "Minst en versal",
+    "number": "Minst en siffra",
+    "special": "Minst ett specialtecken",
+    "passwordMismatch": "Lösenorden matchar inte"
+}

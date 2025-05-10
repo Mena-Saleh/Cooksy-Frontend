@@ -33,7 +33,7 @@
         "title": "Your email has been verified",
         "text": "Your account has been successfully activated. You can now log in and enjoy full access to all features and personalized content."
     },
-    "verifyEmail": {
+    "confirmEmail": {
         "title": "Verify your email",
         "text": "We've sent a verification link to your email. Please check your inbox and click the link to activate your account.",
         "note": "Didn't get the email? Check your spam folder or",
