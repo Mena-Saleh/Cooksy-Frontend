@@ -46,6 +46,26 @@ export const uiIcons = {
 		eyeOpen: "lucide:eye",
 		eyeClosed: "lucide:eye-off",
 	},
+	badges: {
+		topContributor: "fluent:star-add-24-filled",
+		recipeVeteran: "mdi:crown",
+		earlyAdopter: "mdi:rocket-launch",
+		firstRecipe: "material-symbols:flag",
+		uploadStreak: "mdi:calendar-range",
+		topRated: "mdi:star-check",
+		mostFavorited: "mdi:heart-multiple",
+		commentHero: "mdi:comment-multiple-outline",
+		communityHelper: "mdi:account-heart",
+		trending: "mdi:trending-up",
+		viral: "mdi:fire",
+		fusionMaster: "mdi:chef-hat",
+		photogenic: "mdi:camera",
+		onePot: "mdi:pot-steam-outline",
+		mealPrep: "mdi:clock-outline",
+		holidayHero: "mdi:pine-tree",
+		dessertWizard: "mdi:cake-variant",
+		plantBased: "mdi:leaf",
+	},
 } as const;
 
 export type UiIconKeys = keyof typeof uiIcons;
