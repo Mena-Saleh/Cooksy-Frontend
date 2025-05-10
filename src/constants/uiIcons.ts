@@ -39,6 +39,7 @@ export const uiIcons = {
 		globe: "material-symbols:globe",
 		chevronDown: "tabler:chevron-down",
 		chevronRight: "tabler:chevron-right",
+		chevronLeft: "tabler:chevron-left",
 		filter: "majesticons:filter-line",
 	},
 	visibility: {

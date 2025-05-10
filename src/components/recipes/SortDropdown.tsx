@@ -19,12 +19,12 @@ export default function SortDropdown({
 	const [open, setOpen] = useState(false);
 	const { t: tSort } = useTranslation("sort");
 	return (
-		<div className="relative inline-block text-left">
-			<div className="w-64">
+		<div className="relative">
+			<div className="w-auto sm:block flex justify-end">
 				<Button
 					onClick={() => setOpen(!open)}
 					variant="outline"
-					className="w-full border-primary-500! text-basic-900! hover:bg-primary-100! text-nowrap"
+					className="w-auto border-primary-500! text-basic-900! hover:bg-primary-100! text-nowrap"
 				>
 					{tSort("sortBy.label")}: {value}
 					<Icon icon={uiIcons.nav.chevronDown}></Icon>
@@ -32,7 +32,7 @@ export default function SortDropdown({
 			</div>
 			<div
 				className={clsx(
-					"relative sm:absolute sm:left-0 right-[-12px] mt-2 w-full bg-white rounded-xl shadow-md border border-basic-100 z-50 transition-300 ",
+					"relative sm:absolute sm:left-0 right-[-12px] mt-2 w-full bg-white rounded-xl shadow-md border border-basic-100 z-50 transition-300",
 					open
 						? "opacity-100 translate-y-0"
 						: "opacity-0 -translate-y-4 pointer-events-none"

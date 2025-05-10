@@ -12,6 +12,8 @@ function App() {
 		<Router basename="/Cooksy-Frontend/">
 			<NavBarWrapper />
 
+		
+
 			<main>
 				<Routes>
 					<Route path="/" element={<HomePage />} />

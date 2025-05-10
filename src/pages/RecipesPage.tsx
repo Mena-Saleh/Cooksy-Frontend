@@ -2,6 +2,7 @@ import FilterBar from "../components/recipes/FilterBar";
 import RecipeGrid from "../components/recipes/RecipeGrid";
 import { useState } from "react";
 import clsx from "clsx";
+import UnderlinedHeading from "../components/common/UnderlinedHeading";
 
 export default function RecipesPage() {
 	const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -36,7 +37,13 @@ export default function RecipesPage() {
 			</div>
 
 			{/* Main content */}
-			<RecipeGrid onOpenFilter={() => setIsFilterOpen(true)} />
+			<div className="sm:mt-40 px-4 sm:px-24">
+				<div className="my-10">
+					<UnderlinedHeading text="Recipes" variant="small1" />
+				</div>
+
+				<RecipeGrid onOpenFilter={() => setIsFilterOpen(true)} />
+			</div>
 		</div>
 	);
 }

@@ -1,62 +1,28 @@
 import { useState } from "react";
-import Button from "../common/buttons/Button";
-import { uiIcons } from "../../constants/uiIcons";
-import { Icon } from "@iconify/react";
 import RecipeCard from "./RecipeCard";
 import { dummyRecipes } from "../../constants/dummyRecipes";
-import SearchBar from "../common/SearchBar";
-import SortDropdown from "./SortDropdown";
-import { useTranslation } from "react-i18next";
+import Pagination from "../common/Pagination";
+import DesktopSearchContainer from "../common/DesktopSearchContainer";
+import MobileSearchContainer from "../common/MobileSearchContainer";
 
 interface RecipeGridProps {
 	onOpenFilter: () => void;
 }
 
-const sortKeys = [
-	"mostPopular",
-	"newest",
-	"totalTime",
-	"rating",
-	"alphabetical",
-	"reverseAlphabetical",
-];
-
 export default function RecipeGrid({ onOpenFilter }: RecipeGridProps) {
-	const [sortValue, setSortValue] = useState("mostPopular");
-	const { t: tSort } = useTranslation("sort");
+	const [page, setPage] = useState(1);
 
 	return (
-		<div className="sm:mt-40 px-4 mx-auto sm:px-24">
-			{/* Top Controls */}
-			<div className="flex flex-col lg:flex-row justify-between items-stretch gap-4 mb-8">
-				{/* Filter Button */}
-				<div className="flex justify-start">
-					<Button onClick={onOpenFilter} className="gap-2 px-4 py-2">
-						<Icon icon={uiIcons.nav.filter} />
-						Filter
-					</Button>
-				</div>
-
-				{/* Search Bar */}
-				<div className="w-1/2">
-					<SearchBar />
-				</div>
-
-				{/* Sort By Dropdown */}
-				<div className="flex justify-end">
-					<SortDropdown
-						value={tSort(`sortBy.${sortValue}`)}
-						options={sortKeys.map((key) => ({
-							label: tSort(`sortBy.${key}`),
-							key,
-						}))}
-						onChange={(key) => setSortValue(key)}
-					/>
-				</div>
+		<>
+			<div className="hidden md:block">
+				<DesktopSearchContainer onOpenFilter={onOpenFilter} />
+			</div>
+			<div className="block md:hidden">
+				<MobileSearchContainer onOpenFilter={onOpenFilter} />
 			</div>
 
 			{/* Recipe Grid */}
-			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+			<div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-8 place-content-center place-items-center w-full max-w-fit mx-auto">
 				{dummyRecipes.map((recipe) => (
 					<RecipeCard
 						key={recipe.id}
@@ -71,6 +37,13 @@ export default function RecipeGrid({ onOpenFilter }: RecipeGridProps) {
 					/>
 				))}
 			</div>
-		</div>
+			<div className="my-10">
+				<Pagination
+					currentPage={page}
+					totalPages={543}
+					onPageChange={setPage}
+				/>
+			</div>
+		</>
 	);
 }
