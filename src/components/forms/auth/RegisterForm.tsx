@@ -5,7 +5,7 @@ import OAuthButton from "../../common/buttons/OAuthButton";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
-import { register as registerAPI } from "../../../services/CooksyAPI/auth";
+import { register as registerApi } from "../../../services/CooksyAPI/auth";
 import { registerSchema } from "../../../schemas/registerSchema";
 import { useState } from "react";
 import { z } from "zod";
@@ -37,11 +37,11 @@ export default function RegisterForm({ onClose, onLoginClick, onRegisterDone }: 
 		resolver: zodResolver(registerSchema)
 	});
 
-	const onSubmit = async (data: RegisterFormData) => {
-		const response = await registerAPI(data);
+	const onSubmit = async (registerData: RegisterFormData) => {
+		const response = await registerApi(registerData);
 		if (response.success) {
 			reset();
-			dispatch(setPendingEmail(data.email));
+			dispatch(setPendingEmail(registerData.email));
 			onRegisterDone();
 		} else {
 			setApiError(`errors.${response.message ?? "serverError"}`);

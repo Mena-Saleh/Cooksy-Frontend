@@ -5,7 +5,8 @@
         "serverError": "Ett serverfel har inträffat. Försök igen senare.",
         "userNotFound": "Användaren kunde inte hittas.",
         "emailAlreadyVerified": "E-postadressen är redan verifierad.",
-        "failed": "Ett fel uppstod vid behandlingen av din begäran."
+        "failed": "Ett fel uppstod vid behandlingen av din begäran.",
+        "invalidCredentials": "Ogiltig e-postadress eller lösenord."
     },
     "success": {
         "verificationResentSuccessfully": "Verifieringsmejlet har skickats på nytt.",

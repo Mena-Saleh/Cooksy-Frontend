@@ -3,9 +3,12 @@ import { Icon } from "@iconify/react";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { uiIcons } from "../../constants/uiIcons";
-import { useAppSelector } from '../../redux/hooks';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import AuthFormContainer from "../forms/auth/AuthFormContainer";
 import { FormType } from "../../types/FormType";
+import { logout as logoutApi } from '../../services/CooksyAPI/auth';
+import { logout as logoutRedux } from '../../redux/slices/authSlice';
+import { getInitials } from '../../utils/getInitials';
 
 type NavProfileItem = {
 	icon: string;
@@ -37,11 +40,15 @@ export default function NavProfile() {
 	const { t: tNavigation } = useTranslation("navigation");
 	const [open, setOpen] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
-	const { isAuthenticated } = useAppSelector((state) => state.auth);
+	const { isAuthenticated, userFirstName, userLastName } = useAppSelector((state) => state.auth);
 	const [formType, setFormType] = useState<FormType>(null);
+	const dispatch = useAppDispatch();
 
 	useEffect(() => {
 		if (!isAuthenticated) return;
+
+		setOpen(false);
+		setFormType(null);
 
 		function handleClickOutside(e: MouseEvent) {
 			if (
@@ -54,13 +61,19 @@ export default function NavProfile() {
 		document.addEventListener("mousedown", handleClickOutside);
 		return () =>
 			document.removeEventListener("mousedown", handleClickOutside);
-	}, []);
+	}, [isAuthenticated]);
+
+	const handleLogout = async () => {
+		await logoutApi();
+		dispatch(logoutRedux());
+		setOpen(false);
+	};
+
 
 	// Find notification badge
 	const notificationItem = icons.find(
 		(item) => item.label === "notifications"
 	);
-
 
 	return (
 		<div className="relative" ref={dropdownRef}>
@@ -75,12 +88,17 @@ export default function NavProfile() {
 				}}
 			>
 				{isAuthenticated ?
-					<img
-						src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
-						alt="User avatar"
-						className="w-full h-full rounded-full object-cover"
-					/>
-
+					userFirstName || userLastName ? (
+						<div className={`w-full h-full flex text-sm rounded-full flex items-center justify-center text-white select-none bg-basic-900`}>
+							{getInitials(userFirstName, userLastName)}
+						</div>
+					) : (
+						<img
+							src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
+							alt="User avatar"
+							className="w-full h-full rounded-full object-cover"
+						/>
+					)
 					:
 					< Icon icon="mingcute:user-4-fill" className="w-full h-full text-secondary-500"></Icon>
 
@@ -105,6 +123,7 @@ export default function NavProfile() {
 					<div
 						key={index}
 						className="flex items-center gap-3 px-4 py-2 text-sm text-basic-900 hover:bg-primary-100 cursor-pointer rounded-xl transition-300"
+						onClick={label === "logout" ? handleLogout : undefined}
 					>
 						<Icon icon={icon} className="w-5 h-5" />
 						<span className="flex-1">
@@ -130,5 +149,4 @@ export default function NavProfile() {
 
 		</div >
 	);
-
 }

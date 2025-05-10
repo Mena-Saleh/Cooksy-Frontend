@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { confirmEmail } from "../services/CooksyAPI/auth";
+import { confirmEmail as confirmEmailApi } from "../services/CooksyAPI/auth";
 import UnderlinedHeading from "../components/common/UnderlinedHeading";
+import { useAppDispatch } from "../redux/hooks";
+import { login as loginRedux } from "../redux/slices/authSlice";
+import { LoggedInUser } from "../models/auth/LoggedInUser";
 
 export default function ConfirmEmailPage() {
 	const [searchParams] = useSearchParams();
 	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
 	const { t: tConfirmEmail } = useTranslation("confirmEmail");
 	const { t: tApi } = useTranslation("api");
 
@@ -14,6 +18,7 @@ export default function ConfirmEmailPage() {
 	const [message, setMessage] = useState<string | null>(null);
 	const [redirectCountdown, setRedirectCountdown] = useState(5);
 
+	// Confirm email request and dispatch login action
 	useEffect(() => {
 		const userId = searchParams.get("userId");
 		const token = searchParams.get("token");
@@ -26,18 +31,26 @@ export default function ConfirmEmailPage() {
 
 		setStatus("loading");
 
-		confirmEmail(userId, token).then((response) => {
+		confirmEmailApi(userId, token).then((response) => {
 			if (response.success) {
 				setStatus("success");
 				setMessage(tConfirmEmail("success"));
+				if (!response.data) {
+					setStatus("error");
+					setMessage(tApi("errors.serverError"));
+					return;
+				}
+
+				const loggedInUser: LoggedInUser = response.data;
+				dispatch(loginRedux(loggedInUser));
 			} else {
 				setStatus("error");
 				setMessage(tApi(`errors.${response.message ?? "serverError"}`));
 			}
 		});
-	}, [searchParams, navigate, tConfirmEmail]);
+	}, [searchParams, navigate, tConfirmEmail, dispatch]);
 
-	// Countdown and redirect logic
+	// Countdown and redirect logic only if email is confirmed successfully
 	useEffect(() => {
 		if (status !== "success") return;
 
