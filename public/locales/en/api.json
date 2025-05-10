@@ -1,0 +1,15 @@
+{
+    "errors": {
+        "emailTaken": "This email address is already in use.",
+        "passwordMinLen6": "Password must be at least 6 characters long.",
+        "serverError": "A server error occurred. Please try again later.",
+        "userNotFound": "User could not be found.",
+        "emailAlreadyVerified": "The email address is already verified.",
+        "failed": "An error occurred while processing your request.",
+        "invalidCredentials": "Invalid email or password."
+    },
+    "success": {
+        "verificationResentSuccessfully": "Verification email has been resent.",
+        "successful:": "Operation was successful."
+    }
+}

@@ -3,7 +3,7 @@ import RegisterForm from "./RegisterForm";
 import ForgotPasswordForm from "./ForgotPasswordForm";
 import ResetLinkSentForm from "./ResetLinkSentForm";
 import NewPasswordForm from "./NewPasswordForm";
-import VerifyEmailForm from "./VerifyEmailForm";
+import ConfirmEmailForm from "./ConfirmEmailForm";
 import EmailVerifiedForm from "./EmailVerifiedForm";
 import InfoForm from "./InfoForm";
 import { FormType } from "../../../types/FormType";
@@ -45,7 +45,7 @@ export default function AuthFormRouter({ formType, onClose, setFormType }: {
         case "newPassword":
             return <NewPasswordForm onClose={onClose} />;
         case "verifyEmail":
-            return <VerifyEmailForm onClose={onClose} />;
+            return <ConfirmEmailForm onClose={onClose} />;
         case "emailVerified":
             return <EmailVerifiedForm onClose={onClose} />;
         default:
