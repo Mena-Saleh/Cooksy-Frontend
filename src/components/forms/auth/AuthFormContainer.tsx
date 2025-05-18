@@ -33,7 +33,7 @@ export default function AuthFormContainer({
         <div
             onClick={handleClickOutside}
             className={clsx(
-                "fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-black/20 transition-300 z-100",
+                "fixed inset-0 flex items-center justify-center backdrop-blur-xs bg-black/20 transition-300 z-100",
                 isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
             )}
         >
