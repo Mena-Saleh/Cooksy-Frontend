@@ -12,33 +12,34 @@ interface TopContributorsProps {
 const dummyContributors = [
 	{
 		rank: 1,
-		imageUrl: "https://randomuser.me/api/portraits/men/1.jpg",
+		imageUrl: "https://i.pravatar.cc/512?img=13",
 		name: "Alex Cook",
 		recipeCount: 32,
 		followerCount: 1250,
 	},
 	{
 		rank: 2,
-		imageUrl: "https://randomuser.me/api/portraits/women/2.jpg",
+		imageUrl: "https://i.pravatar.cc/512?img=9",
 		name: "Sara Spoon",
 		recipeCount: 28,
 		followerCount: 1100,
 	},
 	{
 		rank: 3,
-		imageUrl: "https://randomuser.me/api/portraits/men/3.jpg",
+		imageUrl: "https://i.pravatar.cc/512?img=12",
 		name: "John Fry",
 		recipeCount: 25,
 		followerCount: 980,
 	},
 	{
 		rank: 4,
-		imageUrl: "https://randomuser.me/api/portraits/women/4.jpg",
+		imageUrl: "https://i.pravatar.cc/512?img=5",
 		name: "Emma Whisk",
 		recipeCount: 22,
 		followerCount: 920,
 	},
 ];
+
 
 export default function TopContributors({ onShowMore }: TopContributorsProps) {
 	const { t: tHome } = useTranslation("home");
