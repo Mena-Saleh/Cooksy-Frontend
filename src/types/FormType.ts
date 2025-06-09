@@ -7,4 +7,5 @@ export type FormType =
     | "newPassword"
     | "emailVerified"
     | "verifyEmail"
+    | "passwordResetSuccessfully"
     | null;
