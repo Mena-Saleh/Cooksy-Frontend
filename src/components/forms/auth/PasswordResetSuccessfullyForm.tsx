@@ -14,7 +14,7 @@ export default function PasswordResetSuccessfullyForm({ onClose, showCloseButton
 
 	setTimeout(() => {
 		navigate("/");
-	}, 2000);
+	}, 3000);
 
 
 	return (
