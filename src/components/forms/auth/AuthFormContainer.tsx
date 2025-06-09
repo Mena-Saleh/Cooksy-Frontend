@@ -4,25 +4,22 @@ import clsx from "clsx";
 import AuthFormRouter from "./AuthFormRouter";
 import { FormType } from "../../../types/FormType";
 
-type OverlayPortalProps = {
+interface OverlayPortalProps {
     isOpen: boolean;
     formType: FormType;
     onClose: () => void;
     setFormType: (type: FormType) => void;
+    showCloseButton?: boolean;
 };
 
-export default function AuthFormContainer({
-    isOpen,
-    formType,
-    onClose,
-    setFormType,
-}: OverlayPortalProps) {
+export default function AuthFormContainer({ isOpen, formType, onClose, setFormType, showCloseButton = true }: OverlayPortalProps) {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const handleClickOutside = (e: React.MouseEvent) => {
         if (
             containerRef.current &&
             !containerRef.current.contains(e.target as Node)
+            && showCloseButton
         ) {
             onClose?.();
         }
@@ -46,6 +43,7 @@ export default function AuthFormContainer({
                     formType={formType}
                     onClose={onClose}
                     setFormType={setFormType}
+                    showCloseButton={showCloseButton}
                 />
             </div>
         </div>,

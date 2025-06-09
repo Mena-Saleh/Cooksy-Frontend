@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 export default function Footer() {
 	const { t: tFooter } = useTranslation("footer")
 	return (
-		<footer className="border-t border-basic-900/10 text-xs px-6 lg:px-24 pt-24 pb-36 flex  lg:gap-24 flex-col lg:flex-row lg:text-sm">
+		<footer className="border-t border-basic-900/10 text-xs px-6 lg:px-24 pt-24 pb-36 flex  lg:gap-24 flex-col lg:flex-row lg:text-sm  bg-white/40 backdrop-blur-sm">
 			{/* Navigation Links */}
 			<div className="flex mb-20 lg:mb-0 lg:w-[50%] gap-[10%] justify-evenly text-nowrap">
 				<div className="flex flex-col gap-2">

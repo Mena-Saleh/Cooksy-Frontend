@@ -7,21 +7,22 @@ import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 import ForgotPasswordForm from "./ForgotPasswordForm";
 import ResetLinkSentForm from "./ResetLinkSentForm";
-import NewPasswordForm from "./NewPasswordForm";
+import ResetPasswordForm from "./ResetPasswordForm";
 import ConfirmEmailForm from "./ConfirmEmailForm";
 import EmailVerifiedForm from "./EmailVerifiedForm";
+import PasswordResetSuccessfullyForm from "./PasswordResetSuccessfullyForm";
 import InfoForm from "./InfoForm";
 import { FormType } from "../../../types/FormType";
 
-export default function AuthFormRouter({
-    formType,
-    onClose,
-    setFormType,
-}: {
+
+interface AuthFormRouterProps {
     formType: FormType;
     onClose: () => void;
     setFormType: (type: FormType) => void;
-}) {
+    showCloseButton?: boolean;
+}
+
+export default function AuthFormRouter({ formType, onClose, setFormType, showCloseButton = true }: AuthFormRouterProps) {
     const getFormComponent = () => {
         switch (formType) {
             case "info":
@@ -49,15 +50,17 @@ export default function AuthFormRouter({
                     />
                 );
             case "forgot":
-                return <ForgotPasswordForm onClose={onClose} />;
+                return <ForgotPasswordForm onClose={onClose} onResetLinkSent={() => setFormType("resetSent")} />;
             case "resetSent":
                 return <ResetLinkSentForm onClose={onClose} />;
             case "newPassword":
-                return <NewPasswordForm onClose={onClose} />;
+                return <ResetPasswordForm onClose={onClose} showCloseButton={showCloseButton} onResetPasswordDone={() => setFormType("passwordResetSuccessfully")} />;
             case "verifyEmail":
                 return <ConfirmEmailForm onClose={onClose} />;
             case "emailVerified":
                 return <EmailVerifiedForm onClose={onClose} />;
+            case "passwordResetSuccessfully":
+                return <PasswordResetSuccessfullyForm onClose={onClose} showCloseButton={showCloseButton} />;
             default:
                 return null;
         }

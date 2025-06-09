@@ -146,7 +146,6 @@ export default function NavProfile() {
 				setFormType={setFormType}
 			/>
 
-
 		</div >
 	);
 }
