@@ -48,7 +48,7 @@ export default function ConfirmEmailPage() {
 				setMessage(tApi(`errors.${response.message ?? "serverError"}`));
 			}
 		});
-	}, [searchParams, navigate, tConfirmEmail, dispatch]);
+	}, [searchParams, navigate, tConfirmEmail, dispatch, tApi]);
 
 	// Countdown and redirect logic only if email is confirmed successfully
 	useEffect(() => {

@@ -43,7 +43,11 @@
         "title": "Check your inbox!",
         "text": "We've sent you a password reset link. Please check your email and follow the instructions to create a new password."
     },
-    "newPassword": {
+    "passwordResetSuccessfully": {
+        "title": "Your Password has been reset successfully!",
+        "text": "You'll be redirected to the home page in a few seconds."
+    },
+    "resetPassword": {
         "title": "Create a new password",
         "text": "Set a new password for your account below. Make sure it’s something strong and easy to remember.",
         "fields": {

@@ -47,12 +47,6 @@ export default function ProfileCard({
 				/>
 			)}
 
-			{rank > 3 && (
-				<div className="absolute top-2 right-4 text-basic-700 font-pacifico text-4xl">
-					{rank}
-				</div>
-			)}
-
 			{/* Avatar + Name block */}
 			<div className="relative mb-8">
 				{/* Avatar */}

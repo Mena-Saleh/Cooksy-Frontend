@@ -44,7 +44,11 @@
         "title": "Kolla din inkorg!",
         "text": "Vi har skickat en länk för att återställa ditt lösenord. Kontrollera din e-post och följ instruktionerna för att skapa ett nytt lösenord."
     },
-    "newPassword": {
+    "passwordResetSuccessfully": {
+        "title": "Din lösenord har återställts!",
+        "text": "Du kommer att omdirigeras till startsidan om några sekunder."
+    },
+    "resetPassword": {
         "title": "Skapa ett nytt lösenord",
         "text": "Ange ett nytt lösenord för ditt konto nedan. Se till att det är starkt och lätt att komma ihåg.",
         "fields": {

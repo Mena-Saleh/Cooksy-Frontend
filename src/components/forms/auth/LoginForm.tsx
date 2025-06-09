@@ -8,27 +8,39 @@ import { useState } from "react";
 import { useAppDispatch } from "../../../redux/hooks";
 import { login as loginApi, getCurrentUser as getCurrentUserApi } from "../../../services/CooksyAPI/auth";
 import { login as loginRedux } from "../../../redux/slices/authSlice";
-import { Login } from "../../../models/auth/Login";
+import { useForm } from "react-hook-form";
 import ErrorMessage from "../../common/ErrorMessage";
+import { z } from "zod";
+import { loginSchema } from "../../../schemas/loginSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 interface LoginFormProps {
 	onClose: () => void;
 	onForgetPasswordClick: () => void;
 	onRegisterClick: () => void;
 }
+
+type LoginFormData = z.infer<typeof loginSchema>;
+
 export default function LoginForm({ onClose, onForgetPasswordClick, onRegisterClick }: LoginFormProps) {
 	const { t: tForms } = useTranslation("forms");
 	const { t: tApi } = useTranslation("api");
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const { t: tSchemas } = useTranslation("schemas");
+
 	const [apiError, setApiError] = useState<string | null>(null);
 	const dispatch = useAppDispatch();
 
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault();
-		setApiError(null);
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		reset
+	} = useForm<LoginFormData>({
+		resolver: zodResolver(loginSchema)
+	});
 
-		const loginData: Login = { email, password };
+	const onSubmit = async (loginData: LoginFormData) => {
+		setApiError(null);
 		const response = await loginApi(loginData);
 
 		if (!response.success) {
@@ -42,6 +54,7 @@ export default function LoginForm({ onClose, onForgetPasswordClick, onRegisterCl
 			return;
 		}
 
+		reset();
 		dispatch(loginRedux(userResponse.data));
 		onClose();
 	};
@@ -53,23 +66,24 @@ export default function LoginForm({ onClose, onForgetPasswordClick, onRegisterCl
 					{tForms("login.title")}
 				</h3>
 
-				<form className="space-y-4" onSubmit={handleSubmit}>
-					<input
-						type="email"
-						value={email}
-						onChange={e => setEmail(e.target.value)}
-						placeholder={tForms("login.fields.email")}
-						className="w-full input"
-						required
-					/>
+				<form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
+					<div className="w-full">
+						<input
+							placeholder={tForms("login.fields.email")}
+							className="w-full input"
+							{...register("email")}
+						/>
+						{errors.email && (
+							<ErrorMessage message={tSchemas(`${errors.email.message}`)} />
+						)}
+					</div>
+
 					<div className="relative">
 						<input
 							type="password"
-							value={password}
-							onChange={e => setPassword(e.target.value)}
 							placeholder={tForms("login.fields.password")}
 							className="w-full input pr-10"
-							required
+							{...register("password")}
 						/>
 						<span className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
 							<Icon
@@ -77,6 +91,9 @@ export default function LoginForm({ onClose, onForgetPasswordClick, onRegisterCl
 								className="w-5 h-5 text-basic-900"
 							/>
 						</span>
+						{errors.password && (
+							<ErrorMessage message={tSchemas(`${errors.password.message}`)} />
+						)}
 					</div>
 
 					{apiError && <ErrorMessage message={tApi(`${apiError}`)} className="text-center mb-2" />}
