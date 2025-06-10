@@ -8,18 +8,11 @@ interface AuthState {
 	userLastName?: string;
 }
 
-// const initialState: AuthState = {
-//     isAuthenticated: false,
-//     userEmail: undefined,
-//     userFirstName: undefined,
-//     userLastName: undefined,
-// };
-
 const initialState: AuthState = {
-	isAuthenticated: true,
-	userEmail: "jess.fredin@gmail.com",
-	userFirstName: "Jessica",
-	userLastName: "Fredin",
+	isAuthenticated: false,
+	userEmail: undefined,
+	userFirstName: undefined,
+	userLastName: undefined,
 };
 
 const authSlice = createSlice({
