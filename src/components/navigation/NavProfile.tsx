@@ -9,14 +9,17 @@ import { FormType } from "../../types/FormType";
 import { logout as logoutApi } from '../../services/CooksyAPI/auth';
 import { logout as logoutRedux } from '../../redux/slices/authSlice';
 import { getInitials } from '../../utils/getInitials';
+import { Link } from "react-router-dom";
 
 type NavProfileItem = {
 	icon: string;
 	label: string;
+	path?: string;
 	badge?: number;
 };
 
-const icons: NavProfileItem[] = [
+
+const dropdownItems: NavProfileItem[] = [
 	// { icon: "solar:user-outline", label: "myProfile" },
 	// { icon: "solar:bell-outline", label: "notifications", badge: 10 },
 	// { icon: "solar:upload-outline", label: "uploadedRecipes" },
@@ -26,14 +29,14 @@ const icons: NavProfileItem[] = [
 	// { icon: "solar:settings-outline", label: "settings" },
 	// { icon: "solar:logout-3-outline", label: "logout" },
 
-	{ icon: uiIcons.profile.account, label: "myProfile" },
-	{ icon: uiIcons.profile.bell, label: "notifications", badge: 10 },
-	{ icon: uiIcons.profile.upload, label: "uploadedRecipes" },
-	{ icon: uiIcons.content.heartOutline, label: "savedRecipes" },
-	{ icon: uiIcons.content.calendar, label: "mealPlanner" },
-	{ icon: uiIcons.content.bookOutline, label: "recipeFeed" },
-	{ icon: uiIcons.profile.settings, label: "settings" },
-	{ icon: uiIcons.profile.logout, label: "logout" },
+	{ icon: uiIcons.profile.account, label: "myProfile", path: "/my-profile" },
+	{ icon: uiIcons.profile.bell, label: "notifications", path: "/notifications", badge: 10 },
+	{ icon: uiIcons.profile.upload, label: "uploadedRecipes", path: "/my-recipes" },
+	{ icon: uiIcons.content.heartOutline, label: "savedRecipes", path: "/saved" },
+	{ icon: uiIcons.content.calendar, label: "mealPlanner", path: "/planner" },
+	{ icon: uiIcons.content.bookOutline, label: "recipeFeed", path: "/feed" },
+	{ icon: uiIcons.profile.settings, label: "settings", path: "/settings" },
+	{ icon: uiIcons.profile.logout, label: "logout" }, // no path for logout
 ];
 
 export default function NavProfile() {
@@ -71,7 +74,7 @@ export default function NavProfile() {
 
 
 	// Find notification badge
-	const notificationItem = icons.find(
+	const notificationItem = dropdownItems.find(
 		(item) => item.label === "notifications"
 	);
 
@@ -84,12 +87,14 @@ export default function NavProfile() {
 					if (!isAuthenticated) {
 						setFormType("info");
 					}
-					setOpen(!open)
+					setOpen(!open);
 				}}
 			>
-				{isAuthenticated ?
+				{isAuthenticated ? (
 					userFirstName || userLastName ? (
-						<div className={`w-full h-full flex text-sm rounded-full flex items-center justify-center text-white select-none bg-basic-900`}>
+						<div
+							className={`w-full h-full flex text-sm rounded-full flex items-center justify-center text-white select-none bg-basic-900`}
+						>
 							{getInitials(userFirstName, userLastName)}
 						</div>
 					) : (
@@ -99,15 +104,19 @@ export default function NavProfile() {
 							className="w-full h-full rounded-full object-cover"
 						/>
 					)
-					:
-					< Icon icon="mingcute:user-4-fill" className="w-full h-full text-secondary-500"></Icon>
-
-				}
-				{isAuthenticated && notificationItem?.badge && notificationItem.badge > 0 && (
-					<div className="absolute -top-1 -right-2 border border-basic-100 bg-secondary-500 text-basic-100 text-xs w-5 h-5 rounded-full flex items-center justify-center font-pacifico">
-						{notificationItem.badge}
-					</div>
+				) : (
+					<Icon
+						icon="mingcute:user-4-fill"
+						className="w-full h-full text-secondary-500"
+					></Icon>
 				)}
+				{isAuthenticated &&
+					notificationItem?.badge &&
+					notificationItem.badge > 0 && (
+						<div className="absolute -top-1 -right-2 border border-basic-100 bg-secondary-500 text-basic-100 text-xs w-5 h-5 rounded-full flex items-center justify-center font-pacifico">
+							{notificationItem.badge}
+						</div>
+					)}
 			</div>
 
 			{/* Authenticated: Show dropdown */}
@@ -119,23 +128,46 @@ export default function NavProfile() {
 						: "opacity-0 -translate-y-4 pointer-events-none"
 				)}
 			>
-				{icons.map(({ icon, label, badge }, index) => (
-					<div
-						key={index}
-						className="flex items-center gap-3 px-4 py-2 text-sm text-basic-900 hover:bg-primary-100 cursor-pointer rounded-xl transition-300"
-						onClick={label === "logout" ? handleLogout : undefined}
-					>
-						<Icon icon={icon} className="w-5 h-5" />
-						<span className="flex-1">
-							{tNavigation(`profileDropdown.${label}`)}
-						</span>
-						{!!badge && badge > 0 && (
-							<span className="bg-secondary-500 text-basic-100 text-xs px-2 py-0.5 rounded-full font-pacifico border border-basic-100 w-5 h-5 flex items-center justify-center">
-								{badge}
+				{dropdownItems.map(({ icon, label, path, badge }, index) =>
+					path ? (
+						<Link
+							to={path}
+							key={index}
+							className="flex items-center gap-3 px-4 py-2 text-sm text-basic-900 hover:bg-primary-100 cursor-pointer rounded-xl transition-300"
+							onClick={() => setOpen(false)}
+						>
+							<Icon icon={icon} className="w-5 h-5" />
+							<span className="flex-1">
+								{tNavigation(`profileDropdown.${label}`)}
 							</span>
-						)}
-					</div>
-				))}
+							{!!badge && badge > 0 && (
+								<span className="bg-secondary-500 text-basic-100 text-xs px-2 py-0.5 rounded-full font-pacifico border border-basic-100 w-5 h-5 flex items-center justify-center">
+									{badge}
+								</span>
+							)}
+						</Link>
+					) : (
+						<div
+							key={index}
+							className="flex items-center gap-3 px-4 py-2 text-sm text-basic-900 hover:bg-primary-100 cursor-pointer rounded-xl transition-300"
+							onClick={
+								label === "logout" ? handleLogout : undefined
+							}
+						>
+							<Icon icon={icon} className="w-5 h-5" />
+							<span className="flex-1">
+								{tNavigation(`profileDropdown.${label}`)}
+							</span>
+							{!!badge && badge > 0 && (
+								<span className="bg-secondary-500 text-basic-100 text-xs px-2 py-0.5 rounded-full font-pacifico border border-basic-100 w-5 h-5 flex items-center justify-center">
+									{badge}
+								</span>
+							)}
+						</div>
+					)
+				)}
+
+
 			</div>
 
 			{/* Not Authenticated: Show InfoForm in overlay */}
@@ -145,6 +177,7 @@ export default function NavProfile() {
 				onClose={() => setFormType(null)}
 				setFormType={setFormType}
 			/>
+
 
 		</div >
 	);

@@ -28,7 +28,7 @@ export default function RecipeGrid({ onOpenFilter }: RecipeGridProps) {
 						key={recipe.id}
 						title={recipe.title}
 						imageUrl={recipe.imageUrl}
-						categories={["Meat"]}
+						categories={["Meat", "Seafood"]}
 						time={recipe.time}
 						rating={recipe.rating}
 						reviews={recipe.reviews}

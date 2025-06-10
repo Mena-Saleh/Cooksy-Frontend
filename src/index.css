@@ -31,7 +31,12 @@
 
   /* Info - Brown */
   --color-info-brown-100: #eebc00;
-  --color-info-brown-900: #b08d57;
+  --color-info-brown-500: #b08d57;
+  --color-info-brown-900: #894B00;
+
+  /* Info - Yellow */
+  --color-info-yellow-100: #FEFCE8;
+  --color-info-yellow-200: #FEF9C2;
 
   /* Info - Blue */
   --color-info-blue-100: #dee9ff;
@@ -59,6 +64,10 @@
 
   p {
     @apply text-xs sm:text-sm leading-relaxed;
+  }
+
+  button {
+    @apply cursor-pointer;
   }
 
   .input {

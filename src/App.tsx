@@ -7,6 +7,7 @@ import RecipesPage from "./pages/RecipesPage";
 import ConfirmEmailPage from "./pages/ConfirmEmailPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import AuthInitializer from "./components/auth/AuthInitializer";
+import MyProfilePage from "./pages/MyProfilePage";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -23,6 +24,7 @@ function App() {
 					<Route path="/recipes" element={<RecipesPage />} />
 					<Route path="/confirm-email" element={<ConfirmEmailPage />} />
 					<Route path="/reset-password" element={<ResetPasswordPage />} />
+					<Route path="/my-profile" element={<MyProfilePage />} />
 				</Routes>
 			</main>
 

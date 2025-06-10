@@ -37,7 +37,7 @@ export const categoryIcons = {
 	Meat: { icon: "hugeicons:steak" },
 	Pasta: { icon: "mdi:food-variant" },
 	Salad: { icon: "mdi:leaf" },
-	Seafood: { icon: "mdi:fish" },
+	Seafood: { icon: "ion:fish-outlineF" },
 	Snack: { icon: "mdi:food-apple" },
 	Soup: { icon: "mdi:pot-mix" },
 	Vegan: { icon: "iconoir:plant" },
